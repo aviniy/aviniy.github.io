@@ -6,13 +6,19 @@ import SidebarNode from './SidebarNode.astro';
 
 const { posts = [] } = Astro.props;
 const banditLevels = sortCategoryPosts(posts.filter(post => post.data.category === 'OverTheWire Bandit' && /^Level\s+\d+\b/i.test(post.data.title)), 'OverTheWire Bandit');
-const tree = categories.map(group => group.name === 'Wargame' ? {
-  ...group,
-  children: group.children.map(child => child === 'OverTheWire Bandit' ? {
-    name: child,
-    children: banditLevels.map(post => ({ name: post.data.title, href: postUrl(post), kind: 'post' }))
-  } : child)
-} : group);
+const postNodes = list => list.map(post => ({ name: post.data.title, href: postUrl(post), kind: 'post' }));
+const miscPosts = posts.filter(post => post.data.category === 'Misc');
+const tree = categories.map(group => {
+  if (group.name === 'Wargame') return {
+    ...group,
+    children: group.children.map(child => child === 'OverTheWire Bandit' ? {
+      name: child,
+      children: postNodes(banditLevels)
+    } : child)
+  };
+  if (group.name === 'Misc') return { ...group, children: postNodes(miscPosts) };
+  return group;
+});
 ---
 <aside class="sidebar" id="sidebar">
   <div class="brand"><a href={url()}>✳ &nbsp;Aviniy's Lab</a></div>
