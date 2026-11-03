@@ -144,26 +144,22 @@
 }
 
 .anime-art {
-  position: relative;
+  overflow: hidden;
+  width: 100%;
   aspect-ratio: 16 / 10;
   margin-bottom: 24px;
   border: 1px solid rgba(255, 255, 255, .17);
   background: #171719;
 }
 
-.anime-art::before,
-.anime-art::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 44px;
-  height: 1px;
-  background: rgba(255, 255, 255, .14);
+.anime-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.anime-art::before { transform: translate(-50%, -50%); }
-.anime-art::after { transform: translate(-50%, -50%) rotate(90deg); }
+.anime-art-date img { object-position: center 32%; }
 
 .anime-item p {
   margin-top: 8px;
