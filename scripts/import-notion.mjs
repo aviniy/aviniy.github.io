@@ -5,6 +5,7 @@ import JSZip from 'jszip';
 import { JSDOM } from 'jsdom';
 import createDOMPurify from 'dompurify';
 import * as cheerio from 'cheerio';
+import { categories } from '../src/config/categories.js';
 
 const root = process.cwd();
 const imports = path.join(root, 'imports');
@@ -21,6 +22,17 @@ const slugify = name => name.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{
 const hash = text => crypto.createHash('sha256').update(text).digest('hex').slice(0,10);
 const yaml = value => JSON.stringify(value);
 const date = new Date().toISOString().slice(0,10);
+const plainName = value => value.replace(/\s+[0-9a-f]{32}(?=\.html?$|$)/i,'').replace(/\.html?$/i,'').trim().toLocaleLowerCase();
+const inferCategory = name => {
+  const parts = name.split('/').map(plainName);
+  if (parts.some(part => part === 'bandit' || part === 'overthewire bandit')) return 'OverTheWire Bandit';
+  for (const group of categories) {
+    const child = group.children.find(item => parts.includes(item.toLocaleLowerCase()));
+    if (child) return child;
+    if (parts.includes(group.name.toLocaleLowerCase())) return group.name;
+  }
+  return 'Study Notes';
+};
 const findDate = ($, key) => {
   const raw = $(`meta[property="${key}"],meta[name="${key}"]`).first().attr('content');
   const parsed = raw && new Date(raw);
@@ -82,7 +94,7 @@ async function processZip(zipPath) {
     const existing = path.join(contentDir,`${slug}.md`);
     let oldCreated;
     try { oldCreated = (await fs.readFile(existing,'utf8')).match(/^createdAt: (.+)$/m)?.[1]; } catch {}
-    const metadata = [`title: ${yaml(title)}`,`description: ${yaml(description)}`,`category: ${yaml('Study Notes')}`,`tags: []`,`createdAt: ${oldCreated || yaml(createdAt)}`,`updatedAt: ${yaml(updatedAt)}`,`draft: false`,`notionSource: ${yaml(`${path.basename(zipPath)}:${name}`)}`];
+    const metadata = [`title: ${yaml(title)}`,`description: ${yaml(description)}`,`category: ${yaml(inferCategory(name))}`,`tags: []`,`createdAt: ${oldCreated || yaml(createdAt)}`,`updatedAt: ${yaml(updatedAt)}`,`draft: false`,`notionSource: ${yaml(`${path.basename(zipPath)}:${name}`)}`];
     await fs.mkdir(contentDir,{recursive:true});
     await fs.writeFile(existing,`---\n${metadata.join('\n')}\n---\n\n${clean}\n`);
     count++;
