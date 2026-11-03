@@ -1,0 +1,7 @@
+---
+import '../styles/personal.css';
+import { rootUrl } from '../lib/posts.js';
+const { title = 'Aviniy', description = "Welcome to Aviniy's Space" } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical.href}/><link rel="canonical" href={canonical.href}/><link rel="icon" href={rootUrl('favicon.svg')} type="image/svg+xml"/><title>{title}</title></head><body><slot /></body></html>

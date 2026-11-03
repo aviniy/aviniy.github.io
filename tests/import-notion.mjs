@@ -35,7 +35,7 @@ try {
   const build = spawnSync(process.execPath,['node_modules/astro/bin/astro.mjs','build'],{cwd:root,encoding:'utf8'});
   assert.equal(build.status,0,build.stderr || build.stdout);
   const slug = created.find(x=>x.startsWith('노트-')).replace(/\.md$/,'');
-  const output = await fs.readFile(path.join(root,'dist','posts',slug,'index.html'),'utf8');
+  const output = await fs.readFile(path.join(root,'dist','lab','posts',slug,'index.html'),'utf8');
   assert.match(output,/\.\.\/\.\.\/assets\/notion\//);
   assert.match(output,/\.\.\/\.\.\/posts\/다음-/);
   assert.match(output,/id="개요-0"/);

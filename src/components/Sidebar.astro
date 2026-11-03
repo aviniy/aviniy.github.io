@@ -1,7 +1,7 @@
 ---
 import { categories } from '../config/categories.js';
 import { sortCategoryPosts } from '../lib/category-sort.js';
-import { postUrl, url } from '../lib/posts.js';
+import { postUrl, rootUrl, url } from '../lib/posts.js';
 import SidebarNode from './SidebarNode.astro';
 
 const { posts = [] } = Astro.props;
@@ -23,7 +23,8 @@ const tree = categories.map(group => group.name === 'Wargame' ? {
     {tree.map(group => <SidebarNode node={group} posts={posts} depth={0} />)}
     <div class="nav-heading">OTHER</div>
     <a class="nav-link" href={url('about/')}>About</a>
-    <a class="nav-link" href={url('admin/')} rel="nofollow">Admin</a>
+    <a class="nav-link" href={rootUrl()}>Personal Home</a>
+    <a class="nav-link" href={rootUrl('admin/')} rel="nofollow">Admin</a>
   </nav>
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="테마 전환">◐ &nbsp; 테마 전환</button>
 </aside>

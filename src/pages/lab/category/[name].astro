@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostList from '../../../components/PostList.astro';
+import { allCategoryNames, categoryMatches } from '../../../config/categories.js';
+import { allPosts } from '../../../lib/posts.js';
+import { sortCategoryPosts } from '../../../lib/category-sort.js';
+export async function getStaticPaths(){return allCategoryNames().map(name=>({params:{name}}))}
+const name = Astro.params.name;
+const posts = await allPosts();
+const filtered = sortCategoryPosts(posts.filter(p=>categoryMatches(p.data.category, name)), name);
+---
+<BaseLayout title={`${name} · Aviniy's Lab`} posts={posts}><div class="eyebrow">CATEGORY</div><h1>{name}</h1><p class="muted">{filtered.length} posts</p><PostList posts={filtered}/></BaseLayout>

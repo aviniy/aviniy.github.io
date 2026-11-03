@@ -1,8 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PostList from '../components/PostList.astro';
-import { allPosts, url } from '../lib/posts.js';
-import { categories, categoryMatches } from '../config/categories.js';
-const posts = await allPosts();
+import PersonalLayout from '../layouts/PersonalLayout.astro';
+import { rootUrl } from '../lib/posts.js';
 ---
-<BaseLayout posts={posts}><div class="eyebrow">PERSONAL KNOWLEDGE BASE</div><h1>Aviniy's Lab</h1><p class="subtitle">Security Research &amp; Study Notes</p><p class="intro">정보보안, 리눅스, 웹 보안, 워게임 등을 공부하고 기록하는 개인 연구 공간.</p><section><h2>Recently Updated</h2><PostList posts={posts.slice(0,5)}/></section><section><h2>Categories</h2><div class="category-grid">{categories.map(c => <a href={url(`category/${encodeURIComponent(c.name)}/`)}><strong>{c.name}</strong><span>{posts.filter(p=>categoryMatches(p.data.category,c.name)).length} posts →</span></a>)}</div></section><section><h2>All Posts</h2><PostList posts={posts}/></section></BaseLayout>
+<PersonalLayout>
+  <div class="space-shell">
+    <header class="space-nav"><a class="space-logo" href={rootUrl()}>✦ Aviniy</a><nav aria-label="개인 홈페이지 탐색"><a href="#profile">Profile</a><a href="#music">Music</a><a href="#links">Links</a><a href={rootUrl('lab/')}>Aviniy's Lab ↗</a></nav></header>
+    <main>
+      <section class="hero" id="profile">
+        <div class="hero-copy paper"><div class="eyebrow"><span class="status-dot"></span> PERSONAL SPACE · SEOUL</div><h1>Welcome to <span>Aviniy's Space</span></h1><p class="intro">관심 있는 것을 깊게 파고들고, 만들고, 기록합니다. 이곳은 취향과 작업, 운영 중인 공간을 한데 모아 둔 Aviniy의 개인 홈페이지입니다.</p><div class="clock-card" aria-live="polite"><strong id="seoul-time">--:--:--</strong><span id="seoul-date">KST</span></div></div>
+        <div class="illustration paper" aria-label="결속밴드 일러스트 영역"><div class="band-lines"></div><div class="stage"></div><div class="illustration-empty"><div class="empty-note"><strong>結束バンド · Illustration</strong><span>요청한 4인 일러스트 파일이 현재 첨부에서 확인되지 않아 원본을 임의로 대체하지 않았습니다.</span></div></div></div>
+      </section>
+      <section class="grid">
+        <div class="block paper"><div class="block-label">RANDOM NOTE</div><p class="message" id="random-message">좋아하는 것을 오래 기록하면 결국 나만의 지도가 된다.</p><div class="message-actions"><span class="eyebrow">A SMALL MESSAGE FOR TODAY</span><button class="ghost-button" id="shuffle-message" type="button">다른 문장 ↻</button></div></div>
+        <div class="block paper" id="music"><div class="block-label">KESSOKU BAND PLAYER</div><div class="now-playing"><div class="album">♫</div><div class="track"><strong>결속밴드 플레이리스트</strong><span>음원 파일이 등록되지 않았습니다.</span></div></div><div class="player-row"><button class="play" type="button" disabled aria-label="음원 미등록">▶</button><div class="progress"></div><span class="eyebrow">0:00</span></div><p class="player-note">브라우저 자동재생을 사용하지 않습니다. 음원이 추가되면 사용자가 재생 버튼을 눌러 시작합니다.</p></div>
+      </section>
+      <section class="grid" id="links">
+        <div class="block paper"><div class="block-label">SOCIAL LINKS</div><div class="socials"><a class="social" href="https://github.com/aviniy" target="_blank" rel="noopener noreferrer"><strong>GitHub ↗</strong><span>@aviniy</span></a><div class="social disabled"><strong>Instagram</strong><span>링크 미등록</span></div><div class="social disabled"><strong>Discord</strong><span>링크 미등록</span></div></div></div>
+        <div class="block paper"><div class="block-label">PROFILE</div><p class="intro">보안, 개발, 디자인과 애니메이션을 좋아합니다. 공부한 내용은 기술 블로그에, 개인적인 취향과 연결점은 이 공간에 정리합니다.</p></div>
+      </section>
+      <section class="sites paper"><div class="block-label">MY SITES</div><a class="site-card" href={rootUrl('lab/')}><div><h2>Aviniy's Lab</h2><p>정보보안, 리눅스, 워게임과 프로젝트를 기록하는 별도의 기술 블로그.</p></div><span class="arrow">→</span></a></section>
+    </main>
+    <footer class="footer"><span>© 2026 Aviniy</span><span>Personal homepage · Built with Astro</span></footer>
+  </div>
+  <script is:inline>
+    const messages=['좋아하는 것을 오래 기록하면 결국 나만의 지도가 된다.','오늘의 작은 호기심이 내일의 프로젝트가 된다.','천천히, 하지만 멈추지 않고.','좋은 기록은 다시 시작할 수 있는 체크포인트다.','완벽함보다 계속 만드는 쪽을 선택한다.'];const message=document.querySelector('#random-message');function shuffle(){let next=messages[Math.floor(Math.random()*messages.length)];if(next===message.textContent)next=messages[(messages.indexOf(next)+1)%messages.length];message.textContent=next}document.querySelector('#shuffle-message')?.addEventListener('click',shuffle);shuffle();const time=document.querySelector('#seoul-time'),date=document.querySelector('#seoul-date');function tick(){const now=new Date();time.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);date.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'long',day:'numeric',weekday:'short'}).format(now)+' · KST'}tick();setInterval(tick,1000);
+  </script>
+</PersonalLayout>
