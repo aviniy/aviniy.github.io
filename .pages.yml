@@ -1,0 +1,110 @@
+media:
+  input: public/images
+  output: /images
+  rename: safe
+  categories: [image]
+
+content:
+  - name: posts
+    label: 게시글
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    view:
+      primary: title
+      fields: [title, category, updatedAt, draft]
+      sort: [updatedAt, createdAt, title]
+      search: [title, description, category, tags, body]
+      default:
+        sort: updatedAt
+        order: desc
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: description
+        label: 요약
+        type: text
+        required: true
+      - name: category
+        label: 분류
+        type: select
+        required: true
+        options:
+          values:
+            - Digital Forensics
+            - OverTheWire Bandit
+            - Dreamhack Web
+            - Dreamhack Misc
+            - Dreamhack Forensics
+            - Dreamhack System Hacking
+            - Dreamhack Reversing
+            - Dreamhack Pwnable
+            - Dreamhack Crypto
+            - CTF Writeups
+            - System Security
+            - Network Security
+            - Web Security
+            - Cryptography
+            - Linux Basics
+            - Commands
+            - Shell Scripting
+            - Vulnerability Analysis
+            - CVE Research
+            - Security Tools
+            - Baekjoon
+            - Study Notes
+      - name: tags
+        label: 태그
+        type: string
+        list: true
+      - name: createdAt
+        label: 작성일
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: updatedAt
+        label: 수정일
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: 임시 저장
+        type: boolean
+        default: false
+      - name: notionSource
+        label: Notion 원본 ID
+        type: string
+        required: false
+        readonly: true
+      - name: importedHtml
+        label: Import 원본 파일
+        type: string
+        required: false
+        readonly: true
+      - name: body
+        label: 본문
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: true
+          path: posts
+          rename: safe
+
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "게시글 작성: {filename}"
+      update: "게시글 수정: {filename}"
+      delete: "게시글 삭제: {filename}"
+      rename: "게시글 이름 변경: {oldFilename} → {filename}"

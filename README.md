@@ -1,5 +1,15 @@
 # Aviniy's Lab
 
+## 웹 관리자
+
+배포된 사이트의 `/admin/`에서 Pages CMS 관리 화면으로 이동할 수 있다. GitHub로 로그인하고
+`aviniy/aviniy.github.io` 저장소를 선택하면 `src/content/posts`의 글을 작성, 수정, 삭제할 수 있다.
+저장 내용은 `main` 브랜치에 커밋되며 기존 GitHub Actions가 자동으로 사이트를 다시 배포한다.
+
+최초 한 번은 Pages CMS GitHub App을 설치하면서 접근 저장소를
+`aviniy/aviniy.github.io` 하나로 제한해야 한다. 블로그 수정 권한은 저장소 쓰기 권한을 가진
+GitHub 계정에만 있다.
+
 정보보안 학습 기록을 위한 Astro 정적 블로그입니다. Markdown과 Notion HTML ZIP을 지원합니다.
 
 ## 배포 없이 로컬에서 미리보기 (선택)
