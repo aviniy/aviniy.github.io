@@ -1,10 +1,12 @@
 ---
 import PersonalLayout from '../layouts/PersonalLayout.astro';
 import PersonalNav from '../components/PersonalNav.astro';
+import HeartCursor from '../components/HeartCursor.astro';
 import { rootUrl } from '../lib/posts.js';
 import '../styles/aboutme.css';
 ---
 <PersonalLayout title="About Me | aviniy.exe" description="aviniy의 소개와 관심사">
+  <HeartCursor />
   <main class="about-page">
     <PersonalNav />
 

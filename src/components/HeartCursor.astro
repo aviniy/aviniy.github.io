@@ -1,0 +1,84 @@
+<div class="heart-cursor-layer" aria-hidden="true" data-heart-cursor></div>
+
+<style>
+  .heart-cursor-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  :global(.cursor-heart) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: var(--heart-color);
+    font-size: var(--heart-size);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, opacity;
+    animation: heart-trail var(--heart-duration) ease-out forwards;
+    filter: drop-shadow(0 1px 2px rgb(33 20 35 / 18%));
+  }
+
+  @keyframes heart-trail {
+    from {
+      opacity: 0.9;
+      transform: translate(-50%, -50%) rotate(var(--heart-start-rotation)) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(
+          calc(-50% + var(--heart-drift-x)),
+          calc(-50% + var(--heart-fall-y))
+        )
+        rotate(var(--heart-end-rotation)) scale(0.55);
+    }
+  }
+
+  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .heart-cursor-layer {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const layer = document.querySelector('[data-heart-cursor]');
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!layer || !finePointer.matches || reducedMotion.matches) return;
+
+    const colors = ['#ffb6c1', '#d8b4fe', '#ffffff'];
+    const interval = 48;
+    let lastCreatedAt = 0;
+
+    document.addEventListener('mousemove', (event) => {
+      const now = performance.now();
+      if (now - lastCreatedAt < interval) return;
+      lastCreatedAt = now;
+
+      const heart = document.createElement('span');
+      const duration = 600 + Math.random() * 400;
+      const startRotation = -18 + Math.random() * 36;
+      const endRotation = startRotation + (-55 + Math.random() * 110);
+
+      heart.className = 'cursor-heart';
+      heart.textContent = '♥';
+      heart.style.left = `${event.clientX}px`;
+      heart.style.top = `${event.clientY}px`;
+      heart.style.setProperty('--heart-color', colors[Math.floor(Math.random() * colors.length)]);
+      heart.style.setProperty('--heart-size', `${8 + Math.random() * 8}px`);
+      heart.style.setProperty('--heart-duration', `${duration}ms`);
+      heart.style.setProperty('--heart-drift-x', `${-18 + Math.random() * 36}px`);
+      heart.style.setProperty('--heart-fall-y', `${18 + Math.random() * 26}px`);
+      heart.style.setProperty('--heart-start-rotation', `${startRotation}deg`);
+      heart.style.setProperty('--heart-end-rotation', `${endRotation}deg`);
+      layer.appendChild(heart);
+      heart.addEventListener('animationend', () => heart.remove(), { once: true });
+    }, { passive: true });
+  })();
+</script>
