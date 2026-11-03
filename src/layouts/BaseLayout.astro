@@ -1,6 +1,7 @@
 ---
 import Sidebar from '../components/Sidebar.astro';
 import '../styles/global.css';
+import '../styles/sidebar.css';
 import { url } from '../lib/posts.js';
 const { title = "Aviniy's Lab", description = '정보보안, 리눅스, 웹 보안, 워게임 학습 기록', posts = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);

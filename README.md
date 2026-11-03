@@ -21,7 +21,7 @@ npm run dev
 
 1. Notion에서 **HTML**로 내보낸 ZIP을 GitHub 저장소의 `imports/` 폴더에 업로드하고 `main`에 반영합니다.
 2. GitHub Actions가 자동으로 `npm ci` → `npm run import:notion` → `npm run build` → GitHub Pages 배포를 실행합니다. 로컬 설치나 실행은 필요하지 않습니다.
-3. ZIP 내부의 `bandit/` 폴더와 `bandit` 상위 페이지는 자동으로 `OverTheWire Bandit`에 분류됩니다. 다른 폴더 이름이 `src/config/categories.js`의 카테고리 이름과 일치하면 그 카테고리에 분류됩니다. 일치하지 않으면 `Study Notes`로 게시됩니다.
+3. ZIP 내부의 `bandit/` 폴더와 `bandit` 상위 페이지는 자동으로 `OverTheWire Bandit`에 분류됩니다. `Dreamhack/Web/`, `Dreamhack/Reversing/` 같은 경로는 Dreamhack 하위 유형에 분류됩니다. 다른 폴더 이름이 `src/config/categories.js`의 카테고리 이름과 일치하면 그 카테고리에 분류됩니다. 일치하지 않으면 `Study Notes`로 게시됩니다.
 
 ZIP 안의 여러 HTML과 이미지를 처리합니다. 동일한 ZIP 이름과 내부 파일 경로는 같은 주소의 게시글로 생성되므로 중복되지 않습니다. Actions에서는 생성물이 저장소에 커밋되지 않고 매번 빌드 중에 다시 생성됩니다. Notion 내보내기에서 날짜를 찾지 못한 경우 빌드 시점을 사용합니다. 외부 이미지는 가져오지 않고, 외부 링크는 허용합니다. SVG 첨부는 보안을 위해 복사하지 않습니다. ZIP은 25 MB, 단일 파일은 20 MB, 전체 압축 해제 크기는 100 MB로 제한합니다. Notion HTML은 허용된 HTML만 남기고 스크립트, iframe, 이벤트 핸들러, 위험한 URL을 제거합니다.
 

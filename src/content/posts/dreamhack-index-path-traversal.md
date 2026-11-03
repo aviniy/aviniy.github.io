@@ -1,7 +1,7 @@
 ---
 title: "Dreamhack Index Path Traversal 풀이"
 description: "클라이언트 측 변환을 우회하고 경로 탐색 취약점을 확인한다."
-category: "Dreamhack"
+category: "Dreamhack Web"
 tags: ["Dreamhack","Web","Path Traversal"]
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"

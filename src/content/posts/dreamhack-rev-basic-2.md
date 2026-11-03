@@ -1,7 +1,7 @@
 ---
 title: "Dreamhack rev-basic-2 풀이"
 description: "정수 배열에 저장된 ASCII 값을 분석해 입력값을 복원한다."
-category: "Dreamhack"
+category: "Dreamhack Reversing"
 tags: ["Dreamhack","Reversing"]
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"

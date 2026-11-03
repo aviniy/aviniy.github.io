@@ -1,7 +1,7 @@
 ---
 title: "Dreamhack rev-basic-0 풀이"
 description: "문자열과 디스어셈블 결과로 입력 검증 로직을 분석한다."
-category: "Dreamhack"
+category: "Dreamhack Reversing"
 tags: ["Dreamhack","Reversing"]
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"

@@ -1,7 +1,7 @@
 ---
 title: "Dreamhack Random Test 풀이"
 description: "접두사 비교 결과를 이용해 비밀 문자열을 한 글자씩 복원한다."
-category: "Dreamhack"
+category: "Dreamhack Web"
 tags: ["Dreamhack","Web","Logic Bug"]
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"

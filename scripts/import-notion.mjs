@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 import { JSDOM } from 'jsdom';
 import createDOMPurify from 'dompurify';
 import * as cheerio from 'cheerio';
-import { categories } from '../src/config/categories.js';
+import { allCategoryNames } from '../src/config/categories.js';
 
 const root = process.cwd();
 const imports = path.join(root, 'imports');
@@ -26,11 +26,12 @@ const plainName = value => value.replace(/\s+[0-9a-f]{32}(?=\.html?$|$)/i,'').re
 const inferCategory = name => {
   const parts = name.split('/').map(plainName);
   if (parts.some(part => part === 'bandit' || part === 'overthewire bandit')) return 'OverTheWire Bandit';
-  for (const group of categories) {
-    const child = group.children.find(item => parts.includes(item.toLocaleLowerCase()));
-    if (child) return child;
-    if (parts.includes(group.name.toLocaleLowerCase())) return group.name;
+  if (parts.includes('dreamhack')) {
+    const types = { web: 'Web', misc: 'Misc', forensic: 'Forensics', forensics: 'Forensics', 'system hacking': 'System Hacking', reversing: 'Reversing', reverse: 'Reversing', pwnable: 'Pwnable', pawnable: 'Pwnable', crypto: 'Crypto', cryptography: 'Crypto' };
+    for (const part of parts) if (types[part]) return `Dreamhack ${types[part]}`;
+    return 'Dreamhack';
   }
+  for (const category of allCategoryNames().reverse()) if (parts.includes(category.toLocaleLowerCase())) return category;
   return 'Study Notes';
 };
 const findDate = ($, key) => {

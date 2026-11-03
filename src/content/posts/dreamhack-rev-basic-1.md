@@ -1,7 +1,7 @@
 ---
 title: "Dreamhack rev-basic-1 풀이"
 description: "바이트별 상수 비교를 읽고 정답 문자열을 복원한다."
-category: "Dreamhack"
+category: "Dreamhack Reversing"
 tags: ["Dreamhack","Reversing"]
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"
