@@ -1,5 +1,6 @@
 ---
 import PersonalLayout from '../layouts/PersonalLayout.astro';
+import PersonalNav from '../components/PersonalNav.astro';
 import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.astro';
 import { youtubePlaylist } from '../config/youtubePlaylist.js';
 import { rootUrl } from '../lib/posts.js';
@@ -7,10 +8,7 @@ import { rootUrl } from '../lib/posts.js';
 <PersonalLayout>
   <main class="home" style={`--hero:url('${rootUrl('images/bocchi-the-rock-hd.png')}')`}>
     <div class="shade"></div>
-    <header class="topbar">
-      <a class="logo" href={rootUrl()}>AVINIY<span>✦</span></a>
-      <a class="lab-link" href={rootUrl('lab/')}>LAB ↗</a>
-    </header>
+    <PersonalNav />
 
     <div class="home-layout">
       <div class="home-left">

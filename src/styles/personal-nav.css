@@ -1,0 +1,67 @@
+.personal-nav nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 28px);
+}
+
+.personal-nav .about-link {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.personal-nav .about-link:hover,
+.personal-nav .about-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 850px) {
+  .personal-nav {
+    gap: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .personal-nav nav > .about-link {
+    display: inline-flex;
+  }
+
+  .personal-nav nav {
+    gap: 8px;
+  }
+
+  .personal-nav .about-link,
+  .personal-nav .lab-link {
+    min-height: 44px;
+    font-size: 11px;
+  }
+
+  .personal-nav .lab-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  .personal-nav .logo {
+    font-size: 13px;
+    letter-spacing: .1em;
+  }
+
+  .personal-nav .logo span {
+    margin-left: 4px;
+  }
+
+  .personal-nav .about-link,
+  .personal-nav .lab-link {
+    font-size: 10px;
+  }
+
+  .personal-nav .lab-link {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+}

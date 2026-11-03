@@ -1,0 +1,10 @@
+---
+import { rootUrl } from '../lib/posts.js';
+---
+<header class="topbar personal-nav">
+  <a class="logo" href={rootUrl()}>AVINIY<span>✦</span></a>
+  <nav aria-label="개인 홈페이지 메뉴">
+    <a class="about-link" href={rootUrl('aboutme/')}>ABOUT ME</a>
+    <a class="lab-link" href={rootUrl('lab/')}>LAB ↗</a>
+  </nav>
+</header>
