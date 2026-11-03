@@ -15,6 +15,7 @@ export const categories = [
   ] },
   { name: 'Linux', children: ['Linux Basics','Commands','Shell Scripting'] },
   { name: 'Research', children: ['Vulnerability Analysis','CVE Research','Security Tools'] },
+  { name: 'Misc', children: [] },
   { name: 'Algorithm', children: ['Baekjoon'] },
   { name: 'Study Notes', children: [] }
 ];
