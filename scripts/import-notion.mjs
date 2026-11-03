@@ -93,9 +93,12 @@ async function processZip(zipPath) {
       await fs.writeFile(path.join(assetsDir,`${hash(`${path.basename(zipPath)}:${target}`)}${ext}`),await entry.async('nodebuffer'));
     }
     const existing = path.join(contentDir,`${slug}.md`);
-    let oldCreated;
-    try { oldCreated = (await fs.readFile(existing,'utf8')).match(/^createdAt: (.+)$/m)?.[1]; } catch {}
-    const metadata = [`title: ${yaml(title)}`,`description: ${yaml(description)}`,`category: ${yaml(inferCategory(name))}`,`tags: []`,`createdAt: ${oldCreated || yaml(createdAt)}`,`updatedAt: ${yaml(updatedAt)}`,`draft: false`,`notionSource: ${yaml(`${path.basename(zipPath)}:${name}`)}`];
+    try {
+      await fs.access(existing);
+      console.log(`${slug}: 이미 가져온 글 유지`);
+      continue;
+    } catch {}
+    const metadata = [`title: ${yaml(title)}`,`description: ${yaml(description)}`,`category: ${yaml(inferCategory(name))}`,`tags: []`,`createdAt: ${yaml(createdAt)}`,`updatedAt: ${yaml(updatedAt)}`,`draft: false`,`notionSource: ${yaml(`${path.basename(zipPath)}:${name}`)}`];
     await fs.mkdir(contentDir,{recursive:true});
     await fs.writeFile(existing,`---\n${metadata.join('\n')}\n---\n\n${clean}\n`);
     count++;

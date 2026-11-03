@@ -1,0 +1,19 @@
+---
+title: "Level 10 → Level 11"
+description: "Level 10 → Level 11"
+category: "OverTheWire Bandit"
+tags: []
+createdAt: "2026-11-03"
+updatedAt: "2026-11-03"
+draft: false
+notionSource: "01377189-8ded-49f7-a965-ccdae8430911_ExportBlock-70e51c03-942c-4958-8025-8f7c870b9fff.zip:bandit/Level 10 → Level 11 3df5747616b28008884ef2bb4125602d.html"
+---
+
+<header><h1 class="page-title" dir="auto">Level 10 → Level 11</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><h3 id="문제-0" class="" dir="auto">문제:</h3><figure id="3df57476-16b2-80bf-8565-e1d35fc5560b" class="image" data-notion-image="Level%2010%20%E2%86%92%20Level%2011/image.png" dir="ltr"><a href="../../assets/notion/f0506ac08b.png"><img src="../../assets/notion/f0506ac08b.png"></a></figure><p id="3df57476-16b2-80af-939a-e2ef870b6f79" class="" dir="auto">다음 레벨의 비밀번호는 data.txt 파일 안에 저장되어 있으며, 이 파일에는 base64로 인코딩된 데이터가 들어있다.</p><p id="3df57476-16b2-800a-919a-d373bb8b237a" class="" dir="auto">
+</p><h3 id="참고-base64는-무엇인가-1" class="" dir="auto">참고: base64는 무엇인가?</h3><ul id="3df57476-16b2-80ea-bcdc-c8e752a3117d" class="bulleted-list" dir="auto"><li>base64는 데이터를 영문자, 숫자, +, / 등의 문자로 표현하는 인코딩 방식이다.</li></ul><ul id="3df57476-16b2-80d8-a6d3-ebc5e6d9f196" class="bulleted-list" dir="auto"><li>예를 들어 원래 문자열이 <code>Hello</code> 라면 Base64로 인코딩하면 <code>SGVsbG8=</code> 로 된다.</li></ul><ul id="3df57476-16b2-8061-8a05-cf83aa2712d1" class="bulleted-list" dir="auto"><li>중요한 건 Base64는 암호화가 아닌 인코딩이라는 개념이다. 누구나 개념과 규칙만 알면 바로 원래 데이터로 되돌릴 수 있다.</li></ul><p id="3df57476-16b2-80aa-8e59-e5deb6c7940c" class="" dir="auto">
+</p><p id="3df57476-16b2-80a4-8c57-c27549e0a0bb" class="" dir="auto">명령어 후보 리스트를 보면 <code>base64</code>가 있는데 문제를 봤을때 아마 <code>base64</code> 라는 명령어가 제일 중요한 방법일거 같다.</p><p id="3df57476-16b2-80e7-bc6a-e1ead1c88ac0" class="" dir="auto">
+</p><p id="3df57476-16b2-80f6-9b35-d249e52a1e56" class="" dir="auto">일단 그냥 한번 봐보자.</p><figure id="3df57476-16b2-806d-bb70-f20c723fac21" class="image" data-notion-image="Level%2010%20%E2%86%92%20Level%2011/image%201.png" dir="ltr"><a href="../../assets/notion/65b36e7f33.png"><img src="../../assets/notion/65b36e7f33.png"></a></figure><p id="3df57476-16b2-8049-86b8-de5b7d71ab1c" class="" dir="auto">이렇게 인코딩된 값이 출력된다.</p><p id="3df57476-16b2-804e-8823-ec87d404eee7" class="" dir="auto">
+</p><p id="3df57476-16b2-801a-a069-f3a6e02fd7f0" class="" dir="auto"><code>base64 --help</code> 를 쳐서 <code>base64</code> 의 사용법을 보자.</p><figure id="3df57476-16b2-8055-b5b3-d78d4b52537c" class="image" data-notion-image="Level%2010%20%E2%86%92%20Level%2011/image%202.png" dir="ltr"><a href="../../assets/notion/bffb1feebb.png"><img src="../../assets/notion/bffb1feebb.png"></a></figure><p id="3df57476-16b2-8037-b2cb-c20abcafa585" class="" dir="auto">decode 를 할려면 <code>-d</code> 또는 <code>--decode</code> 옵션을 사용해야 하는 거 같다.</p><p id="3df57476-16b2-8067-984e-c7ebb7f9ce12" class="" dir="auto">
+</p><pre id="3df57476-16b2-802b-bb07-cb2c59cfd5b8" class="code code-wrap" data-notion-code-syntax="bash"><code class="language-bash">base64 --decode data.txt</code></pre><p id="3df57476-16b2-80e6-b1ac-d92cd6f6146f" class="" dir="auto">이렇게 명령어를 작성하면</p><figure id="3df57476-16b2-80e6-a6a4-e177d23fb54f" class="image" data-notion-image="Level%2010%20%E2%86%92%20Level%2011/image%203.png" dir="ltr"><a href="../../assets/notion/96e8131006.png"><img src="../../assets/notion/96e8131006.png"></a></figure><p id="3df57476-16b2-80fd-8eb7-c9e2d5fa524f" class="" dir="auto">이렇게 비밀번호를 획득할 수 있다.</p><p id="3df57476-16b2-80f6-8518-f5731c720d77" class="" dir="auto">
+</p><p id="3df57476-16b2-809b-9a7c-f006ffa0b22e" class="" dir="auto">pw:</p><pre id="3df57476-16b2-80d1-8b67-cc05a72bb8b7" class="code code-wrap" data-notion-code-syntax="bash"><code class="language-bash">pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro</code></pre><p id="3df57476-16b2-801c-b31d-fe598a156811" class="" dir="auto">
+</p></div>
