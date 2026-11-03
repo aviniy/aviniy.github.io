@@ -118,7 +118,7 @@
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   padding: 5px 14px;
 }
 
@@ -203,16 +203,25 @@
 .yt-volume {
   display: grid;
   flex: 0 0 auto;
-  grid-template-columns: 18px auto 1fr 23px;
+  grid-template-columns: 18px minmax(68px, 105px);
   align-items: center;
-  gap: 7px;
-  padding: 2px 18px 4px;
+  gap: 8px;
+  margin-left: 8px;
+  padding-left: 13px;
+  border-left: 1px solid rgba(255, 255, 255, .14);
   color: rgba(255, 255, 255, .5);
 }
 
-.yt-volume label,
-.yt-volume output {
-  font-size: 9px;
+.yt-volume .volume-muted {
+  display: none;
+}
+
+.yt-volume.is-muted .volume-wave {
+  display: none;
+}
+
+.yt-volume.is-muted .volume-muted {
+  display: block;
 }
 
 .yt-volume input {
@@ -253,6 +262,49 @@
   font-size: 9px;
 }
 
+.yt-playlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.yt-playlist-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, .66);
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.yt-playlist-actions button:hover,
+.yt-playlist-actions button:focus-visible {
+  border-color: rgba(255, 255, 255, .42);
+  color: #fff;
+}
+
+.yt-playlist-actions button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, .72);
+  outline-offset: 2px;
+}
+
+.yt-playlist-actions svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  transition: transform .16s ease;
+}
+
+.yt-playlist-actions button.open svg {
+  transform: rotate(180deg);
+}
+
 .yt-track-list {
   flex: 1 1 auto;
   min-height: 0;
@@ -262,6 +314,10 @@
   list-style: none;
   scrollbar-color: rgba(255, 255, 255, .22) transparent;
   scrollbar-width: thin;
+}
+
+.yt-track-list[hidden] {
+  display: none;
 }
 
 .yt-track-list button {
@@ -401,6 +457,37 @@
     right: 22px;
     bottom: auto;
     left: 22px;
+  }
+}
+
+@media (max-width: 450px) {
+  .yt-controls {
+    gap: 3px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .yt-controls button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .yt-controls .yt-play {
+    width: 38px;
+    height: 38px;
+    margin: 0 2px;
+  }
+
+  .yt-volume {
+    grid-template-columns: 16px 56px;
+    gap: 5px;
+    margin-left: 3px;
+    padding-left: 7px;
+  }
+
+  .yt-volume svg {
+    width: 15px;
+    height: 15px;
   }
 }
 

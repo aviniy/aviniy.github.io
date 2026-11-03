@@ -42,22 +42,29 @@ const firstTrack = playlist[0];
     <button id="yt-repeat" type="button" aria-label="반복 끄기" data-mode="off" title="반복">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l3 3-3 3M4 11V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 0 1-3 3H4"/><text class="repeat-one" x="12" y="14.5">1</text></svg>
     </button>
-  </div>
-
-  <div class="yt-volume">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4ZM17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg>
-    <label for="yt-volume">볼륨</label>
-    <input id="yt-volume" type="range" min="0" max="100" value="55" step="1" />
-    <output id="yt-volume-value" for="yt-volume">55</output>
+    <div class="yt-volume" id="yt-volume-control">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 10v4h4l5 4V6L8 10H4"/>
+        <path class="volume-wave" d="M17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/>
+        <path class="volume-muted" d="m17 9 5 6M22 9l-5 6"/>
+      </svg>
+      <input id="yt-volume" aria-label="볼륨" type="range" min="0" max="100" value="55" step="1" />
+    </div>
   </div>
 
   <p id="yt-status" class="yt-status" aria-live="polite">재생 버튼을 누르면 음악이 시작됩니다.</p>
 
   <div class="yt-playlist-heading">
     <span>PLAYLIST</span>
-    <small>{playlist.length} tracks</small>
+    <div class="yt-playlist-actions">
+      <small>{playlist.length} tracks</small>
+      <button id="yt-playlist-toggle" type="button" aria-expanded="false" aria-controls="yt-track-list">
+        <span>펼치기</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+      </button>
+    </div>
   </div>
-  <ol id="yt-track-list" class="yt-track-list">
+  <ol id="yt-track-list" class="yt-track-list" hidden>
     {playlist.map((track, index) => (
       <li>
         <button type="button" data-track-index={index} aria-current={index === 0 ? 'true' : undefined}>
@@ -87,9 +94,12 @@ const firstTrack = playlist[0];
   const shuffleButton = document.querySelector('#yt-shuffle');
   const repeatButton = document.querySelector('#yt-repeat');
   const volumeInput = document.querySelector('#yt-volume');
-  const volumeValue = document.querySelector('#yt-volume-value');
+  const volumeControl = document.querySelector('#yt-volume-control');
   const cover = document.querySelector('#yt-cover');
   const trackButtons = [...document.querySelectorAll('[data-track-index]')];
+  const trackList = document.querySelector('#yt-track-list');
+  const playlistToggle = document.querySelector('#yt-playlist-toggle');
+  const playlistToggleText = playlistToggle?.querySelector('span');
 
   let player;
   let ready = false;
@@ -112,6 +122,11 @@ const firstTrack = playlist[0];
   if (Number.isFinite(saved.volume)) volumeInput.value = String(Math.min(100, Math.max(0, saved.volume)));
 
   const repeatLabels = { off: '반복 끄기', all: '전체 반복', one: '한 곡 반복' };
+  const updateVolumeIcon = () => {
+    const muted = Number(volumeInput.value) === 0;
+    volumeControl.classList.toggle('is-muted', muted);
+    volumeInput.setAttribute('aria-valuetext', muted ? '음소거' : `볼륨 ${volumeInput.value}`);
+  };
   const updateOptions = () => {
     shuffleButton.classList.toggle('active', shuffle);
     shuffleButton.setAttribute('aria-pressed', String(shuffle));
@@ -119,7 +134,7 @@ const firstTrack = playlist[0];
     repeatButton.dataset.mode = repeatMode;
     repeatButton.classList.toggle('active', repeatMode !== 'off');
     repeatButton.setAttribute('aria-label', repeatLabels[repeatMode]);
-    volumeValue.textContent = volumeInput.value;
+    updateVolumeIcon();
   };
 
   const showTrack = () => {
@@ -135,7 +150,7 @@ const firstTrack = playlist[0];
       if (active) button.setAttribute('aria-current', 'true');
       else button.removeAttribute('aria-current');
     });
-    trackButtons[currentIndex]?.scrollIntoView({ block: 'nearest' });
+    if (!trackList.hidden) trackButtons[currentIndex]?.scrollIntoView({ block: 'nearest' });
   };
 
   const setPlaying = (isPlaying) => {
@@ -278,9 +293,17 @@ const firstTrack = playlist[0];
     persist();
   });
   volumeInput?.addEventListener('input', () => {
-    volumeValue.textContent = volumeInput.value;
+    updateVolumeIcon();
     if (ready) player.setVolume(Number(volumeInput.value));
     persist();
+  });
+  playlistToggle?.addEventListener('click', () => {
+    const open = trackList.hidden;
+    trackList.hidden = !open;
+    playlistToggle.setAttribute('aria-expanded', String(open));
+    playlistToggleText.textContent = open ? '접기' : '펼치기';
+    playlistToggle.classList.toggle('open', open);
+    if (open) trackButtons[currentIndex]?.scrollIntoView({ block: 'nearest' });
   });
   trackButtons.forEach((button) => button.addEventListener('click', () => {
     loadTrack(Number(button.dataset.trackIndex), true, 0);
