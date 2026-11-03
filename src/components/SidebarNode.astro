@@ -1,0 +1,21 @@
+---
+import { categoryName, categoryLabel, categoryMatches } from '../config/categories.js';
+import { url } from '../lib/posts.js';
+const { node, posts = [], depth = 0 } = Astro.props;
+const name = categoryName(node);
+const label = categoryLabel(node);
+const children = typeof node === 'string' ? [] : node.children || [];
+const href = typeof node === 'string' ? url(`category/${encodeURIComponent(name)}/`) : node.href || url(`category/${encodeURIComponent(name)}/`);
+const currentPath = decodeURIComponent(Astro.url.pathname);
+const nodePath = item => typeof item === 'string' ? url(`category/${encodeURIComponent(item)}/`) : item.href || url(`category/${encodeURIComponent(item.name)}/`);
+const hasCurrent = item => decodeURIComponent(nodePath(item)) === currentPath || (typeof item !== 'string' && item.children?.some(hasCurrent));
+const active = hasCurrent(node);
+const count = node.kind === 'post' ? null : posts.filter(post => categoryMatches(post.data.category, name)).length;
+---
+{children.length ? <details class="nav-tree" data-category={name} data-active={active ? 'true' : undefined} open={active}>
+  <summary class:list={['nav-row', `depth-${depth}`]} aria-label={`${label} 접기 또는 펼치기`}><span class="nav-chevron" aria-hidden="true">▸</span><span class="nav-label">{label}</span><span class="nav-count">{count}</span></summary>
+  <div class="nav-children">
+    <a class:list={['nav-link','nav-all',`depth-${depth + 1}`]} href={href}>전체 보기</a>
+    {children.map(child => <Astro.self node={child} posts={posts} depth={depth + 1} />)}
+  </div>
+</details> : <a class:list={['nav-link','nav-leaf',`depth-${depth}`,{'is-active':active}]} href={href} aria-current={active ? 'page' : undefined}><span class="nav-label">{label}</span>{count !== null && <span class="nav-count">{count}</span>}</a>}

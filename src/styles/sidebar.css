@@ -1,1 +1,19 @@
-.nav-link.subsub { padding-left: 39px; color: var(--muted); font-size: 12px; }
+.nav-tree summary { list-style: none; cursor: pointer; }
+.nav-tree summary::-webkit-details-marker { display: none; }
+.nav-row, .nav-leaf { display: flex; align-items: center; gap: 7px; min-height: 32px; padding: 5px 12px; border-radius: 5px; font-size: 13px; }
+.nav-row:hover, .nav-leaf:hover { background: var(--hover); }
+.nav-row:focus-visible, .nav-leaf:focus-visible, .nav-all:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.nav-row.depth-0 { font-weight: 600; }
+.nav-row.depth-1, .nav-leaf.depth-1 { padding-left: 25px; }
+.nav-row.depth-2, .nav-leaf.depth-2 { padding-left: 39px; color: var(--muted); font-size: 12px; }
+.nav-leaf.depth-3 { padding-left: 53px; color: var(--muted); font-size: 12px; }
+.nav-all.depth-1 { padding-left: 25px; }
+.nav-all.depth-2 { padding-left: 39px; }
+.nav-all.depth-3 { padding-left: 53px; }
+.nav-all { color: var(--muted); font-size: 12px; }
+.nav-leaf.is-active { background: var(--hover); color: var(--text); }
+.nav-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-count { margin-left: auto; color: var(--muted); font-size: 11px; }
+.nav-chevron { flex: none; font-size: 11px; color: var(--muted); transition: transform .15s; }
+.nav-tree[open] > summary .nav-chevron { transform: rotate(90deg); }
+.nav-children { margin: 2px 0 4px; }

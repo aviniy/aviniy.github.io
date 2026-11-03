@@ -1,7 +1,41 @@
 ---
-import { categories, categoryName, categoryLabel, categoryDescendants } from '../config/categories.js';
-import { url } from '../lib/posts.js';
+import { categories } from '../config/categories.js';
+import { sortCategoryPosts } from '../lib/category-sort.js';
+import { postUrl, url } from '../lib/posts.js';
+import SidebarNode from './SidebarNode.astro';
+
 const { posts = [] } = Astro.props;
-const count = node => posts.filter(p => categoryDescendants(node).includes(p.data.category)).length;
+const banditLevels = sortCategoryPosts(posts.filter(post => post.data.category === 'OverTheWire Bandit' && /^Level\s+\d+\b/i.test(post.data.title)), 'OverTheWire Bandit');
+const tree = categories.map(group => group.name === 'Wargame' ? {
+  ...group,
+  children: group.children.map(child => child === 'OverTheWire Bandit' ? {
+    name: child,
+    children: banditLevels.map(post => ({ name: post.data.title, href: postUrl(post), kind: 'post' }))
+  } : child)
+} : group);
 ---
-<aside class="sidebar" id="sidebar"><div class="brand"><a href={url()}>✳ &nbsp;Aviniy's Lab</a></div><nav aria-label="주 탐색"><a class="nav-link" href={url()}>⌂ &nbsp; Home</a><a class="nav-link" href={url('search/')}>⌕ &nbsp; Search</a><div class="nav-heading">LIBRARY</div>{categories.map(group => <div class="nav-group"><a class="nav-link group" href={url(`category/${encodeURIComponent(group.name)}/`)}>{group.name}<span>{count(group)}</span></a>{group.children.map(child => <><a class="nav-link sub" href={url(`category/${encodeURIComponent(categoryName(child))}/`)}>{categoryLabel(child)}<span>{count(child)}</span></a>{typeof child !== 'string' && child.children?.map(grandchild => <a class="nav-link subsub" href={url(`category/${encodeURIComponent(categoryName(grandchild))}/`)}>{categoryLabel(grandchild)}<span>{count(grandchild)}</span></a>)}</>)}</div>)}<div class="nav-heading">OTHER</div><a class="nav-link" href={url('about/')}>About</a></nav><button id="theme-toggle" class="theme-toggle" type="button" aria-label="테마 전환">◐ &nbsp; 테마 전환</button></aside>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><a href={url()}>✳ &nbsp;Aviniy's Lab</a></div>
+  <nav aria-label="주 탐색">
+    <a class="nav-link" href={url()}>⌂ &nbsp; Home</a>
+    <a class="nav-link" href={url('search/')}>⌕ &nbsp; Search</a>
+    <div class="nav-heading">LIBRARY</div>
+    {tree.map(group => <SidebarNode node={group} posts={posts} depth={0} />)}
+    <div class="nav-heading">OTHER</div>
+    <a class="nav-link" href={url('about/')}>About</a>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="테마 전환">◐ &nbsp; 테마 전환</button>
+</aside>
+<script is:inline>
+  try {
+    const key = 'lab-sidebar-open';
+    const saved = JSON.parse(localStorage.getItem(key) || '{}');
+    document.querySelectorAll('#sidebar details[data-category]').forEach(item => {
+      if (!item.dataset.active && Object.prototype.hasOwnProperty.call(saved, item.dataset.category)) item.open = saved[item.dataset.category];
+      item.addEventListener('toggle', () => {
+        saved[item.dataset.category] = item.open;
+        localStorage.setItem(key, JSON.stringify(saved));
+      });
+    });
+  } catch {}
+</script>
