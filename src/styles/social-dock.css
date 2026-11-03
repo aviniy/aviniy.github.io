@@ -1,0 +1,131 @@
+.social-dock {
+  position: absolute;
+  z-index: 3;
+  left: clamp(24px, 5vw, 76px);
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.social-dock a,
+.social-dock button {
+  position: relative;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  opacity: .72;
+  cursor: pointer;
+  transition: opacity .16s ease, transform .16s ease;
+}
+
+.social-dock a:hover,
+.social-dock button:hover,
+.social-dock a:focus-visible,
+.social-dock button:focus-visible {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.social-dock a:focus-visible,
+.social-dock button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, .7);
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
+.social-dock svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-dock rect,
+.social-dock svg > circle:not(.fill),
+.social-dock a:last-of-type svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-dock .fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-dock .cut {
+  fill: #181818;
+  stroke: none;
+}
+
+.social-dock [data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 7px);
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 6px;
+  background: rgba(18, 18, 18, .8);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  transition: opacity .15s ease, transform .15s ease;
+  backdrop-filter: blur(8px);
+}
+
+.social-dock [data-label]:hover::after,
+.social-dock [data-label]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+#social-status {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  color: #fff;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.home footer {
+  padding-left: clamp(195px, 17vw, 250px);
+}
+
+@media (max-width: 850px) {
+  .social-dock {
+    left: 19px;
+    bottom: 12px;
+  }
+
+  .social-dock a,
+  .social-dock button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home footer {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-dock a,
+  .social-dock button,
+  .social-dock [data-label]::after {
+    transition: none;
+  }
+}
