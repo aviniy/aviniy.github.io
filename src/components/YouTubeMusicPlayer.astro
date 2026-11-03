@@ -1,11 +1,12 @@
 ---
 const { playlist = [] } = Astro.props;
+const firstTrack = playlist[0];
 ---
 <section class="yt-player-shell" aria-labelledby="yt-player-heading">
   <header class="yt-player-heading">
     <div>
-      <span>KESSOKU BAND · YOUTUBE</span>
-      <h2 id="yt-player-heading">음악을 골라 재생해 보세요</h2>
+      <span>YOUTUBE PLAYLIST</span>
+      <h2>Kessoku Band</h2>
     </div>
     <small id="yt-track-count">1 / {playlist.length}</small>
   </header>
@@ -13,6 +14,15 @@ const { playlist = [] } = Astro.props;
   <div class="yt-video-wrap">
     <div id="youtube-player"></div>
     <div class="yt-loading" id="yt-loading" role="status">YouTube 플레이어 불러오는 중…</div>
+  </div>
+
+  <div class="yt-now-playing">
+    <img id="yt-cover" src={`https://i.ytimg.com/vi/${firstTrack?.id}/mqdefault.jpg`} alt="" />
+    <div>
+      <span>NOW PLAYING</span>
+      <h3 id="yt-player-heading">{firstTrack?.title ?? '음악을 골라 재생해 보세요'}</h3>
+      <small>Kessoku Band</small>
+    </div>
   </div>
 
   <div class="yt-controls" aria-label="음악 재생 제어">
@@ -42,6 +52,22 @@ const { playlist = [] } = Astro.props;
   </div>
 
   <p id="yt-status" class="yt-status" aria-live="polite">재생 버튼을 누르면 음악이 시작됩니다.</p>
+
+  <div class="yt-playlist-heading">
+    <span>PLAYLIST</span>
+    <small>{playlist.length} tracks</small>
+  </div>
+  <ol id="yt-track-list" class="yt-track-list">
+    {playlist.map((track, index) => (
+      <li>
+        <button type="button" data-track-index={index} aria-current={index === 0 ? 'true' : undefined}>
+          <span class="yt-track-number">{String(index + 1).padStart(2, '0')}</span>
+          <span class="yt-track-copy"><strong>{track.title}</strong><small>Kessoku Band</small></span>
+          <span class="yt-track-play" aria-hidden="true">▶</span>
+        </button>
+      </li>
+    ))}
+  </ol>
   <script id="yt-playlist-data" type="application/json" set:html={JSON.stringify(playlist)}></script>
 </section>
 
@@ -62,6 +88,8 @@ const { playlist = [] } = Astro.props;
   const repeatButton = document.querySelector('#yt-repeat');
   const volumeInput = document.querySelector('#yt-volume');
   const volumeValue = document.querySelector('#yt-volume-value');
+  const cover = document.querySelector('#yt-cover');
+  const trackButtons = [...document.querySelectorAll('[data-track-index]')];
 
   let player;
   let ready = false;
@@ -99,6 +127,15 @@ const { playlist = [] } = Astro.props;
     if (!track) return;
     title.textContent = track.title;
     count.textContent = `${currentIndex + 1} / ${validPlaylist.length}`;
+    cover.src = `https://i.ytimg.com/vi/${track.id}/mqdefault.jpg`;
+    cover.alt = `${track.title} YouTube 썸네일`;
+    trackButtons.forEach((button, index) => {
+      const active = index === currentIndex;
+      button.classList.toggle('active', active);
+      if (active) button.setAttribute('aria-current', 'true');
+      else button.removeAttribute('aria-current');
+    });
+    trackButtons[currentIndex]?.scrollIntoView({ block: 'nearest' });
   };
 
   const setPlaying = (isPlaying) => {
@@ -245,5 +282,8 @@ const { playlist = [] } = Astro.props;
     if (ready) player.setVolume(Number(volumeInput.value));
     persist();
   });
+  trackButtons.forEach((button) => button.addEventListener('click', () => {
+    loadTrack(Number(button.dataset.trackIndex), true, 0);
+  }));
   window.addEventListener('pagehide', persist);
 </script>
