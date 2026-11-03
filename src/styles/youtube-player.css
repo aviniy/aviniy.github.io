@@ -414,3 +414,152 @@
     top: 1420px;
   }
 }
+
+/* The page itself owns the scroll. The artwork stays fixed while content flows. */
+.home {
+  min-height: 100svh;
+  overflow: visible;
+  background-attachment: fixed;
+  background-position: center 38%;
+  background-size: cover;
+}
+
+.shade {
+  position: fixed;
+}
+
+.home-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 460px);
+  align-items: start;
+  gap: clamp(44px, 6vw, 100px);
+  width: min(1760px, 100%);
+  margin: 0 auto;
+  padding: 96px clamp(24px, 5vw, 76px) 76px;
+}
+
+.home-left {
+  min-width: 0;
+  padding-top: clamp(145px, 15vh, 220px);
+}
+
+.hero-copy,
+.info,
+.social-dock,
+.yt-player-shell {
+  position: static;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(58px, 6.8vw, 104px);
+}
+
+.info {
+  width: min(440px, 100%);
+  margin-top: 56px;
+}
+
+.social-dock {
+  margin-top: 28px;
+}
+
+#social-status {
+  position: static;
+  margin-left: 6px;
+}
+
+.yt-player-shell {
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.yt-track-list {
+  flex: none;
+  overflow: visible;
+}
+
+.home footer {
+  position: relative;
+  z-index: 1;
+  padding: 22px clamp(24px, 5vw, 76px);
+  border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+@media (max-width: 1100px) {
+  .home {
+    background-position: 58% top;
+  }
+
+  .home-layout {
+    display: block;
+    padding-top: 118px;
+  }
+
+  .home-left {
+    padding-top: 70px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .yt-player-shell {
+    width: min(620px, 100%);
+    height: auto;
+    margin: 72px auto 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .home {
+    min-height: 100svh;
+    overflow: visible;
+    background-attachment: fixed;
+    background-size: auto 100svh;
+  }
+
+  .home-layout {
+    padding: 104px 18px 48px;
+  }
+
+  .home-left {
+    padding-top: 54px;
+  }
+
+  .hero-copy,
+  .info,
+  .social-dock,
+  .yt-player-shell {
+    position: static;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
+  .info {
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  .social-dock {
+    margin-top: 18px;
+  }
+
+  .yt-player-shell {
+    width: 100%;
+    height: auto;
+    margin-top: 54px;
+  }
+
+  .home footer {
+    display: flex;
+  }
+}
