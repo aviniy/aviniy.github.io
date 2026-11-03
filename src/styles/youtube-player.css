@@ -1,0 +1,257 @@
+.yt-player-shell {
+  position: absolute;
+  z-index: 2;
+  top: 105px;
+  right: clamp(24px, 5vw, 76px);
+  width: min(360px, calc(100% - 48px));
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 12px;
+  background: rgba(16, 15, 14, .78);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(18px);
+}
+
+.yt-player-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+  padding: 0 2px 10px;
+}
+
+.yt-player-heading span {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, .55);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.yt-player-heading h2 {
+  overflow: hidden;
+  max-width: 285px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yt-player-heading small {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, .55);
+  font-size: 9px;
+}
+
+.yt-video-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 7px;
+  background: #090909;
+}
+
+#youtube-player,
+#youtube-player iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  color: rgba(255, 255, 255, .64);
+  font-size: 10px;
+  text-align: center;
+}
+
+.yt-loading[hidden] {
+  display: none;
+}
+
+.yt-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 0 6px;
+}
+
+.yt-controls button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, .68);
+  cursor: pointer;
+}
+
+.yt-controls button:hover,
+.yt-controls button:focus-visible,
+.yt-controls button.active {
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+}
+
+.yt-controls button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, .7);
+  outline-offset: 2px;
+}
+
+.yt-controls .yt-play {
+  width: 38px;
+  height: 38px;
+  margin: 0 3px;
+  background: #fff;
+  color: #171513;
+}
+
+.yt-controls .yt-play:hover,
+.yt-controls .yt-play:focus-visible {
+  background: #f3b8c8;
+  color: #171513;
+}
+
+.yt-controls svg,
+.yt-volume svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.yt-controls .play-icon path {
+  fill: currentColor;
+  stroke: none;
+}
+
+.yt-controls .pause-icon,
+.yt-controls .is-playing .play-icon {
+  display: none;
+}
+
+.yt-controls .is-playing .pause-icon {
+  display: block;
+}
+
+.yt-controls .repeat-one {
+  display: none;
+  fill: currentColor;
+  stroke: none;
+  font-size: 7px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.yt-controls [data-mode="one"] .repeat-one {
+  display: block;
+}
+
+.yt-volume {
+  display: grid;
+  grid-template-columns: 18px auto 1fr 23px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 3px;
+  color: rgba(255, 255, 255, .62);
+}
+
+.yt-volume label,
+.yt-volume output {
+  font-size: 9px;
+}
+
+.yt-volume input {
+  width: 100%;
+  height: 2px;
+  accent-color: #f3b8c8;
+  cursor: pointer;
+}
+
+.yt-status {
+  min-height: 13px;
+  margin: 8px 3px 0;
+  color: rgba(255, 255, 255, .55);
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.yt-player-shell.has-error .yt-status {
+  color: #ffd0dc;
+}
+
+@media (max-height: 720px) and (min-width: 851px) {
+  .yt-player-shell {
+    top: 82px;
+    width: 300px;
+    padding: 10px;
+  }
+
+  .yt-player-heading {
+    min-height: 30px;
+    padding-bottom: 7px;
+  }
+
+  .info .note {
+    display: none;
+  }
+
+  .info {
+    width: 300px;
+  }
+}
+
+@media (max-width: 850px) {
+  .home {
+    min-height: 1220px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #111;
+    background-position: 58% top;
+    background-size: auto 100svh;
+    background-repeat: no-repeat;
+  }
+
+  .hero-copy {
+    top: 116px;
+    bottom: auto;
+  }
+
+  .yt-player-shell {
+    top: 570px;
+    right: 22px;
+    left: 22px;
+    width: auto;
+  }
+
+  .info {
+    top: 995px;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 410px) {
+  .yt-player-shell {
+    top: 600px;
+  }
+
+  .info {
+    top: 1025px;
+  }
+}

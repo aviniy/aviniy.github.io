@@ -1,0 +1,249 @@
+---
+const { playlist = [] } = Astro.props;
+---
+<section class="yt-player-shell" aria-labelledby="yt-player-heading">
+  <header class="yt-player-heading">
+    <div>
+      <span>KESSOKU BAND · YOUTUBE</span>
+      <h2 id="yt-player-heading">음악을 골라 재생해 보세요</h2>
+    </div>
+    <small id="yt-track-count">1 / {playlist.length}</small>
+  </header>
+
+  <div class="yt-video-wrap">
+    <div id="youtube-player"></div>
+    <div class="yt-loading" id="yt-loading" role="status">YouTube 플레이어 불러오는 중…</div>
+  </div>
+
+  <div class="yt-controls" aria-label="음악 재생 제어">
+    <button id="yt-previous" type="button" aria-label="이전 곡" title="이전 곡">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M18 6l-9 6 9 6V6Z"/></svg>
+    </button>
+    <button id="yt-play" class="yt-play" type="button" aria-label="재생" title="재생">
+      <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+      <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+    </button>
+    <button id="yt-next" type="button" aria-label="다음 곡" title="다음 곡">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 9 6-9 6V6ZM18 5v14"/></svg>
+    </button>
+    <button id="yt-shuffle" type="button" aria-label="셔플 끄기" aria-pressed="false" title="셔플">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h2.5c4.5 0 6.5 10 11 10H20M17 4l3 3-3 3M4 17h2.5c1.4 0 2.5-1 3.5-2.4M14 9.4c1-1.4 2.1-2.4 3.5-2.4H20M17 14l3 3-3 3"/></svg>
+    </button>
+    <button id="yt-repeat" type="button" aria-label="반복 끄기" data-mode="off" title="반복">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l3 3-3 3M4 11V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 0 1-3 3H4"/><text class="repeat-one" x="12" y="14.5">1</text></svg>
+    </button>
+  </div>
+
+  <div class="yt-volume">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6L8 10H4ZM17 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg>
+    <label for="yt-volume">볼륨</label>
+    <input id="yt-volume" type="range" min="0" max="100" value="55" step="1" />
+    <output id="yt-volume-value" for="yt-volume">55</output>
+  </div>
+
+  <p id="yt-status" class="yt-status" aria-live="polite">재생 버튼을 누르면 음악이 시작됩니다.</p>
+  <script id="yt-playlist-data" type="application/json" set:html={JSON.stringify(playlist)}></script>
+</section>
+
+<script>
+  const storageKey = 'aviniy-youtube-player-v1';
+  const dataNode = document.querySelector('#yt-playlist-data');
+  const playlist = dataNode ? JSON.parse(dataNode.textContent || '[]') : [];
+  const validPlaylist = playlist.filter((track) => /^[A-Za-z0-9_-]{11}$/.test(track.id));
+  const playerTarget = document.querySelector('#youtube-player');
+  const loading = document.querySelector('#yt-loading');
+  const title = document.querySelector('#yt-player-heading');
+  const count = document.querySelector('#yt-track-count');
+  const status = document.querySelector('#yt-status');
+  const playButton = document.querySelector('#yt-play');
+  const previousButton = document.querySelector('#yt-previous');
+  const nextButton = document.querySelector('#yt-next');
+  const shuffleButton = document.querySelector('#yt-shuffle');
+  const repeatButton = document.querySelector('#yt-repeat');
+  const volumeInput = document.querySelector('#yt-volume');
+  const volumeValue = document.querySelector('#yt-volume-value');
+
+  let player;
+  let ready = false;
+  let currentIndex = 0;
+  let shuffle = false;
+  let repeatMode = 'off';
+  let restoredTime = 0;
+  let apiTimer;
+
+  const safeState = () => {
+    try { return JSON.parse(sessionStorage.getItem(storageKey) || '{}'); }
+    catch { return {}; }
+  };
+
+  const saved = safeState();
+  if (Number.isInteger(saved.index) && saved.index >= 0 && saved.index < validPlaylist.length) currentIndex = saved.index;
+  if (Number.isFinite(saved.time) && saved.time > 0) restoredTime = saved.time;
+  if (typeof saved.shuffle === 'boolean') shuffle = saved.shuffle;
+  if (['off', 'all', 'one'].includes(saved.repeat)) repeatMode = saved.repeat;
+  if (Number.isFinite(saved.volume)) volumeInput.value = String(Math.min(100, Math.max(0, saved.volume)));
+
+  const repeatLabels = { off: '반복 끄기', all: '전체 반복', one: '한 곡 반복' };
+  const updateOptions = () => {
+    shuffleButton.classList.toggle('active', shuffle);
+    shuffleButton.setAttribute('aria-pressed', String(shuffle));
+    shuffleButton.setAttribute('aria-label', shuffle ? '셔플 켜짐' : '셔플 꺼짐');
+    repeatButton.dataset.mode = repeatMode;
+    repeatButton.classList.toggle('active', repeatMode !== 'off');
+    repeatButton.setAttribute('aria-label', repeatLabels[repeatMode]);
+    volumeValue.textContent = volumeInput.value;
+  };
+
+  const showTrack = () => {
+    const track = validPlaylist[currentIndex];
+    if (!track) return;
+    title.textContent = track.title;
+    count.textContent = `${currentIndex + 1} / ${validPlaylist.length}`;
+  };
+
+  const setPlaying = (isPlaying) => {
+    playButton.classList.toggle('is-playing', isPlaying);
+    playButton.setAttribute('aria-label', isPlaying ? '일시정지' : '재생');
+    playButton.setAttribute('title', isPlaying ? '일시정지' : '재생');
+  };
+
+  const persist = () => {
+    const time = ready && player?.getCurrentTime ? player.getCurrentTime() : restoredTime;
+    try {
+      sessionStorage.setItem(storageKey, JSON.stringify({
+        index: currentIndex,
+        time: Number.isFinite(time) ? time : 0,
+        volume: Number(volumeInput.value),
+        shuffle,
+        repeat: repeatMode,
+      }));
+    } catch {
+      // 저장소가 차단된 브라우저에서도 재생 기능은 그대로 유지합니다.
+    }
+  };
+
+  const chooseNext = (direction = 1) => {
+    if (validPlaylist.length < 2) return currentIndex;
+    if (shuffle) {
+      let next = currentIndex;
+      while (next === currentIndex) next = Math.floor(Math.random() * validPlaylist.length);
+      return next;
+    }
+    return (currentIndex + direction + validPlaylist.length) % validPlaylist.length;
+  };
+
+  const loadTrack = (index, autoplay = false, startSeconds = 0) => {
+    if (!ready || !validPlaylist[index]) return;
+    currentIndex = index;
+    restoredTime = startSeconds;
+    showTrack();
+    const request = { videoId: validPlaylist[index].id, startSeconds };
+    if (autoplay) player.loadVideoById(request);
+    else player.cueVideoById(request);
+    status.textContent = autoplay ? 'YouTube에서 재생 중입니다.' : '재생 버튼을 누르면 음악이 시작됩니다.';
+    persist();
+  };
+
+  const fail = (message) => {
+    clearTimeout(apiTimer);
+    loading.hidden = true;
+    status.textContent = message;
+    document.querySelector('.yt-player-shell')?.classList.add('has-error');
+  };
+
+  updateOptions();
+  showTrack();
+
+  if (!validPlaylist.length) {
+    fail('설정 파일에 재생 가능한 YouTube 영상 ID가 없습니다.');
+  } else {
+    window.onYouTubeIframeAPIReady = () => {
+      clearTimeout(apiTimer);
+      player = new window.YT.Player(playerTarget, {
+        videoId: validPlaylist[currentIndex].id,
+        width: '100%',
+        height: '100%',
+        playerVars: {
+          autoplay: 0,
+          controls: 1,
+          playsinline: 1,
+          rel: 0,
+          origin: window.location.origin,
+        },
+        events: {
+          onReady: (event) => {
+            ready = true;
+            loading.hidden = true;
+            event.target.setVolume(Number(volumeInput.value));
+            loadTrack(currentIndex, false, restoredTime);
+            if (restoredTime > 1) status.textContent = '이전 위치를 불러왔습니다. 재생 버튼을 눌러 이어 들으세요.';
+          },
+          onStateChange: (event) => {
+            const states = window.YT.PlayerState;
+            setPlaying(event.data === states.PLAYING);
+            if (event.data === states.PLAYING) {
+              const youtubeTitle = player.getVideoData?.().title;
+              if (youtubeTitle) title.textContent = youtubeTitle;
+              status.textContent = 'YouTube에서 재생 중입니다.';
+            }
+            if (event.data === states.PAUSED) {
+              status.textContent = '일시정지됨';
+              persist();
+            }
+            if (event.data === states.ENDED) {
+              if (repeatMode === 'one') loadTrack(currentIndex, true, 0);
+              else if (shuffle || repeatMode === 'all' || currentIndex < validPlaylist.length - 1) loadTrack(chooseNext(1), true, 0);
+              else {
+                setPlaying(false);
+                status.textContent = '재생목록이 끝났습니다.';
+              }
+            }
+          },
+          onError: (event) => {
+            const errors = {
+              2: '영상 ID가 올바르지 않습니다.',
+              5: '이 브라우저에서 영상을 재생할 수 없습니다.',
+              100: '영상이 삭제되었거나 비공개 상태입니다.',
+              101: '영상 소유자가 외부 재생을 허용하지 않았습니다.',
+              150: '영상 소유자가 외부 재생을 허용하지 않았습니다.',
+            };
+            fail(errors[event.data] || 'YouTube 재생 중 오류가 발생했습니다.');
+          },
+        },
+      });
+    };
+
+    const api = document.createElement('script');
+    api.src = 'https://www.youtube.com/iframe_api';
+    api.async = true;
+    api.onerror = () => fail('YouTube 플레이어를 불러오지 못했습니다. 네트워크 설정을 확인해 주세요.');
+    document.head.append(api);
+    apiTimer = window.setTimeout(() => {
+      if (!ready) fail('YouTube 응답이 지연되고 있습니다. 잠시 후 페이지를 새로고침해 주세요.');
+    }, 12000);
+  }
+
+  playButton?.addEventListener('click', () => {
+    if (!ready) return;
+    if (player.getPlayerState() === window.YT.PlayerState.PLAYING) player.pauseVideo();
+    else player.playVideo();
+  });
+  previousButton?.addEventListener('click', () => loadTrack(chooseNext(-1), true, 0));
+  nextButton?.addEventListener('click', () => loadTrack(chooseNext(1), true, 0));
+  shuffleButton?.addEventListener('click', () => {
+    shuffle = !shuffle;
+    updateOptions();
+    persist();
+  });
+  repeatButton?.addEventListener('click', () => {
+    repeatMode = repeatMode === 'off' ? 'all' : repeatMode === 'all' ? 'one' : 'off';
+    updateOptions();
+    persist();
+  });
+  volumeInput?.addEventListener('input', () => {
+    volumeValue.textContent = volumeInput.value;
+    if (ready) player.setVolume(Number(volumeInput.value));
+    persist();
+  });
+  window.addEventListener('pagehide', persist);
+</script>
