@@ -5,7 +5,6 @@ const firstTrack = playlist[0];
 <section class="yt-player-shell" aria-labelledby="yt-player-heading">
   <header class="yt-player-heading">
     <div>
-      <span>YOUTUBE PLAYLIST</span>
       <h2>Kessoku Band</h2>
     </div>
     <small id="yt-track-count">1 / {playlist.length}</small>
@@ -52,7 +51,7 @@ const firstTrack = playlist[0];
     </div>
   </div>
 
-  <p id="yt-status" class="yt-status" aria-live="polite">재생 버튼을 누르면 음악이 시작됩니다.</p>
+  <p id="yt-status" class="yt-status" aria-live="polite"></p>
 
   <div class="yt-playlist-heading">
     <span>PLAYLIST</span>
@@ -192,7 +191,7 @@ const firstTrack = playlist[0];
     const request = { videoId: validPlaylist[index].id, startSeconds };
     if (autoplay) player.loadVideoById(request);
     else player.cueVideoById(request);
-    status.textContent = autoplay ? 'YouTube에서 재생 중입니다.' : '재생 버튼을 누르면 음악이 시작됩니다.';
+    status.textContent = autoplay ? 'YouTube에서 재생 중입니다.' : '';
     persist();
   };
 

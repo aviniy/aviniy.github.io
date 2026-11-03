@@ -113,8 +113,12 @@
 
   .social-dock a,
   .social-dock button {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-dock {
+    gap: 4px;
   }
 
   .home footer {

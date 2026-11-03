@@ -244,6 +244,10 @@
   color: #ffd0dc;
 }
 
+.yt-status:empty {
+  display: none;
+}
+
 .yt-playlist-heading {
   display: flex;
   flex: 0 0 auto;
@@ -610,6 +614,7 @@
     min-height: 100svh;
     overflow: visible;
     background-attachment: fixed;
+    background-position: 55% top;
     background-size: auto 100svh;
   }
 
@@ -629,12 +634,24 @@
   }
 
   .hero-copy h1 {
-    font-size: clamp(48px, 14vw, 72px);
+    max-width: 100%;
+    font-size: clamp(44px, 14vw, 72px);
+    line-height: .95;
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    font-size: clamp(15px, 4.2vw, 17px);
+    line-height: 1.7;
+  }
+
+  .intro br {
+    display: block;
   }
 
   .info {
     width: 100%;
-    margin-top: 48px;
+    margin-top: 36px;
   }
 
   .social-dock {
@@ -649,5 +666,90 @@
 
   .home footer {
     display: flex;
+  }
+}
+
+@media (max-width: 450px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .home-layout {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .home-left {
+    padding-top: 42px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(42px, 13.5vw, 58px);
+    letter-spacing: -.055em;
+  }
+
+  .intro {
+    margin-top: 20px;
+  }
+
+  .clock strong {
+    font-size: clamp(25px, 8vw, 29px);
+  }
+
+  .yt-player-shell {
+    border-radius: 14px;
+  }
+
+  .yt-player-heading {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .yt-controls {
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 7px 10px 10px;
+  }
+
+  .yt-controls button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .yt-controls .yt-play {
+    width: 48px;
+    height: 48px;
+    margin: 0 2px;
+  }
+
+  .yt-volume {
+    width: 100%;
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 8px;
+    margin: 4px 6px 0;
+    padding: 9px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    border-left: 0;
+  }
+
+  .yt-volume input {
+    min-width: 0;
+  }
+
+  .yt-now-playing {
+    grid-template-columns: 58px minmax(0, 1fr);
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .yt-now-playing img {
+    width: 58px;
+    height: 44px;
+  }
+
+  .yt-playlist-heading {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 }

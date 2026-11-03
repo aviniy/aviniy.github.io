@@ -15,15 +15,13 @@ import { rootUrl } from '../lib/posts.js';
     <div class="home-layout">
       <div class="home-left">
         <section class="hero-copy">
-          <p class="kicker">PERSONAL SPACE · SEOUL</p>
-          <h1>Welcome to<br/><em>Aviniy's Space</em></h1>
-          <p class="intro">관심 있는 것을 깊게 파고들고, 만들고, 기록합니다.<br/>보안과 개발을 공부하며 디자인과 애니메이션을 즐깁니다.</p>
+          <h1>aviniy.exe</h1>
+          <p class="intro">그냥 이것저것 하는 사람.<br/>애니 시청은 기본 소양.</p>
           <a class="enter" href={rootUrl('lab/')}><span>Aviniy's Lab</span><b>→</b></a>
         </section>
 
         <aside class="info" aria-label="홈페이지 정보">
-          <section class="info-row clock" aria-live="polite"><div><span>SEOUL TIME</span><strong id="seoul-time">--:--:--</strong></div><small id="seoul-date">KST</small></section>
-          <section class="info-row note"><span>RANDOM NOTE</span><p id="random-message">좋아하는 것을 오래 기록하면 결국 나만의 지도가 된다.</p><button id="shuffle-message" type="button" aria-label="다른 랜덤 문장">↻</button></section>
+          <section class="info-row clock" aria-live="polite"><div><span>KOREA TIME</span><strong id="seoul-time">--:--:--</strong></div><small id="seoul-date">KST</small></section>
         </aside>
 
         <nav class="social-dock" aria-label="소셜 링크">
@@ -41,6 +39,6 @@ import { rootUrl } from '../lib/posts.js';
     <footer><span>© 2026 AVINIY</span><span>結束バンド · BOCCHI THE ROCK!</span></footer>
   </main>
   <script is:inline>
-    const messages=['좋아하는 것을 오래 기록하면 결국 나만의 지도가 된다.','오늘의 작은 호기심이 내일의 프로젝트가 된다.','천천히, 하지만 멈추지 않고.','좋은 기록은 다시 시작할 수 있는 체크포인트다.','완벽함보다 계속 만드는 쪽을 선택한다.'];const message=document.querySelector('#random-message');function shuffle(){let next=messages[Math.floor(Math.random()*messages.length)];if(next===message.textContent)next=messages[(messages.indexOf(next)+1)%messages.length];message.textContent=next}document.querySelector('#shuffle-message')?.addEventListener('click',shuffle);shuffle();const time=document.querySelector('#seoul-time'),date=document.querySelector('#seoul-date');function tick(){const now=new Date();time.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);date.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'short',day:'numeric',weekday:'short'}).format(now)+' · KST'}tick();setInterval(tick,1000);const discord=document.querySelector('#copy-discord'),status=document.querySelector('#social-status');discord?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('@aviniyy');status.textContent='Discord @aviniyy 복사됨'}catch{status.textContent='Discord · @aviniyy'}setTimeout(()=>status.textContent='',1800)});
+    const time=document.querySelector('#seoul-time'),date=document.querySelector('#seoul-date');function tick(){const now=new Date();time.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);date.textContent=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'short',day:'numeric',weekday:'short'}).format(now)+' · KST'}tick();setInterval(tick,1000);const discord=document.querySelector('#copy-discord'),status=document.querySelector('#social-status');discord?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('@aviniyy');status.textContent='Discord @aviniyy 복사됨'}catch{status.textContent='Discord · @aviniyy'}setTimeout(()=>status.textContent='',1800)});
   </script>
 </PersonalLayout>
