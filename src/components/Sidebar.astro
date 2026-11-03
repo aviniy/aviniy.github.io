@@ -1,0 +1,7 @@
+---
+import { categories } from '../config/categories.js';
+import { url } from '../lib/posts.js';
+const { posts = [] } = Astro.props;
+const count = name => posts.filter(p => p.data.category === name).length;
+---
+<aside class="sidebar" id="sidebar"><div class="brand"><a href={url()}>✳ &nbsp;Aviniy's Lab</a></div><nav aria-label="주 탐색"><a class="nav-link" href={url()}>⌂ &nbsp; Home</a><a class="nav-link" href={url('search/')}>⌕ &nbsp; Search</a><div class="nav-heading">LIBRARY</div>{categories.map(group => <div class="nav-group"><a class="nav-link group" href={url(`category/${encodeURIComponent(group.name)}/`)}>{group.name}<span>{count(group.name) + group.children.reduce((n,c)=>n+count(c),0)}</span></a>{group.children.map(child => <a class="nav-link sub" href={url(`category/${encodeURIComponent(child)}/`)}>{child}<span>{count(child)}</span></a>)}</div>)}<div class="nav-heading">OTHER</div><a class="nav-link" href={url('about/')}>About</a></nav><button id="theme-toggle" class="theme-toggle" type="button" aria-label="테마 전환">◐ &nbsp; 테마 전환</button></aside>

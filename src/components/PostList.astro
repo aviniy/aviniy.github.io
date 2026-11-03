@@ -1,0 +1,5 @@
+---
+import { postUrl, date } from '../lib/posts.js';
+const { posts = [] } = Astro.props;
+---
+<div class="post-list">{posts.length ? posts.map(post => <a class="post-row" href={postUrl(post)}><div class="post-row-main"><strong>▤ &nbsp;{post.data.title}</strong><p>{post.data.description}</p></div><div class="post-row-meta"><span>{post.data.category}</span><time datetime={post.data.createdAt.toISOString()}>{date(post.data.createdAt)}</time>{post.data.updatedAt.getTime() !== post.data.createdAt.getTime() && <time datetime={post.data.updatedAt.toISOString()}>수정 {date(post.data.updatedAt)}</time>}{post.data.tags.map(tag => <span class="tag">#{tag}</span>)}</div></a>) : <p class="muted">아직 게시글이 없습니다.</p>}</div>
