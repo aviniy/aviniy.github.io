@@ -193,11 +193,9 @@ fetch('/get_info', {
 
 
 
-&nbsp;
-
-&nbsp;
-
 ## 결과:
+
+![image.png](/images/image-6.png)
 
 ![image.png](/images/image-5.png)
 
