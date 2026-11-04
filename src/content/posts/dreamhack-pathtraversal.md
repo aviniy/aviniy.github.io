@@ -31,9 +31,8 @@ link: [https://dreamhack.io/wargame/challenges/12](https://dreamhack.io/wargame/
 
 ## 코드:
 
-`
-
 ```python
+#!/usr/bin/python3
 from flask import Flask, request, render_template, abort
 from functools import wraps
 import requests
@@ -103,6 +102,8 @@ def flag():
     return FLAG
 
 application = app # app.run(host='0.0.0.0', port=8000)
+# Dockerfile
+#     ENTRYPOINT ["uwsgi", "--socket", "0.0.0.0:8000", "--protocol=http", "--threads", "4", "--wsgi-file", "app.py"]
 ```
 
 
