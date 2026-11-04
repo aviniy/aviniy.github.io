@@ -13,7 +13,7 @@ draft: false
 ---
 # DH - Pathtraversal
 
-## 문제:
+## 문제
 
 ![image.png](/images/image-1.png)
 
@@ -29,7 +29,7 @@ link: [https://dreamhack.io/wargame/challenges/12](https://dreamhack.io/wargame/
 
 
 
-## 소스 코드:
+## 소스 코드
 
 ```python
 #!/usr/bin/python3
@@ -108,7 +108,7 @@ application = app # app.run(host='0.0.0.0', port=8000)
 
 
 
-## 풀이 시도:
+## 풀이 시도
 
 ![image.png](/images/image-2.png)
 
@@ -166,9 +166,9 @@ def get_info():
 
 
 
-## 익스플로잇 코드:
+## 익스플로잇 코드
 
-```
+```javascript
 fetch('/get_info', {
     method: 'POST',
     headers: {
