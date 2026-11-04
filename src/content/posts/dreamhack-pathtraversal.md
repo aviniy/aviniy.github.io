@@ -9,7 +9,7 @@ tags:
   - Dreamhack
 createdAt: 2026-11-04
 updatedAt: 2026-11-04
-draft: true
+draft: false
 ---
 # DH - Pathtraversal
 
