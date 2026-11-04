@@ -1,0 +1,132 @@
+<style>
+  :global(.prose pre[data-code-language]) {
+    padding-top: 40px;
+  }
+
+  :global(.prose pre[data-code-language]::before) {
+    content: attr(data-code-language);
+    position: absolute;
+    top: 9px;
+    left: 14px;
+    color: var(--muted);
+    font-family: Inter, Pretendard, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  :global(html[data-theme='dark'] .astro-code),
+  :global(html[data-theme='dark'] .astro-code span) {
+    color: var(--shiki-dark) !important;
+  }
+
+  :global(.prose .hljs-comment),
+  :global(.prose .hljs-quote) { color: #6a737d; font-style: italic; }
+  :global(.prose .hljs-keyword),
+  :global(.prose .hljs-selector-tag),
+  :global(.prose .hljs-literal),
+  :global(.prose .hljs-section),
+  :global(.prose .hljs-link) { color: #d73a49; }
+  :global(.prose .hljs-string),
+  :global(.prose .hljs-title),
+  :global(.prose .hljs-name),
+  :global(.prose .hljs-type),
+  :global(.prose .hljs-attribute),
+  :global(.prose .hljs-symbol),
+  :global(.prose .hljs-bullet),
+  :global(.prose .hljs-addition),
+  :global(.prose .hljs-variable),
+  :global(.prose .hljs-template-tag),
+  :global(.prose .hljs-template-variable) { color: #032f62; }
+  :global(.prose .hljs-number),
+  :global(.prose .hljs-meta),
+  :global(.prose .hljs-built_in),
+  :global(.prose .hljs-builtin-name),
+  :global(.prose .hljs-params) { color: #005cc5; }
+  :global(.prose .hljs-function .hljs-title),
+  :global(.prose .hljs-class .hljs-title) { color: #6f42c1; }
+  :global(.prose .hljs-deletion) { color: #b31d28; background: #ffeef0; }
+  :global(.prose .hljs-addition) { background: #f0fff4; }
+
+  :global(html[data-theme='dark'] .prose .hljs-comment),
+  :global(html[data-theme='dark'] .prose .hljs-quote) { color: #8b949e; }
+  :global(html[data-theme='dark'] .prose .hljs-keyword),
+  :global(html[data-theme='dark'] .prose .hljs-selector-tag),
+  :global(html[data-theme='dark'] .prose .hljs-literal),
+  :global(html[data-theme='dark'] .prose .hljs-section),
+  :global(html[data-theme='dark'] .prose .hljs-link) { color: #ff7b72; }
+  :global(html[data-theme='dark'] .prose .hljs-string),
+  :global(html[data-theme='dark'] .prose .hljs-title),
+  :global(html[data-theme='dark'] .prose .hljs-name),
+  :global(html[data-theme='dark'] .prose .hljs-type),
+  :global(html[data-theme='dark'] .prose .hljs-attribute),
+  :global(html[data-theme='dark'] .prose .hljs-symbol),
+  :global(html[data-theme='dark'] .prose .hljs-bullet),
+  :global(html[data-theme='dark'] .prose .hljs-addition),
+  :global(html[data-theme='dark'] .prose .hljs-variable),
+  :global(html[data-theme='dark'] .prose .hljs-template-tag),
+  :global(html[data-theme='dark'] .prose .hljs-template-variable) { color: #a5d6ff; }
+  :global(html[data-theme='dark'] .prose .hljs-number),
+  :global(html[data-theme='dark'] .prose .hljs-meta),
+  :global(html[data-theme='dark'] .prose .hljs-built_in),
+  :global(html[data-theme='dark'] .prose .hljs-builtin-name),
+  :global(html[data-theme='dark'] .prose .hljs-params) { color: #79c0ff; }
+  :global(html[data-theme='dark'] .prose .hljs-function .hljs-title),
+  :global(html[data-theme='dark'] .prose .hljs-class .hljs-title) { color: #d2a8ff; }
+</style>
+
+<script>
+  import hljs from 'highlight.js/lib/core';
+  import bash from 'highlight.js/lib/languages/bash';
+  import c from 'highlight.js/lib/languages/c';
+  import cpp from 'highlight.js/lib/languages/cpp';
+  import css from 'highlight.js/lib/languages/css';
+  import java from 'highlight.js/lib/languages/java';
+  import javascript from 'highlight.js/lib/languages/javascript';
+  import json from 'highlight.js/lib/languages/json';
+  import python from 'highlight.js/lib/languages/python';
+  import sql from 'highlight.js/lib/languages/sql';
+  import xml from 'highlight.js/lib/languages/xml';
+  import powershell from 'highlight.js/lib/languages/powershell';
+  import x86asm from 'highlight.js/lib/languages/x86asm';
+
+  hljs.registerLanguage('bash', bash);
+  hljs.registerLanguage('c', c);
+  hljs.registerLanguage('cpp', cpp);
+  hljs.registerLanguage('css', css);
+  hljs.registerLanguage('java', java);
+  hljs.registerLanguage('javascript', javascript);
+  hljs.registerLanguage('json', json);
+  hljs.registerLanguage('python', python);
+  hljs.registerLanguage('sql', sql);
+  hljs.registerLanguage('xml', xml);
+  hljs.registerLanguage('powershell', powershell);
+  hljs.registerLanguage('x86asm', x86asm);
+
+  const aliases = {
+    asm: 'x86asm', cxx: 'cpp', h: 'c', html: 'xml', js: 'javascript',
+    jsx: 'javascript', ps1: 'powershell', py: 'python', sh: 'bash', shell: 'bash',
+    ts: 'javascript', typescript: 'javascript', yml: 'yaml'
+  };
+  const labels = {
+    x86asm: 'Assembly', cpp: 'C++', xml: 'HTML', javascript: 'JavaScript',
+    powershell: 'PowerShell', python: 'Python', bash: 'Bash', json: 'JSON',
+    css: 'CSS', java: 'Java', sql: 'SQL', c: 'C', txt: 'Text', plaintext: 'Text'
+  };
+
+  document.querySelectorAll('.prose pre').forEach((pre) => {
+    const code = pre.querySelector('code');
+    if (!code) return;
+    const classLanguage = [...code.classList].find((name) => name.startsWith('language-'))?.slice(9);
+    const sourceLanguage = pre.dataset.language || pre.dataset.notionCodeSyntax || classLanguage;
+    if (!sourceLanguage) return;
+    const normalized = aliases[sourceLanguage.toLowerCase()] || sourceLanguage.toLowerCase();
+    pre.dataset.codeLanguage = labels[normalized] || normalized;
+    if (!pre.classList.contains('astro-code') && !['txt', 'text', 'plaintext'].includes(normalized) && hljs.getLanguage(normalized)) {
+      code.className = `language-${normalized}`;
+      hljs.highlightElement(code);
+    }
+  });
+</script>
