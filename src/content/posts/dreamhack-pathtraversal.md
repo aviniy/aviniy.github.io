@@ -108,7 +108,7 @@ application = app # app.run(host='0.0.0.0', port=8000)
 
 
 
-## 풀이 시도: 
+## 풀이 시도:
 
 ![image.png](/images/image-2.png)
 
