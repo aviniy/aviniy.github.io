@@ -1,0 +1,47 @@
+.security-news {
+  width: min(520px, 100%);
+  margin-top: 42px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255,255,255,.55);
+  text-shadow: 0 1px 8px rgba(0,0,0,.45);
+}
+.security-news-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.security-news-head h2 { margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
+.security-news-head span { color: #f2bdce; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.security-news-list { margin: 0; padding: 0; list-style: none; }
+.security-news-list li { padding: 12px 0 11px; border-bottom: 1px solid rgba(255,255,255,.22); }
+.security-news-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.security-news-title { min-width: 0; overflow-wrap: anywhere; }
+.security-news-arrow { flex: none; color: #f2bdce; }
+.security-news-list a:hover .security-news-title,
+.security-news-list a:focus-visible .security-news-title { text-decoration: underline; text-underline-offset: 3px; }
+.security-news-list a:focus-visible { outline: 1px solid #fff; outline-offset: 3px; }
+.security-news-meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 5px;
+  color: rgba(255,255,255,.67);
+  font-size: 10px;
+}
+.security-news-updated, .security-news-empty {
+  margin: 12px 0 0;
+  color: rgba(255,255,255,.65);
+  font-size: 10px;
+  line-height: 1.5;
+}
+@media (max-width: 850px) {
+  .security-news { margin-top: 35px; }
+}

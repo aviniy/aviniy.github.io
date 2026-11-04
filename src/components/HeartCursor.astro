@@ -1,84 +1,110 @@
 <div class="heart-cursor-layer" aria-hidden="true" data-heart-cursor></div>
 
 <style>
-  .heart-cursor-layer {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    overflow: hidden;
-    pointer-events: none;
+  .heart-cursor-layer { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; }
+  :global(.cursor-particle) {
+    position: fixed; left: 0; top: 0; color: var(--color); font-size: var(--size);
+    line-height: 1; pointer-events: none; user-select: none; will-change: transform, opacity;
+    animation: cursor-float var(--duration) cubic-bezier(.18,.65,.35,1) forwards;
+    filter: drop-shadow(0 1px 1px rgb(30 20 32 / 18%));
   }
-
-  :global(.cursor-heart) {
-    position: fixed;
-    left: 0;
-    top: 0;
-    color: var(--heart-color);
-    font-size: var(--heart-size);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-    will-change: transform, opacity;
-    animation: heart-trail var(--heart-duration) ease-out forwards;
-    filter: drop-shadow(0 1px 2px rgb(33 20 35 / 18%));
+  @keyframes cursor-float {
+    0% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--rotation)) scale(.45); }
+    16% { opacity: var(--opacity); transform: translate(calc(-50% + var(--early-dx)),calc(-50% + var(--early-dy))) rotate(var(--rotation)) scale(1); }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) rotate(var(--end-rotation)) scale(.58); }
   }
-
-  @keyframes heart-trail {
-    from {
-      opacity: 0.9;
-      transform: translate(-50%, -50%) rotate(var(--heart-start-rotation)) scale(1);
-    }
-    to {
-      opacity: 0;
-      transform: translate(
-          calc(-50% + var(--heart-drift-x)),
-          calc(-50% + var(--heart-fall-y))
-        )
-        rotate(var(--heart-end-rotation)) scale(0.55);
-    }
-  }
-
-  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
-    .heart-cursor-layer {
-      display: none;
-    }
-  }
+  @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) { .heart-cursor-layer { display: none; } }
 </style>
 
 <script is:inline>
   (() => {
     const layer = document.querySelector('[data-heart-cursor]');
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!layer || !finePointer.matches || reducedMotion.matches) return;
+    if (!layer) return;
+    const pointer = matchMedia('(hover: hover) and (pointer: fine)');
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const colors = ['#ffb6c9', '#f3c4d8', '#d8c4f5', '#fff'];
+    const particles = new Set();
+    const MAX = 85;
+    let queued = null, frame = 0, previous = null, lastEmission = 0, active = false;
+    const random = (min, max) => min + Math.random() * (max - min);
 
-    const colors = ['#ffb6c1', '#d8b4fe', '#ffffff'];
-    const interval = 48;
-    let lastCreatedAt = 0;
-
-    document.addEventListener('mousemove', (event) => {
-      const now = performance.now();
-      if (now - lastCreatedAt < interval) return;
-      lastCreatedAt = now;
-
-      const heart = document.createElement('span');
-      const duration = 600 + Math.random() * 400;
-      const startRotation = -18 + Math.random() * 36;
-      const endRotation = startRotation + (-55 + Math.random() * 110);
-
-      heart.className = 'cursor-heart';
-      heart.textContent = '♥';
-      heart.style.left = `${event.clientX}px`;
-      heart.style.top = `${event.clientY}px`;
-      heart.style.setProperty('--heart-color', colors[Math.floor(Math.random() * colors.length)]);
-      heart.style.setProperty('--heart-size', `${8 + Math.random() * 8}px`);
-      heart.style.setProperty('--heart-duration', `${duration}ms`);
-      heart.style.setProperty('--heart-drift-x', `${-18 + Math.random() * 36}px`);
-      heart.style.setProperty('--heart-fall-y', `${18 + Math.random() * 26}px`);
-      heart.style.setProperty('--heart-start-rotation', `${startRotation}deg`);
-      heart.style.setProperty('--heart-end-rotation', `${endRotation}deg`);
-      layer.appendChild(heart);
-      heart.addEventListener('animationend', () => heart.remove(), { once: true });
-    }, { passive: true });
+    function create(x, y, vx, vy, burst = false) {
+      if (particles.size >= MAX) return;
+      const particle = document.createElement('span');
+      const choice = Math.random();
+      particle.className = 'cursor-particle';
+      particle.textContent = choice < .69 ? '♥' : choice < .88 ? '✦' : '✧';
+      const dx = burst ? vx : -vx * random(.14, .32) + random(-20, 20);
+      const dy = burst ? vy : -vy * random(.12, .27) + random(14, 38);
+      const rotation = random(-30, 30);
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+      particle.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+      particle.style.setProperty('--size', `${choice < .69 ? random(7, 17) : random(5, 11)}px`);
+      particle.style.setProperty('--duration', `${random(burst ? 530 : 670, burst ? 940 : 1100)}ms`);
+      particle.style.setProperty('--opacity', random(.62, .95).toFixed(2));
+      const finalX = Math.max(-100, Math.min(100, dx));
+      const finalY = Math.max(-100, Math.min(100, dy));
+      particle.style.setProperty('--dx', `${finalX}px`);
+      particle.style.setProperty('--dy', `${finalY}px`);
+      particle.style.setProperty('--early-dx', `${finalX * .13}px`);
+      particle.style.setProperty('--early-dy', `${finalY * .13}px`);
+      particle.style.setProperty('--rotation', `${rotation}deg`);
+      particle.style.setProperty('--end-rotation', `${rotation + random(-75, 75)}deg`);
+      particles.add(particle);
+      layer.appendChild(particle);
+      particle.addEventListener('animationend', () => { particles.delete(particle); particle.remove(); }, { once: true });
+    }
+    function flush(now) {
+      frame = 0;
+      if (!queued || !active) return;
+      const { x, y } = queued;
+      queued = null;
+      if (previous) {
+        const elapsed = Math.max(now - previous.time, 16);
+        const vx = x - previous.x, vy = y - previous.y;
+        const distance = Math.hypot(vx, vy);
+        if (distance > 2 && now - lastEmission >= 28) {
+          const count = Math.min(4, 1 + Math.floor((distance / elapsed) / .55));
+          for (let i = 0; i < count; i++) create(x - vx * i / (count + 1), y - vy * i / (count + 1), vx, vy);
+          lastEmission = now;
+        }
+      }
+      previous = { x, y, time: now };
+    }
+    function onMove(event) {
+      if (event.pointerType === 'touch') return;
+      queued = { x: event.clientX, y: event.clientY };
+      if (!frame) frame = requestAnimationFrame(flush);
+    }
+    function onClick(event) {
+      if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+      for (let i = 0; i < 12; i++) {
+        const angle = i * Math.PI / 6 + random(-.16, .16);
+        const distance = random(25, 62);
+        create(event.clientX, event.clientY, Math.cos(angle) * distance, Math.sin(angle) * distance, true);
+      }
+    }
+    function stop() {
+      if (!active) return;
+      active = false;
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerdown', onClick);
+      cancelAnimationFrame(frame); frame = 0; queued = previous = null;
+      particles.forEach(particle => particle.remove()); particles.clear();
+    }
+    function sync() {
+      if (!pointer.matches || motion.matches || document.hidden) { stop(); return; }
+      if (active) return;
+      active = true;
+      document.addEventListener('pointermove', onMove, { passive: true });
+      document.addEventListener('pointerdown', onClick, { passive: true });
+    }
+    pointer.addEventListener('change', sync);
+    motion.addEventListener('change', sync);
+    document.addEventListener('visibilitychange', sync);
+    addEventListener('pagehide', stop);
+    addEventListener('pageshow', sync);
+    sync();
   })();
 </script>

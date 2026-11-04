@@ -1,0 +1,28 @@
+---
+import data from '../data/security-news.json';
+const items = Array.isArray(data.items) ? data.items.slice(0, 4) : [];
+const formatDate = value => new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', month: 'numeric', day: 'numeric' }).format(new Date(value));
+const updated = data.updatedAt && !Number.isNaN(Date.parse(data.updatedAt))
+  ? new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(data.updatedAt))
+  : null;
+---
+<section class="security-news" aria-labelledby="security-news-title">
+  <div class="security-news-head">
+    <h2 id="security-news-title">보안 소식</h2>
+    <span>SECURITY NEWS</span>
+  </div>
+  {items.length ? (
+    <ol class="security-news-list">
+      {items.map(item => (
+        <li>
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <span class="security-news-title">{item.title}</span>
+            <span class="security-news-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="security-news-meta"><span>{item.source}</span><time datetime={item.date}>{formatDate(item.date)}</time></div>
+        </li>
+      ))}
+    </ol>
+  ) : <p class="security-news-empty">지금은 소식을 불러올 수 없습니다.</p>}
+  <p class="security-news-updated">{updated ? <>마지막 수집 <time datetime={data.updatedAt}>{updated} KST</time></> : '아직 수집된 소식이 없습니다.'}</p>
+</section>

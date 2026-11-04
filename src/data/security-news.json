@@ -1,0 +1,125 @@
+{
+  "updatedAt": "2026-11-04T15:46:44.761Z",
+  "items": [
+    {
+      "title": "Google Calendar phishing campaign hijacks sessions, bypasses MFA",
+      "source": "BleepingComputer",
+      "date": "2026-11-04T15:00:10.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/google-calendar-phishing-campaign-hijacks-sessions-bypasses-mfa/"
+    },
+    {
+      "title": "SonicWall warns of unpatched flaws in end-of-life GMS software",
+      "source": "BleepingComputer",
+      "date": "2026-11-04T14:42:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-unpatched-flaws-in-end-of-life-gms-software/"
+    },
+    {
+      "title": "APT29-Linked Hackers Hijack Web Analytics Script to Deliver iOS and Android Exploits",
+      "source": "The Hacker News",
+      "date": "2026-11-04T14:27:52.000Z",
+      "url": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html"
+    },
+    {
+      "title": "US charges two Canadians accused of hacking US universities",
+      "source": "BleepingComputer",
+      "date": "2026-11-04T13:13:20.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/us-charges-two-canadians-accused-of-hacking-us-universities/"
+    },
+    {
+      "title": "CISA flags WordPress RCE flaw as actively exploited in attacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-04T12:11:05.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+    },
+    {
+      "title": "Critical Rails Flaw Lets Attackers Write Server Files via Crafted ImageMagick Uploads",
+      "source": "The Hacker News",
+      "date": "2026-11-04T12:07:04.000Z",
+      "url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html"
+    },
+    {
+      "title": "Xen Hypervisor Flaws Let One Malicious VM Read and Write Any Other VM's Memory",
+      "source": "The Hacker News",
+      "date": "2026-11-04T11:46:27.000Z",
+      "url": "https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html"
+    },
+    {
+      "title": "Radio With No Radar: Why Agent Runtime Security Fails Without the Layers Beneath It",
+      "source": "The Hacker News",
+      "date": "2026-11-04T11:34:20.000Z",
+      "url": "https://thehackernews.com/2026/11/radio-with-no-radar-why-agent-runtime.html"
+    },
+    {
+      "title": "China-Aligned Hackers Hijack Sogou Input Method DNS Requests to Deploy DarkVigil Backdoor",
+      "source": "The Hacker News",
+      "date": "2026-11-04T11:24:31.000Z",
+      "url": "https://thehackernews.com/2026/11/china-aligned-hackers-hijack-sogou.html"
+    },
+    {
+      "title": "Hackers use n-day exploits in zero-click attacks on iOS, Android devices",
+      "source": "BleepingComputer",
+      "date": "2026-11-04T09:39:54.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-use-n-day-exploits-in-zero-click-attacks-on-ios-android-devices/"
+    },
+    {
+      "title": "Russian Police Arrest 3 Suspected VasyGrek Hackers, Dismantle Criminal Infrastructure",
+      "source": "The Hacker News",
+      "date": "2026-11-04T08:17:11.000Z",
+      "url": "https://thehackernews.com/2026/11/russian-police-arrest-3-suspected.html"
+    },
+    {
+      "title": "Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction",
+      "source": "The Hacker News",
+      "date": "2026-11-04T07:46:15.000Z",
+      "url": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html"
+    },
+    {
+      "title": "CISA Confirms Hackers Exploiting WordPress Core Flaw During Software Upgrades",
+      "source": "The Hacker News",
+      "date": "2026-11-04T05:43:11.000Z",
+      "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html"
+    },
+    {
+      "title": "Hackers hijack cPGuard autoupdate to deploy backdoor, steal data",
+      "source": "BleepingComputer",
+      "date": "2026-11-03T22:18:50.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-cpguard-autoupdate-to-deploy-backdoor-steal-data/"
+    },
+    {
+      "title": "WorkOS says attacker used ARTEX AI to breach internal sales app",
+      "source": "BleepingComputer",
+      "date": "2026-11-03T21:28:44.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/workos-says-attacker-used-artex-ai-to-breach-internal-sales-app/"
+    },
+    {
+      "title": "Binance says fake job interview led to $6.3 billion crypto heist",
+      "source": "BleepingComputer",
+      "date": "2026-11-03T20:05:50.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/binance-says-fake-job-interview-led-to-63-billion-crypto-heist/"
+    },
+    {
+      "title": "Google: LLMjacking attacks rack up $1 million in cloud AI charges",
+      "source": "BleepingComputer",
+      "date": "2026-11-03T18:51:04.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/google-llmjacking-attacks-rack-up-1-million-in-cloud-ai-charges/"
+    },
+    {
+      "title": "mSecure Warns Users to Change Passwords, Reset 2FA and Passkeys After Suspicious Activity",
+      "source": "The Hacker News",
+      "date": "2026-11-03T18:46:38.000Z",
+      "url": "https://thehackernews.com/2026/11/msecure-warns-users-to-change-passwords.html"
+    },
+    {
+      "title": "Chainstack Reports Production Systems Breach Exposing Customer Data and Password Hashes",
+      "source": "The Hacker News",
+      "date": "2026-11-03T18:16:19.000Z",
+      "url": "https://thehackernews.com/2026/11/chainstack-reports-production-systems.html"
+    },
+    {
+      "title": "Binance Reveals How Fake Job Interviews and AI Tool Abuse Led to $6.43 Billion Theft",
+      "source": "The Hacker News",
+      "date": "2026-11-03T16:55:58.000Z",
+      "url": "https://thehackernews.com/2026/11/binance-reveals-how-fake-job-interviews.html"
+    }
+  ]
+}
