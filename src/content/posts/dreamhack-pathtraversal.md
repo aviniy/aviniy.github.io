@@ -183,9 +183,15 @@ fetch('/get_info', {
 });
 ```
 
+`fetch()` 함수를 이용해 `/get_info` 경로로 POST 요청을 보내고, `body`에 `userid=../flag`를 전달하였다.
+
+서버에서는 전달받은 `userid` 값을 URL에 그대로 삽입하므로 `/api/user/../flag` 경로가 생성된다.
+
+이후 `../`에 의해 경로가 정규화되면서 `/api/flag`로 변경되고, 서버 내부에서 해당 API를 호출하게 된다.
+
+마지막으로 `.then()`을 통해 서버의 응답을 받아 문자열로 변환하고, `document.write()`를 이용해 응답 HTML을 웹페이지에 출력하도록 하였다.
 
 
-&nbsp;
 
 &nbsp;
 
