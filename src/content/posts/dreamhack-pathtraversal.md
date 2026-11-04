@@ -13,8 +13,6 @@ draft: true
 ---
 # DH - Pathtraversal
 
-
-
 ## 문제:
 
 ![image.png](/images/image-1.png)
@@ -114,8 +112,6 @@ application = app # app.run(host='0.0.0.0', port=8000)
 ## 풀이:
 
 
-
-&nbsp;
 
 &nbsp;
 
