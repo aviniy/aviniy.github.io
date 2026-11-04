@@ -103,17 +103,13 @@ def flag():
     return FLAG
 
 application = app # app.run(host='0.0.0.0', port=8000)
-# Dockerfile
-#     ENTRYPOINT ["uwsgi", "--socket", "0.0.0.0:8000", "--protocol=http", "--threads", "4", "--wsgi-file", "app.py"]
 ```
 
 
 
-## 풀이:
+## 풀이: 
 
 
-
-&nbsp;
 
 &nbsp;
 
