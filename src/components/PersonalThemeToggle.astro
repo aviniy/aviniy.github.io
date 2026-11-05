@@ -1,0 +1,45 @@
+<div class="personal-theme-switch" role="group" aria-label="개인 홈페이지 테마" hidden>
+  <button type="button" data-personal-theme-choice="bocchi" aria-pressed="true" aria-label="BOCCHI MODE">
+    <span aria-hidden="true">♡</span><span>BOCCHI</span>
+  </button>
+  <button type="button" data-personal-theme-choice="kurumi" aria-pressed="false" aria-label="KURUMI MODE">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5v5l3 2"/></svg><span>KURUMI</span>
+  </button>
+</div>
+
+<script is:inline data-personal-theme-controller>
+  (() => {
+    const root = document.documentElement;
+    if (!root.classList.contains('personal-site') || root.dataset.personalThemeReady) return;
+    root.dataset.personalThemeReady = 'true';
+    const key = 'aviniy-personal-theme-v1';
+    const normalize = value => value === 'kurumi' ? 'kurumi' : 'bocchi';
+    const syncButtons = () => {
+      document.querySelectorAll('[data-personal-theme-choice]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.personalThemeChoice === root.dataset.personalTheme));
+      });
+      document.querySelectorAll('.personal-theme-switch').forEach(control => { control.hidden = false; });
+    };
+    const apply = (value, save = false) => {
+      const theme = normalize(value);
+      const changed = root.dataset.personalTheme !== theme;
+      root.dataset.personalTheme = theme;
+      if (save) {
+        try { localStorage.setItem(key, theme); } catch { /* The current page still switches when storage is blocked. */ }
+      }
+      syncButtons();
+      if (changed) document.dispatchEvent(new CustomEvent('aviniy:theme-change', { detail: { theme } }));
+    };
+    document.addEventListener('click', event => {
+      const button = event.target.closest?.('[data-personal-theme-choice]');
+      if (button) apply(button.dataset.personalThemeChoice, true);
+    });
+    addEventListener('storage', event => {
+      if (event.key === key || event.key === null) apply(event.newValue);
+    });
+    addEventListener('pageshow', () => {
+      try { apply(localStorage.getItem(key)); } catch { syncButtons(); }
+    });
+    syncButtons();
+  })();
+</script>

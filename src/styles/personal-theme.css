@@ -1,0 +1,179 @@
+/* Personal pages only. Lab uses data-theme and BaseLayout independently. */
+html.personal-site {
+  color-scheme: dark;
+  --theme-bg: #111;
+  --theme-text: #fff;
+  --theme-accent: #f3b8c8;
+  --theme-secondary: #d8b4fe;
+  --theme-surface: rgba(14, 14, 14, .91);
+  --theme-surface-solid: #171719;
+  --theme-surface-hover: rgba(255, 255, 255, .06);
+  --theme-accent-soft: rgba(243, 184, 200, .1);
+  --theme-border: rgba(255, 255, 255, .22);
+  --theme-border-soft: rgba(255, 255, 255, .12);
+  --theme-border-strong: rgba(255, 255, 255, .48);
+  --theme-muted: rgba(255, 255, 255, .68);
+  --theme-subtle: rgba(255, 255, 255, .5);
+  --theme-button: #fff;
+  --theme-on-accent: #151515;
+  --theme-shadow: rgba(0, 0, 0, .38);
+  --theme-error: #ffd0dc;
+  --theme-nav-bg: rgba(17, 17, 17, .94);
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+html.personal-site[data-personal-theme="kurumi"] {
+  --theme-bg: #100d12;
+  --theme-text: #f1e8e6;
+  --theme-accent: #c77a8c;
+  --theme-secondary: #c6a36a;
+  --theme-surface: #1b141b;
+  --theme-surface-solid: #1b141b;
+  --theme-surface-hover: rgba(198, 163, 106, .08);
+  --theme-accent-soft: rgba(165, 42, 69, .2);
+  --theme-border: rgba(198, 163, 106, .3);
+  --theme-border-soft: rgba(198, 163, 106, .15);
+  --theme-border-strong: rgba(198, 163, 106, .6);
+  --theme-muted: #b8a8ae;
+  --theme-subtle: #aa979d;
+  --theme-button: #c6a36a;
+  --theme-on-accent: #100d12;
+  --theme-shadow: rgba(7, 2, 6, .58);
+  --theme-error: #f4b5bc;
+  --theme-nav-bg: rgba(16, 13, 18, .96);
+}
+
+/* Keep the established layout and type; color consumers share the same tokens. */
+.personal-site .home {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+.personal-site .topbar { border-color: var(--theme-border); }
+.personal-site .logo span { color: var(--theme-accent); }
+.personal-site .intro { color: var(--theme-text); }
+.personal-site .lab-link,
+.personal-site .enter { border-color: var(--theme-border-strong); }
+.personal-site .enter { background: var(--theme-accent-soft); }
+.personal-site .enter b { background: var(--theme-button); color: var(--theme-on-accent); }
+.personal-site .lab-link:hover,
+.personal-site .enter:hover { background: var(--theme-button); color: var(--theme-on-accent); }
+.personal-site .info,
+.personal-site .info-row { border-color: var(--theme-border-strong); }
+.personal-site .info-row span,
+.personal-site .info small,
+.personal-site .home footer { color: var(--theme-muted); }
+.personal-site .home footer { border-color: var(--theme-border-soft); }
+.personal-site :focus-visible { outline: 2px solid var(--theme-secondary); outline-offset: 4px; }
+
+.personal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bocchi-backdrop,
+.kurumi-backdrop { position: absolute; inset: 0; }
+.bocchi-backdrop {
+  background: #1b1816 var(--hero) center 38% / cover no-repeat;
+  opacity: 1;
+}
+.kurumi-backdrop {
+  background: radial-gradient(ellipse at 83% 32%, #3b1925 0%, #1b111a 42%, #100d12 78%);
+  opacity: 0;
+}
+.kurumi-dial {
+  position: absolute;
+  width: min(70vw, 800px);
+  height: auto;
+  top: 5vh;
+  right: -8vw;
+  stroke: #c6a36a;
+  stroke-width: .65;
+  opacity: .12;
+}
+[data-personal-theme="kurumi"] .bocchi-backdrop { opacity: 0; }
+[data-personal-theme="kurumi"] .kurumi-backdrop { opacity: 1; }
+[data-personal-theme="kurumi"] .clock strong { color: var(--theme-secondary); }
+
+.personal-nav-actions { display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
+.personal-theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--theme-border);
+  border-radius: 7px;
+  background: var(--theme-surface);
+}
+.personal-theme-switch[hidden] { display: none; }
+.personal-theme-switch button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--theme-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .045em;
+  cursor: pointer;
+}
+.personal-theme-switch button[aria-pressed="true"] {
+  background: var(--theme-accent-soft);
+  color: var(--theme-accent);
+  box-shadow: inset 0 -2px var(--theme-accent);
+}
+.personal-theme-switch button:hover { color: var(--theme-text); }
+.personal-theme-switch button > span:first-child { font-size: 17px; line-height: 1; }
+.personal-theme-switch svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.3; }
+
+/* Opt in after initial theme selection, avoiding a default-theme flash on load. */
+@media (prefers-reduced-motion: no-preference) {
+  .personal-site[data-personal-theme-ready] :where(
+    body, .home, .about-page, .topbar, .logo span, .intro, .enter, .enter b,
+    .lab-link, .info, .info-row, .info-row span, .info small, .clock strong,
+    footer, .personal-theme-switch, .personal-theme-switch button,
+    .section-index, .nickname, .profile-meta,
+    .profile-image img, .about-section, .section-heading span,
+    .interest-list article, .interest-list p, .anime-art, .anime-item p,
+    .about-links, .about-links a, .about-links button, .about-links span, .sr-status,
+    .yt-player-shell, .yt-player-heading small, .yt-now-playing span,
+    .yt-now-playing small, .yt-controls button, .yt-volume, .yt-status,
+    .yt-playlist-heading, .yt-playlist-heading span, .yt-playlist-heading small,
+    .yt-playlist-actions button, .yt-track-list button, .yt-track-number, .yt-track-copy small,
+    .security-news, .security-news-list li, .security-news-head span,
+    .security-news-arrow, .security-news-meta, .security-news-updated
+  ) {
+    transition: background-color 450ms ease, color 450ms ease, border-color 450ms ease, box-shadow 450ms ease;
+  }
+  .personal-site[data-personal-theme-ready] .bocchi-backdrop,
+  .personal-site[data-personal-theme-ready] .kurumi-backdrop { transition: opacity 500ms ease; }
+  .personal-site[data-personal-theme-ready] .social-dock a,
+  .personal-site[data-personal-theme-ready] .social-dock button {
+    transition: color 450ms ease, opacity .16s ease, transform .16s ease;
+  }
+}
+@media (max-width: 1100px) { .bocchi-backdrop { background-position: 58% top; } }
+@media (max-width: 850px) {
+  .bocchi-backdrop { background-position: 55% top; background-size: auto 100svh; }
+  .personal-nav-actions { gap: 12px; }
+  .personal-theme-switch button { min-height: 40px; padding: 0 7px; }
+}
+@media (max-width: 600px) {
+  .personal-site .personal-nav { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; padding-top: 12px; padding-bottom: 10px; }
+  .personal-nav-actions { display: contents; }
+  .personal-site .personal-nav nav { grid-column: 1 / -1; justify-self: end; }
+  .personal-theme-switch { justify-self: end; }
+  .personal-theme-switch button { min-height: 38px; font-size: 9px; }
+  .kurumi-dial { width: 100vw; top: 12vh; right: -35vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .personal-site .lab-link,
+  .personal-site .yt-playlist-actions svg { transition: none; }
+}

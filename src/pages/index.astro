@@ -1,6 +1,7 @@
 ---
 import PersonalLayout from '../layouts/PersonalLayout.astro';
 import PersonalNav from '../components/PersonalNav.astro';
+import PersonalBackdrop from '../components/PersonalBackdrop.astro';
 import HeartCursor from '../components/HeartCursor.astro';
 import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.astro';
 import SecurityNews from '../components/SecurityNews.astro';
@@ -11,6 +12,7 @@ import { rootUrl } from '../lib/posts.js';
 <PersonalLayout>
   <HeartCursor />
   <main class="home" style={`--hero:url('${rootUrl('images/bocchi-the-rock-hd.png')}')`}>
+    <PersonalBackdrop />
     <div class="shade"></div>
     <PersonalNav />
 

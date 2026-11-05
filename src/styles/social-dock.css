@@ -18,7 +18,7 @@
   place-items: center;
   border: 0;
   background: transparent;
-  color: #fff;
+  color: var(--theme-text);
   opacity: .72;
   cursor: pointer;
   transition: opacity .16s ease, transform .16s ease;
@@ -34,7 +34,7 @@
 
 .social-dock a:focus-visible,
 .social-dock button:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, .7);
+  outline: 1px solid var(--theme-secondary);
   outline-offset: 1px;
   border-radius: 50%;
 }
@@ -61,7 +61,7 @@
 }
 
 .social-dock .cut {
-  fill: #181818;
+  fill: var(--theme-surface-solid);
   stroke: none;
 }
 
@@ -71,10 +71,10 @@
   left: 50%;
   bottom: calc(100% + 7px);
   padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, .16);
+  border: 1px solid var(--theme-border-soft);
   border-radius: 6px;
-  background: rgba(18, 18, 18, .8);
-  color: #fff;
+  background: var(--theme-surface);
+  color: var(--theme-text);
   font-size: 9px;
   letter-spacing: .04em;
   line-height: 1.2;
@@ -96,7 +96,7 @@
   position: absolute;
   left: 0;
   bottom: calc(100% + 10px);
-  color: #fff;
+  color: var(--theme-text);
   font-size: 10px;
   white-space: nowrap;
 }

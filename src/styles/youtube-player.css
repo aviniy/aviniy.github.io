@@ -9,10 +9,10 @@
   min-height: 520px;
   overflow: hidden;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, .2);
+  border: 1px solid var(--theme-border);
   border-radius: 18px;
-  background: rgba(14, 14, 14, .91);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, .38);
+  background: var(--theme-surface);
+  box-shadow: 0 22px 70px var(--theme-shadow);
   backdrop-filter: blur(22px);
 }
 
@@ -30,7 +30,7 @@
 .yt-playlist-heading span {
   display: block;
   margin-bottom: 4px;
-  color: rgba(255, 255, 255, .46);
+  color: var(--theme-subtle);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: .19em;
@@ -44,7 +44,7 @@
 }
 
 .yt-player-heading > small {
-  color: rgba(255, 255, 255, .48);
+  color: var(--theme-subtle);
   font-size: 9px;
   letter-spacing: .08em;
 }
@@ -74,7 +74,7 @@
   display: grid;
   padding: 20px;
   place-items: center;
-  color: rgba(255, 255, 255, .6);
+  color: var(--theme-muted);
   font-size: 10px;
   text-align: center;
 }
@@ -109,7 +109,7 @@
 }
 
 .yt-now-playing small {
-  color: rgba(255, 255, 255, .42);
+  color: var(--theme-subtle);
   font-size: 10px;
 }
 
@@ -131,20 +131,20 @@
   border: 0;
   border-radius: 50%;
   background: transparent;
-  color: rgba(255, 255, 255, .62);
+  color: var(--theme-muted);
   cursor: pointer;
 }
 
 .yt-controls button:hover,
 .yt-controls button:focus-visible,
 .yt-controls button.active {
-  color: #fff;
-  background: rgba(255, 255, 255, .1);
+  color: var(--theme-text);
+  background: var(--theme-surface-hover);
 }
 
 .yt-controls button:focus-visible,
 .yt-track-list button:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, .72);
+  outline: 1px solid var(--theme-secondary);
   outline-offset: 2px;
 }
 
@@ -152,14 +152,14 @@
   width: 42px;
   height: 42px;
   margin: 0 4px;
-  background: #fff;
-  color: #151515;
+  background: var(--theme-button);
+  color: var(--theme-on-accent);
 }
 
 .yt-controls .yt-play:hover,
 .yt-controls .yt-play:focus-visible {
-  background: #f3b8c8;
-  color: #151515;
+  background: var(--theme-accent);
+  color: var(--theme-on-accent);
 }
 
 .yt-controls svg,
@@ -208,8 +208,8 @@
   gap: 8px;
   margin-left: 8px;
   padding-left: 13px;
-  border-left: 1px solid rgba(255, 255, 255, .14);
-  color: rgba(255, 255, 255, .5);
+  border-left: 1px solid var(--theme-border-soft);
+  color: var(--theme-subtle);
 }
 
 .yt-volume .volume-muted {
@@ -227,7 +227,7 @@
 .yt-volume input {
   width: 100%;
   height: 2px;
-  accent-color: #f3b8c8;
+  accent-color: var(--theme-accent);
   cursor: pointer;
 }
 
@@ -235,13 +235,13 @@
   flex: 0 0 auto;
   min-height: 13px;
   margin: 4px 18px 8px;
-  color: rgba(255, 255, 255, .44);
+  color: var(--theme-subtle);
   font-size: 9px;
   line-height: 1.4;
 }
 
 .yt-player-shell.has-error .yt-status {
-  color: #ffd0dc;
+  color: var(--theme-error);
 }
 
 .yt-status:empty {
@@ -254,7 +254,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 18px 8px;
-  border-top: 1px solid rgba(255, 255, 255, .12);
+  border-top: 1px solid var(--theme-border-soft);
 }
 
 .yt-playlist-heading span {
@@ -262,7 +262,7 @@
 }
 
 .yt-playlist-heading small {
-  color: rgba(255, 255, 255, .38);
+  color: var(--theme-subtle);
   font-size: 9px;
 }
 
@@ -277,22 +277,22 @@
   align-items: center;
   gap: 4px;
   padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, .16);
+  border: 1px solid var(--theme-border-soft);
   border-radius: 999px;
   background: transparent;
-  color: rgba(255, 255, 255, .66);
+  color: var(--theme-muted);
   font-size: 9px;
   cursor: pointer;
 }
 
 .yt-playlist-actions button:hover,
 .yt-playlist-actions button:focus-visible {
-  border-color: rgba(255, 255, 255, .42);
-  color: #fff;
+  border-color: var(--theme-border-strong);
+  color: var(--theme-text);
 }
 
 .yt-playlist-actions button:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, .72);
+  outline: 1px solid var(--theme-secondary);
   outline-offset: 2px;
 }
 
@@ -316,7 +316,7 @@
   padding: 0 7px 8px;
   overflow-y: auto;
   list-style: none;
-  scrollbar-color: rgba(255, 255, 255, .22) transparent;
+  scrollbar-color: var(--theme-border) transparent;
   scrollbar-width: thin;
 }
 
@@ -334,23 +334,23 @@
   border: 0;
   border-radius: 8px;
   background: transparent;
-  color: rgba(255, 255, 255, .76);
+  color: var(--theme-text);
   text-align: left;
   cursor: pointer;
 }
 
 .yt-track-list button:hover {
-  background: rgba(255, 255, 255, .06);
-  color: #fff;
+  background: var(--theme-surface-hover);
+  color: var(--theme-text);
 }
 
 .yt-track-list button.active {
-  background: rgba(243, 184, 200, .1);
-  color: #f5c0cf;
+  background: var(--theme-accent-soft);
+  color: var(--theme-accent);
 }
 
 .yt-track-number {
-  color: rgba(255, 255, 255, .3);
+  color: var(--theme-subtle);
   font-size: 9px;
   font-variant-numeric: tabular-nums;
   text-align: center;
@@ -375,7 +375,7 @@
 
 .yt-track-copy small {
   margin-top: 2px;
-  color: rgba(255, 255, 255, .34);
+  color: var(--theme-subtle);
   font-size: 9px;
 }
 
@@ -435,7 +435,7 @@
     min-height: 1600px;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #111;
+    background-color: var(--theme-bg);
     background-position: 58% top;
     background-size: auto 100svh;
     background-repeat: no-repeat;
@@ -581,7 +581,7 @@
   position: relative;
   z-index: 1;
   padding: 22px clamp(24px, 5vw, 76px);
-  border-top: 1px solid rgba(255, 255, 255, .14);
+  border-top: 1px solid var(--theme-border-soft);
 }
 
 @media (max-width: 1100px) {
@@ -729,7 +729,7 @@
     gap: 8px;
     margin: 4px 6px 0;
     padding: 9px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, .14);
+    border-top: 1px solid var(--theme-border-soft);
     border-left: 0;
   }
 

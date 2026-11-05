@@ -8,6 +8,23 @@
     animation: cursor-float var(--duration) cubic-bezier(.18,.65,.35,1) forwards;
     filter: drop-shadow(0 1px 1px rgb(30 20 32 / 18%));
   }
+  :global(.cursor-particle[data-kind="petal"]) {
+    width: var(--size); height: calc(var(--size) * .68);
+    border-radius: 85% 12% 70% 28%; background: var(--color);
+    filter: none;
+  }
+  :global(.cursor-particle[data-kind="clock"]) {
+    width: var(--size); height: var(--size);
+    border: 1px solid currentColor; border-radius: 50%; filter: none;
+  }
+  :global(.cursor-particle[data-kind="clock"]::before),
+  :global(.cursor-particle[data-kind="clock"]::after) {
+    content: ''; position: absolute; left: 50%; top: 50%;
+    width: 1px; height: 32%; background: currentColor;
+    transform-origin: center top;
+  }
+  :global(.cursor-particle[data-kind="clock"]::before) { transform: rotate(180deg); }
+  :global(.cursor-particle[data-kind="clock"]::after) { height: 25%; transform: rotate(-55deg); }
   @keyframes cursor-float {
     0% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--rotation)) scale(.45); }
     16% { opacity: var(--opacity); transform: translate(calc(-50% + var(--early-dx)),calc(-50% + var(--early-dy))) rotate(var(--rotation)) scale(1); }
@@ -19,30 +36,38 @@
 <script is:inline>
   (() => {
     const layer = document.querySelector('[data-heart-cursor]');
-    if (!layer) return;
+    if (!layer || layer.dataset.initialized) return;
+    layer.dataset.initialized = 'true';
     const pointer = matchMedia('(hover: hover) and (pointer: fine)');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
     const colors = ['#ffb6c9', '#f3c4d8', '#d8c4f5', '#fff'];
+    const petalColors = ['#a52a45', '#8c263e', '#6f2035'];
     const particles = new Set();
     const MAX = 85;
-    let queued = null, frame = 0, previous = null, lastEmission = 0, active = false;
+    let queued = null, frame = 0, previous = null, lastEmission = 0, lastClock = -Infinity, lastBurst = -Infinity, active = false;
     const random = (min, max) => min + Math.random() * (max - min);
 
     function create(x, y, vx, vy, burst = false) {
       if (particles.size >= MAX) return;
       const particle = document.createElement('span');
       const choice = Math.random();
+      const kurumi = document.documentElement.dataset.personalTheme === 'kurumi';
+      const clock = kurumi && choice > .96 && performance.now() - lastClock > 350;
+      const petal = kurumi && !clock && choice < .8;
       particle.className = 'cursor-particle';
-      particle.textContent = choice < .69 ? '♥' : choice < .88 ? '✦' : '✧';
+      particle.dataset.kind = kurumi ? clock ? 'clock' : petal ? 'petal' : 'sparkle' : choice < .69 ? 'heart' : 'sparkle';
+      particle.textContent = kurumi ? petal || clock ? '' : '✧' : choice < .69 ? '♥' : choice < .88 ? '✦' : '✧';
+      if (clock) lastClock = performance.now();
       const dx = burst ? vx : -vx * random(.14, .32) + random(-20, 20);
       const dy = burst ? vy : -vy * random(.12, .27) + random(14, 38);
       const rotation = random(-30, 30);
       particle.style.left = `${x}px`;
       particle.style.top = `${y}px`;
-      particle.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
-      particle.style.setProperty('--size', `${choice < .69 ? random(7, 17) : random(5, 11)}px`);
+      const palette = kurumi ? petal ? petalColors : ['#c6a36a', '#d6b77f'] : colors;
+      particle.style.setProperty('--color', palette[Math.floor(Math.random() * palette.length)]);
+      particle.style.setProperty('--size', `${kurumi ? clock ? random(9, 12) : petal ? random(7, 13) : random(5, 10) : choice < .69 ? random(7, 17) : random(5, 11)}px`);
       particle.style.setProperty('--duration', `${random(burst ? 530 : 670, burst ? 940 : 1100)}ms`);
-      particle.style.setProperty('--opacity', random(.62, .95).toFixed(2));
+      particle.style.setProperty('--opacity', (kurumi ? random(.5, .8) : random(.62, .95)).toFixed(2));
       const finalX = Math.max(-100, Math.min(100, dx));
       const finalY = Math.max(-100, Math.min(100, dy));
       particle.style.setProperty('--dx', `${finalX}px`);
@@ -73,25 +98,30 @@
       previous = { x, y, time: now };
     }
     function onMove(event) {
-      if (event.pointerType === 'touch') return;
+      if (event.pointerType && event.pointerType !== 'mouse') return;
       queued = { x: event.clientX, y: event.clientY };
       if (!frame) frame = requestAnimationFrame(flush);
     }
     function onClick(event) {
-      if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      const now = performance.now();
+      if (now - lastBurst < 120) return;
+      lastBurst = now;
       for (let i = 0; i < 12; i++) {
         const angle = i * Math.PI / 6 + random(-.16, .16);
         const distance = random(25, 62);
         create(event.clientX, event.clientY, Math.cos(angle) * distance, Math.sin(angle) * distance, true);
       }
     }
+    function clear() {
+      cancelAnimationFrame(frame); frame = 0; queued = previous = null;
+      particles.forEach(particle => particle.remove()); particles.clear();
+    }
     function stop() {
-      if (!active) return;
       active = false;
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerdown', onClick);
-      cancelAnimationFrame(frame); frame = 0; queued = previous = null;
-      particles.forEach(particle => particle.remove()); particles.clear();
+      clear();
     }
     function sync() {
       if (!pointer.matches || motion.matches || document.hidden) { stop(); return; }
@@ -103,6 +133,7 @@
     pointer.addEventListener('change', sync);
     motion.addEventListener('change', sync);
     document.addEventListener('visibilitychange', sync);
+    document.addEventListener('aviniy:theme-change', clear);
     addEventListener('pagehide', stop);
     addEventListener('pageshow', sync);
     sync();

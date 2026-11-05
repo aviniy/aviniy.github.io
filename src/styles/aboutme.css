@@ -1,12 +1,12 @@
 .about-page {
   min-height: 100svh;
-  background: #111;
-  color: #f4f1ef;
+  background: var(--theme-bg);
+  color: var(--theme-text);
 }
 
 .about-page .topbar {
   position: fixed;
-  background: rgba(17, 17, 17, .94);
+  background: var(--theme-nav-bg);
   backdrop-filter: none;
 }
 
@@ -27,7 +27,7 @@
 
 .section-index {
   margin: 0 0 22px;
-  color: #f0a3ba;
+  color: var(--theme-accent);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .2em;
@@ -42,7 +42,7 @@
 
 .nickname {
   margin: 28px 0 0;
-  color: #f3b8c8;
+  color: var(--theme-accent);
   font-family: Georgia, serif;
   font-size: clamp(25px, 3vw, 38px);
   font-style: italic;
@@ -59,8 +59,8 @@
   gap: 10px 26px;
   margin: 30px 0 0;
   padding: 20px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, .2);
-  color: rgba(255, 255, 255, .62);
+  border-top: 1px solid var(--theme-border);
+  color: var(--theme-muted);
   font-size: 13px;
   list-style: none;
 }
@@ -68,7 +68,7 @@
 .profile-meta li::before {
   content: '—';
   margin-right: 8px;
-  color: #f0a3ba;
+  color: var(--theme-accent);
 }
 
 .profile-image {
@@ -80,14 +80,14 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .22);
+  border: 1px solid var(--theme-border);
   object-fit: cover;
   filter: saturate(.82) contrast(1.03);
 }
 
 .about-section {
   padding: 72px 0 88px;
-  border-top: 1px solid rgba(255, 255, 255, .22);
+  border-top: 1px solid var(--theme-border);
 }
 
 .section-heading {
@@ -98,7 +98,7 @@
 }
 
 .section-heading span {
-  color: #f0a3ba;
+  color: var(--theme-accent);
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: 12px;
 }
@@ -118,7 +118,7 @@
   grid-template-columns: minmax(180px, .55fr) 1fr;
   gap: 30px;
   padding: 25px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 .interest-list h3,
@@ -131,7 +131,7 @@
 .interest-list p,
 .anime-item p {
   margin: 0;
-  color: rgba(255, 255, 255, .58);
+  color: var(--theme-muted);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -148,8 +148,8 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, .17);
-  background: #171719;
+  border: 1px solid var(--theme-border);
+  background: var(--theme-surface-solid);
 }
 
 .anime-art img {
@@ -173,7 +173,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-left: 52px;
-  border-top: 1px solid rgba(255, 255, 255, .12);
+  border-top: 1px solid var(--theme-border-soft);
 }
 
 .about-links a,
@@ -184,7 +184,7 @@
   justify-content: space-between;
   padding: 0 18px;
   border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  border-bottom: 1px solid var(--theme-border-soft);
   background: transparent;
   color: inherit;
   font-size: 14px;
@@ -194,19 +194,19 @@
 
 .about-links a:nth-child(odd),
 .about-links button:nth-child(odd) {
-  border-right: 1px solid rgba(255, 255, 255, .12);
+  border-right: 1px solid var(--theme-border-soft);
 }
 
 .about-links a:hover,
 .about-links button:hover,
 .about-links a:focus-visible,
 .about-links button:focus-visible {
-  background: #f3b8c8;
-  color: #111;
+  background: var(--theme-accent);
+  color: var(--theme-on-accent);
 }
 
 .about-links span {
-  color: rgba(255, 255, 255, .45);
+  color: var(--theme-subtle);
   font-size: 12px;
 }
 
@@ -214,13 +214,13 @@
 .about-links button:hover span,
 .about-links a:focus-visible span,
 .about-links button:focus-visible span {
-  color: #111;
+  color: var(--theme-on-accent);
 }
 
 .sr-status {
   min-height: 18px;
   margin: 14px 0 0 70px;
-  color: rgba(255, 255, 255, .65);
+  color: var(--theme-muted);
   font-size: 11px;
 }
 
