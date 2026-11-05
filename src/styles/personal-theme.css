@@ -80,18 +80,22 @@ html.personal-site[data-personal-theme="kurumi"] {
   opacity: 1;
 }
 .kurumi-backdrop {
-  background: radial-gradient(ellipse at 83% 32%, #3b1925 0%, #1b111a 42%, #100d12 78%);
+  background: #100d12;
   opacity: 0;
 }
-.kurumi-dial {
+.kurumi-backdrop picture,
+.kurumi-backdrop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.kurumi-backdrop img { object-fit: cover; object-position: center 22%; }
+.kurumi-backdrop::after {
+  content: '';
   position: absolute;
-  width: min(70vw, 800px);
-  height: auto;
-  top: 5vh;
-  right: -8vw;
-  stroke: #c6a36a;
-  stroke-width: .65;
-  opacity: .12;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(16, 13, 18, .5), transparent 62%),
+    linear-gradient(0deg, rgba(16, 13, 18, .5), transparent 55%);
 }
 [data-personal-theme="kurumi"] .bocchi-backdrop { opacity: 0; }
 [data-personal-theme="kurumi"] .kurumi-backdrop { opacity: 1; }
@@ -162,6 +166,8 @@ html.personal-site[data-personal-theme="kurumi"] {
 @media (max-width: 1100px) { .bocchi-backdrop { background-position: 58% top; } }
 @media (max-width: 850px) {
   .bocchi-backdrop { background-position: 55% top; background-size: auto 100svh; }
+  .kurumi-backdrop img { object-position: 56% top; }
+  .kurumi-backdrop::after { background: linear-gradient(0deg, rgba(16, 13, 18, .8), rgba(16, 13, 18, .1) 80%); }
   .personal-nav-actions { gap: 12px; }
   .personal-theme-switch button { min-height: 40px; padding: 0 7px; }
 }
@@ -171,7 +177,6 @@ html.personal-site[data-personal-theme="kurumi"] {
   .personal-site .personal-nav nav { grid-column: 1 / -1; justify-self: end; }
   .personal-theme-switch { justify-self: end; }
   .personal-theme-switch button { min-height: 38px; font-size: 9px; }
-  .kurumi-dial { width: 100vw; top: 12vh; right: -35vw; }
 }
 @media (prefers-reduced-motion: reduce) {
   .personal-site .lab-link,

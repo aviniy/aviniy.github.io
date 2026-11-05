@@ -1,15 +1,16 @@
+---
+import { getImage } from 'astro:assets';
+import kurumiArtwork from '../assets/kurumi-clock.jpg';
+const desktop = await getImage({ src: kurumiArtwork, width: 2560, format: 'webp', quality: 90 });
+const mobile = await getImage({ src: kurumiArtwork, width: 1280, format: 'webp', quality: 88 });
+---
 <!-- Fixed artwork crossfades independently of content and the YouTube iframe. -->
 <div class="personal-backdrop" aria-hidden="true">
   <div class="bocchi-backdrop"></div>
   <div class="kurumi-backdrop">
-    <svg class="kurumi-dial" viewBox="0 0 400 400" fill="none">
-      <circle cx="200" cy="200" r="190" />
-      <circle cx="200" cy="200" r="177" />
-      {Array.from({ length: 12 }, (_, index) => (
-        <path d="M200 27v12" transform={`rotate(${index * 30} 200 200)`} />
-      ))}
-      <path d="M200 82v118l77 48" />
-      <circle cx="200" cy="200" r="4" />
-    </svg>
+    <picture>
+      <source media="(max-width: 850px)" srcset={mobile.src} />
+      <img src={desktop.src} width="2560" height="1600" alt="" decoding="async" />
+    </picture>
   </div>
 </div>
