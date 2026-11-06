@@ -12,8 +12,6 @@ draft: false
 ---
 # DH ROT128
 
-
-
 ## 문제
 
 ![image.png](/images/image-8.png)
