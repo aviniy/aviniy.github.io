@@ -1,81 +1,6 @@
-<style>
-  :global(.prose pre[data-code-language]) {
-    padding-top: 40px;
-  }
-
-  :global(.prose pre[data-code-language]::before) {
-    content: attr(data-code-language);
-    position: absolute;
-    top: 9px;
-    left: 14px;
-    color: var(--muted);
-    font-family: Inter, Pretendard, sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-  }
-
-  :global(html[data-theme='dark'] .astro-code),
-  :global(html[data-theme='dark'] .astro-code span) {
-    color: var(--shiki-dark) !important;
-  }
-
-  :global(.prose .hljs-comment),
-  :global(.prose .hljs-quote) { color: #6a737d; font-style: italic; }
-  :global(.prose .hljs-keyword),
-  :global(.prose .hljs-selector-tag),
-  :global(.prose .hljs-literal),
-  :global(.prose .hljs-section),
-  :global(.prose .hljs-link) { color: #d73a49; }
-  :global(.prose .hljs-string),
-  :global(.prose .hljs-title),
-  :global(.prose .hljs-name),
-  :global(.prose .hljs-type),
-  :global(.prose .hljs-attribute),
-  :global(.prose .hljs-symbol),
-  :global(.prose .hljs-bullet),
-  :global(.prose .hljs-addition),
-  :global(.prose .hljs-variable),
-  :global(.prose .hljs-template-tag),
-  :global(.prose .hljs-template-variable) { color: #032f62; }
-  :global(.prose .hljs-number),
-  :global(.prose .hljs-meta),
-  :global(.prose .hljs-built_in),
-  :global(.prose .hljs-builtin-name),
-  :global(.prose .hljs-params) { color: #005cc5; }
-  :global(.prose .hljs-function .hljs-title),
-  :global(.prose .hljs-class .hljs-title) { color: #6f42c1; }
-  :global(.prose .hljs-deletion) { color: #b31d28; background: #ffeef0; }
-  :global(.prose .hljs-addition) { background: #f0fff4; }
-
-  :global(html[data-theme='dark'] .prose .hljs-comment),
-  :global(html[data-theme='dark'] .prose .hljs-quote) { color: #8b949e; }
-  :global(html[data-theme='dark'] .prose .hljs-keyword),
-  :global(html[data-theme='dark'] .prose .hljs-selector-tag),
-  :global(html[data-theme='dark'] .prose .hljs-literal),
-  :global(html[data-theme='dark'] .prose .hljs-section),
-  :global(html[data-theme='dark'] .prose .hljs-link) { color: #ff7b72; }
-  :global(html[data-theme='dark'] .prose .hljs-string),
-  :global(html[data-theme='dark'] .prose .hljs-title),
-  :global(html[data-theme='dark'] .prose .hljs-name),
-  :global(html[data-theme='dark'] .prose .hljs-type),
-  :global(html[data-theme='dark'] .prose .hljs-attribute),
-  :global(html[data-theme='dark'] .prose .hljs-symbol),
-  :global(html[data-theme='dark'] .prose .hljs-bullet),
-  :global(html[data-theme='dark'] .prose .hljs-addition),
-  :global(html[data-theme='dark'] .prose .hljs-variable),
-  :global(html[data-theme='dark'] .prose .hljs-template-tag),
-  :global(html[data-theme='dark'] .prose .hljs-template-variable) { color: #a5d6ff; }
-  :global(html[data-theme='dark'] .prose .hljs-number),
-  :global(html[data-theme='dark'] .prose .hljs-meta),
-  :global(html[data-theme='dark'] .prose .hljs-built_in),
-  :global(html[data-theme='dark'] .prose .hljs-builtin-name),
-  :global(html[data-theme='dark'] .prose .hljs-params) { color: #79c0ff; }
-  :global(html[data-theme='dark'] .prose .hljs-function .hljs-title),
-  :global(html[data-theme='dark'] .prose .hljs-class .hljs-title) { color: #d2a8ff; }
-</style>
+---
+import '../styles/code-blocks.css';
+---
 
 <script>
   import hljs from 'highlight.js/lib/core';
@@ -116,17 +41,50 @@
     css: 'CSS', java: 'Java', sql: 'SQL', c: 'C', txt: 'Text', plaintext: 'Text'
   };
 
-  document.querySelectorAll('.prose pre').forEach((pre) => {
+  document.querySelectorAll<HTMLElement>('.prose pre').forEach((pre) => {
     const code = pre.querySelector('code');
-    if (!code) return;
+    if (!code || pre.closest('.code-block')) return;
     const classLanguage = [...code.classList].find((name) => name.startsWith('language-'))?.slice(9);
     const sourceLanguage = pre.dataset.language || pre.dataset.notionCodeSyntax || classLanguage;
-    if (!sourceLanguage) return;
-    const normalized = aliases[sourceLanguage.toLowerCase()] || sourceLanguage.toLowerCase();
-    pre.dataset.codeLanguage = labels[normalized] || normalized;
+    const normalized = sourceLanguage ? aliases[sourceLanguage.toLowerCase()] || sourceLanguage.toLowerCase() : 'plaintext';
+    const language = labels[normalized] || normalized;
+    pre.dataset.codeLanguage = language;
     if (!pre.classList.contains('astro-code') && !['txt', 'text', 'plaintext'].includes(normalized) && hljs.getLanguage(normalized)) {
       code.className = `language-${normalized}`;
       hljs.highlightElement(code);
     }
+
+    const frame = document.createElement('div');
+    frame.className = 'code-block';
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+    const label = document.createElement('span');
+    label.textContent = language;
+    const button = document.createElement('button');
+    button.className = 'code-copy';
+    button.type = 'button';
+    button.setAttribute('aria-label', `${language} 코드 복사`);
+    button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>';
+    const status = document.createElement('span');
+    status.textContent = '복사';
+    status.setAttribute('role', 'status');
+    button.append(status);
+    let reset: ReturnType<typeof setTimeout>;
+    button.addEventListener('click', async () => {
+      clearTimeout(reset);
+      try {
+        await navigator.clipboard.writeText(code.innerText);
+        status.textContent = '복사됨';
+      } catch {
+        status.textContent = '복사 실패';
+      }
+      reset = setTimeout(() => { status.textContent = '복사'; }, 1800);
+    });
+    toolbar.append(label, button);
+    pre.before(frame);
+    frame.append(toolbar, pre);
+    pre.tabIndex = 0;
+    pre.setAttribute('role', 'region');
+    pre.setAttribute('aria-label', `${language} 코드 · 가로 스크롤 가능`);
   });
 </script>
