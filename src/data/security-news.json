@@ -1,6 +1,60 @@
 {
-  "updatedAt": "2026-11-06T06:46:10.772Z",
+  "updatedAt": "2026-11-06T15:00:31.707Z",
   "items": [
+    {
+      "title": "Chainalysis says breach exposed credentials for all customers",
+      "source": "BleepingComputer",
+      "date": "2026-11-06T14:17:07.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/chainalysis-says-breach-exposed-credentials-for-all-customers/"
+    },
+    {
+      "title": "D-Link warns of multiple zero-days in DGS-3130 Series switches",
+      "source": "BleepingComputer",
+      "date": "2026-11-06T12:37:22.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/"
+    },
+    {
+      "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
+      "source": "The Hacker News",
+      "date": "2026-11-06T12:06:43.000Z",
+      "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+    },
+    {
+      "title": "Malicious Browser Extensions Could Use Claude Dispatch to Run Code on Users' Computers",
+      "source": "The Hacker News",
+      "date": "2026-11-06T12:06:35.000Z",
+      "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html"
+    },
+    {
+      "title": "The Flood is Coming And The Pipes Were Already Full",
+      "source": "The Hacker News",
+      "date": "2026-11-06T11:30:00.000Z",
+      "url": "https://thehackernews.com/2026/11/the-flood-is-coming-and-pipes-were.html"
+    },
+    {
+      "title": "MetaMask says recent attack didn't affect wallet infrastructure",
+      "source": "BleepingComputer",
+      "date": "2026-11-06T09:22:28.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/metamask-says-recent-attack-didnt-affect-wallet-infrastructure/"
+    },
+    {
+      "title": "Chainalysis Breach Exposes All Users' Credentials, Forces Shutdown of Key Services",
+      "source": "The Hacker News",
+      "date": "2026-11-06T08:04:49.000Z",
+      "url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html"
+    },
+    {
+      "title": "Hackers Hide Linux Backdoor in Control Web Panel Server to Execute Commands Without Logs",
+      "source": "The Hacker News",
+      "date": "2026-11-06T05:58:54.000Z",
+      "url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html"
+    },
+    {
+      "title": "Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login",
+      "source": "The Hacker News",
+      "date": "2026-11-06T05:39:10.000Z",
+      "url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html"
+    },
     {
       "title": "FBI, CISA warn of cyberattacks targeting refrigeration systems",
       "source": "BleepingComputer",
@@ -66,60 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-05T14:41:10.000Z",
       "url": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html"
-    },
-    {
-      "title": "Is Your Exposure Management Platform Leaving You Exposed? Five Tests to Find Out",
-      "source": "The Hacker News",
-      "date": "2026-11-05T12:25:00.000Z",
-      "url": "https://thehackernews.com/2026/11/is-your-exposure-management-platform.html"
-    },
-    {
-      "title": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run",
-      "source": "The Hacker News",
-      "date": "2026-11-05T12:08:54.000Z",
-      "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html"
-    },
-    {
-      "title": "Post-Quantum Questions to Ask Your Vendors",
-      "source": "CISA",
-      "date": "2026-11-05T12:00:00.000Z",
-      "url": "https://www.cisa.gov/resources-tools/resources/post-quantum-questions-ask-your-vendors"
-    },
-    {
-      "title": "US Government Partners Urge Hardening Industrial Refrigeration and Cold Chain Monitoring Systems",
-      "source": "CISA",
-      "date": "2026-11-05T12:00:00.000Z",
-      "url": "https://www.cisa.gov/resources-tools/resources/us-government-partners-urge-hardening-industrial-refrigeration-and-cold-chain-monitoring-systems"
-    },
-    {
-      "title": "5 Active Cyber Threats That Put US Enterprises at Risk in October 2026",
-      "source": "The Hacker News",
-      "date": "2026-11-05T10:06:19.000Z",
-      "url": "https://thehackernews.com/2026/11/5-active-cyber-threats-that-put-us.html"
-    },
-    {
-      "title": "GhostMap Android flaw lets malicious app trigger persistent boot loop",
-      "source": "BleepingComputer",
-      "date": "2026-11-05T09:18:29.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/ghostmap-android-flaw-lets-malicious-app-trigger-persistent-boot-loop/"
-    },
-    {
-      "title": "Apple to Start Scanning Publicly Shared iCloud Photos and Files for Harmful Content",
-      "source": "The Hacker News",
-      "date": "2026-11-05T09:13:28.000Z",
-      "url": "https://thehackernews.com/2026/11/apple-to-start-scanning-publicly-shared.html"
-    },
-    {
-      "title": "CERT-In Flags AI-Driven Attacks as Backdoored ARTEX Exposes 62 Consoles to Root Access",
-      "source": "The Hacker News",
-      "date": "2026-11-05T08:42:03.000Z",
-      "url": "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html"
-    },
-    {
-      "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
-      "source": "The Hacker News",
-      "date": "2026-11-05T07:06:33.000Z",
-      "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
     }
   ]
 }
