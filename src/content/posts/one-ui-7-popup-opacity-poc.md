@@ -1,14 +1,17 @@
 ---
-title: "One UI 7 Popup View 투명도 복구 POC"
-description: "숨겨진 투명도 UI를 복구하고 task surface에 alpha를 적용한 LSPosed 실험 전체 기록."
-category: "Misc"
-tags: ["Android", "One UI", "LSPosed", "리버싱"]
-createdAt: "2026-11-03"
-updatedAt: "2026-11-04"
+title: One UI 7 Popup View 투명도 복구 POC
+description: 숨겨진 투명도 UI를 복구하고 task surface에 alpha를 적용한 LSPosed 실험 전체 기록.
+category: Misc
+tags:
+  - Android
+  - One UI
+  - LSPosed
+  - 리버싱
+createdAt: 2026-11-03
+updatedAt: 2026-11-04
 draft: false
-notionSource: "37657476-16b2-81b8-9a09-c5aaa316e6a2"
+notionSource: 37657476-16b2-81b8-9a09-c5aaa316e6a2
 ---
-
 ## 요약
 
 Samsung Galaxy Tab S8+ SM-X800 / Android 15 / One UI 7.0 환경에서 제거된 것처럼 보이는 Popup View 투명도 기능을 LSPosed 모듈로 복구하는 POC를 진행했다.
@@ -301,4 +304,16 @@ One UI 7의 Popup View 투명도 기능은 완전히 삭제됐다기보다, UI�
 1. alpha가 1.0인 기본값은 저장하지 않거나 기존 키를 제거하도록 저장 정책 정리
 2. unsupported firmware에서 개별 hook 실패가 SystemUI 로드를 방해하지 않도록 hook별 `runCatching` 및 graceful disable 적용
 3. build fingerprint 및 SystemUI resource/class 호환성 테이블 추가
-4. 디버그 로그 레벨 정리와 release build/README 작성
+4. 디버그 로그 레벨 정리와 release build/README 작성  
+
+
+
+
+### 참고 사진
+
+![image.png](/images/image-10.png)
+
+![image.png](/images/image-11.png)
+
+![image.png](/images/image-12.png)
+
