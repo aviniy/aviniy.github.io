@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-06T00:14:02.979Z",
+  "updatedAt": "2026-11-06T06:46:10.772Z",
   "items": [
+    {
+      "title": "FBI, CISA warn of cyberattacks targeting refrigeration systems",
+      "source": "BleepingComputer",
+      "date": "2026-11-06T00:56:44.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/"
+    },
     {
       "title": "Fake OpenAI, SpaceX events used to steal Microsoft, Google accounts",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-05T07:06:33.000Z",
       "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
-    },
-    {
-      "title": "Hackers Exploit Patched Apple Flaw to Deliver Info-Stealing Malware, CISA Says",
-      "source": "The Hacker News",
-      "date": "2026-11-05T05:17:04.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-patched-apple-flaw-to.html"
     }
   ]
 }
