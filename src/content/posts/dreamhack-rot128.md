@@ -76,7 +76,7 @@ for i in range(len(plain_list)):
 
 ## 복호화 코드
 
-```
+```python
 with open('encfile', 'r') as f:
     enc = f.read()
 
