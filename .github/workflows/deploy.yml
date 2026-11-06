@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -22,9 +23,26 @@ jobs:
       - run: npm ci
       - run: npm run import:notion
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - name: Validate Pages output
+        run: |
+          chmod -R u+rwX,go+rX dist
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("dist")
+          entries = list(root.rglob("*"))
+          links = [str(path) for path in entries if path.is_symlink()]
+          files = [path for path in entries if path.is_file()]
+          size = sum(path.stat().st_size for path in files)
+          print(json.dumps({"files": len(files), "bytes": size, "symlinks": links}))
+          assert (root / "index.html").is_file(), "Missing site entry point"
+          assert not links, "Pages output contains symbolic links"
+          assert size < 1_000_000_000, "Pages output exceeds 1 GB"
+          PY
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          include-hidden-files: true
   deploy:
     environment:
       name: github-pages
@@ -33,4 +51,4 @@ jobs:
     needs: build
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
