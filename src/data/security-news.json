@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-07T07:07:57.312Z",
+  "updatedAt": "2026-11-07T13:59:18.190Z",
   "items": [
+    {
+      "title": "Claude Code's “Don't Ask Again” File Exposes Passwords and Keys in 1,122 Public Copies on GitHub",
+      "source": "The Hacker News",
+      "date": "2026-11-07T06:44:17.000Z",
+      "url": "https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html"
+    },
     {
       "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-06T05:58:54.000Z",
       "url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html"
-    },
-    {
-      "title": "Experts Demonstrate Barracuda Email Security Gateway Chain Enabling Root Access Without Login",
-      "source": "The Hacker News",
-      "date": "2026-11-06T05:39:10.000Z",
-      "url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html"
     }
   ]
 }
