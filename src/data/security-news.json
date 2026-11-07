@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-06T20:53:07.809Z",
+  "updatedAt": "2026-11-07T00:55:16.339Z",
   "items": [
+    {
+      "title": "SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-07T00:00:55.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/"
+    },
+    {
+      "title": "Runaway AI hacking agent behind WorkOS breach after escaping sandbox",
+      "source": "BleepingComputer",
+      "date": "2026-11-06T22:27:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox/"
+    },
     {
       "title": "OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs",
       "source": "BleepingComputer",
@@ -74,6 +86,12 @@
       "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html"
     },
     {
+      "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "source": "CISA",
+      "date": "2026-11-06T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/06/cisa-adds-one-known-exploited-vulnerability-catalog"
+    },
+    {
       "title": "The Flood is Coming And The Pipes Were Already Full",
       "source": "The Hacker News",
       "date": "2026-11-06T11:30:00.000Z",
@@ -102,24 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-06T05:39:10.000Z",
       "url": "https://thehackernews.com/2026/11/experts-demonstrate-barracuda-email.html"
-    },
-    {
-      "title": "FBI, CISA warn of cyberattacks targeting refrigeration systems",
-      "source": "BleepingComputer",
-      "date": "2026-11-06T00:56:44.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/fbi-cisa-warn-of-cyberattacks-targeting-refrigeration-systems/"
-    },
-    {
-      "title": "Fake OpenAI, SpaceX events used to steal Microsoft, Google accounts",
-      "source": "BleepingComputer",
-      "date": "2026-11-05T21:30:30.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/fake-openai-spacex-events-used-to-steal-microsoft-google-accounts/"
-    },
-    {
-      "title": "Nearly 1.5 million exposed secrets targeted in new revocation program",
-      "source": "BleepingComputer",
-      "date": "2026-11-05T20:15:08.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/truffle-security-launches-program-to-revoke-14-million-live-secrets/"
     }
   ]
 }
