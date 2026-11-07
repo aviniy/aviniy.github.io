@@ -1,0 +1,5 @@
+JetBrains Mono Regular (unmodified WOFF2)
+https://github.com/JetBrains/JetBrainsMono
+Source commit: 19371302b95d218af43299bce79ddbddd0bc364d
+License: SIL Open Font License 1.1; see JetBrainsMono-OFL.txt.
+Used only for the U+005C glyph to keep backslashes unambiguous.

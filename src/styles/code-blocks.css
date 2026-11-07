@@ -1,3 +1,19 @@
+/* Some Korean system monospace fonts draw U+005C as a won sign.
+   Keep the original character and supply only its backslash glyph. */
+@font-face {
+  font-family: "Code Backslash";
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+005C;
+}
+
+.prose {
+  --code-font: "Code Backslash", "SFMono-Regular", Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.prose code, .prose pre { font-family: var(--code-font); }
+
 .prose .code-block {
   --code-surface: #eff1f5;
   --code-toolbar: #e6e9ef;
@@ -82,7 +98,7 @@ html[data-theme='dark'] .prose .code-block {
   overscroll-behavior-x: contain;
   background: var(--code-surface) !important;
   color: var(--syntax-variable);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--code-font);
   font-size: 13px;
   line-height: 1.7;
   tab-size: 4;
