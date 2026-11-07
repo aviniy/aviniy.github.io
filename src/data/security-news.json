@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-07T13:59:18.190Z",
+  "updatedAt": "2026-11-07T18:45:51.850Z",
   "items": [
+    {
+      "title": "Hackers pull off $133 million French bank heist via service provider",
+      "source": "BleepingComputer",
+      "date": "2026-11-07T15:25:35.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/"
+    },
+    {
+      "title": "CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands",
+      "source": "BleepingComputer",
+      "date": "2026-11-07T14:10:19.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/"
+    },
     {
       "title": "Claude Code's “Don't Ask Again” File Exposes Passwords and Keys in 1,122 Public Copies on GitHub",
       "source": "The Hacker News",
@@ -108,18 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-06T09:22:28.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/metamask-says-recent-attack-didnt-affect-wallet-infrastructure/"
-    },
-    {
-      "title": "Chainalysis Breach Exposes All Users' Credentials, Forces Shutdown of Key Services",
-      "source": "The Hacker News",
-      "date": "2026-11-06T08:04:49.000Z",
-      "url": "https://thehackernews.com/2026/11/chainalysis-breach-exposes-all-users.html"
-    },
-    {
-      "title": "Hackers Hide Linux Backdoor in Control Web Panel Server to Execute Commands Without Logs",
-      "source": "The Hacker News",
-      "date": "2026-11-06T05:58:54.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html"
     }
   ]
 }
