@@ -6,12 +6,36 @@ tags:
   - Affine
   - Crypto
   - 수학
+  - 암호학
 createdAt: 2026-11-09
 updatedAt: 2026-11-09
 draft: false
 ---
+### 아핀 암호화 함수
 
-D(x)는 왜 저렇게 나올까? 결론만 말하면 D(x)는 E(x)의 역함수이다. 주의할점은 a^(-1)은 일반적인 역수가 아닌 모듈러 곱셈의 역원이라는거다.
+![image.png](/images/image-32.png)
+
+
+
+### 아핀 복호화 함수
+
+![image.png](/images/image-33.png)
+
+
+
+### 참고
+
+![image.png](/images/image-34.png)
+
+여기서 주의할점은 a^(-1)은 m을 법(modulo)으로 하는 a의 모듈러 곱셈 역원(modular multiplicative inverse)이다.
+
+예를 들어, `a = 3`, `m = 7` 이라고 가정하자. `3 * 5 = 15`이고 `15 mod 7 = 1` 이다. 따라서 
+
+
+
+### 복호화 함수는 왜 저렇게 나올까?
+
+D(x)는 왜 저렇게 나올까? 결론만 말하면 D(x)는 E(x)의 역함수이다.
 
 D(x) 가 E(x)의 역함수임을 증명.
 
