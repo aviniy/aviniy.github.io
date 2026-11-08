@@ -1,0 +1,11 @@
+.prose .katex {
+  color: inherit;
+  overflow-wrap: normal;
+}
+
+.prose .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .5em 0;
+}

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CodeHighlighter from '../../../components/CodeHighlighter.astro';
+import 'katex/dist/katex.min.css';
+import '../../../styles/math.css';
 import { render } from 'astro:content';
 import * as cheerio from 'cheerio';
 import { allPosts, date, url } from '../../../lib/posts.js';
