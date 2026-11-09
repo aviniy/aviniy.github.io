@@ -1,6 +1,24 @@
 {
-  "updatedAt": "2026-11-09T00:52:25.734Z",
+  "updatedAt": "2026-11-09T07:57:25.149Z",
   "items": [
+    {
+      "title": "Former OpenAI Engineer Pleads Not Guilty to Planting Covert Device in Executive Meeting Room",
+      "source": "The Hacker News",
+      "date": "2026-11-09T07:05:48.000Z",
+      "url": "https://thehackernews.com/2026/11/former-openai-engineer-pleads-not.html"
+    },
+    {
+      "title": "U.S. Agencies Warn Refrigeration Controller Attacks Could Cause Fires and Inventory Losses",
+      "source": "The Hacker News",
+      "date": "2026-11-09T06:15:10.000Z",
+      "url": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html"
+    },
+    {
+      "title": "CISA Flags SonicWall SonicOS MFA Bypass Flaw Amid Reports of Possible Exploitation",
+      "source": "The Hacker News",
+      "date": "2026-11-09T06:05:24.000Z",
+      "url": "https://thehackernews.com/2026/11/cisa-flags-sonicwall-sonicos-mfa-bypass.html"
+    },
     {
       "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
       "source": "BleepingComputer",
@@ -102,24 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-06T12:06:43.000Z",
       "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
-    },
-    {
-      "title": "Malicious Browser Extensions Could Use Claude Dispatch to Run Code on Users' Computers",
-      "source": "The Hacker News",
-      "date": "2026-11-06T12:06:35.000Z",
-      "url": "https://thehackernews.com/2026/11/malicious-browser-extensions-could-use.html"
-    },
-    {
-      "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-      "source": "CISA",
-      "date": "2026-11-06T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/06/cisa-adds-one-known-exploited-vulnerability-catalog"
-    },
-    {
-      "title": "The Flood is Coming And The Pipes Were Already Full",
-      "source": "The Hacker News",
-      "date": "2026-11-06T11:30:00.000Z",
-      "url": "https://thehackernews.com/2026/11/the-flood-is-coming-and-pipes-were.html"
     }
   ]
 }
