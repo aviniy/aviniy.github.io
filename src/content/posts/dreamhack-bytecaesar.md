@@ -13,8 +13,6 @@ draft: false
 ---
 # DH ByteCaesar
 
-
-
 ## 문제
 
 ![image.png](/images/image-37.png)
@@ -45,6 +43,10 @@ link: [ByteCaesar | Wargame | Dreamhack](https://dreamhack.io/wargame/challenges
 
 
 
+---
+
+
+
 ## 문제 소스
 
 드림핵 사이트에서 문제를 다운로드 받으면 다음과 같은 파일들이 들어있다.
@@ -65,7 +67,7 @@ my encrypted sentence > 061a17d2252720d2251e21291e2bd225172625d221281724d2261a17
 
 위에 있는 문자들은 `output.txt`의 내용이고, 아래에 있는 코드가 `prob.py`파이썬 파일이다.
 
-```
+```python
 import random
 
 class Caesar:
@@ -102,8 +104,145 @@ if __name__ == "__main__":
 
 
 
-&nbsp;
+---
+
+
+
+## 소스코드 분석
+
+위에 소스코드를 분석해보자.
+
+```python
+class Caesar:
+    def __init__(self, key):
+        assert isinstance(key, int) and 1 <= key <= 255
+        self._key = key
+
+    def encrypt(self, msg):
+        msg_enc = b""
+        for b in msg:
+            msg_enc = msg_enc + bytes([(b + self._key) % 256])
+        return msg_enc
+
+    def decrypt(self, msg):
+        msg_dec = b""
+        for b in msg:
+            msg_dec = msg_dec + bytes([(b - self._key) % 256])
+        return msg_dec
+```
+
+코드를 보면 클래스안에 메서드들이 정의되어있다. 클래스 내부에 정의된 `__init__()`메서드를 보면, 암호화 키가 정수형이며 1 이상 255 이하의 값을 가져야 한다는 것을 알 수 있다. 또한 `self._key = key`를 통해 전달받은 키를 객체의 속성으로 저장한다.
+
+`encrypt()`메서드를 보면, `msg_enc = b""`를 통해 암호화된 데이터를 저장할 빈 바이트 객체를 생성한다.
+
+이후 `for`문을 이용해 전달받은 `msg`를 바이트 단위로 순회하며, 각 바이트에 암호화 키(self._key)를 더한 뒤 256으로 나눈 나머지를 구한다.
+
+이렇게 계산된 값을 `bytes()`를 통해 바이트 형태로 변환하고, `msg_enc`에 순차적으로 이어 붙인다. 마지막으로 암호화된 데이터를 반환한다.
+
+`decrypt()`메서드는 암호화된 데이터를 원래 상태로 복호화 하는 역할을 한다. 메서드를 보면 먼저, `msg_dec = b""`를 통해 복호화된 데이터를 저장할 빈 바이트 객체를 생성한다.
+
+이후 `for`문을 이용해 전달받은 암호문을 바이트 단위로 순회하며, 각 바이트에서 암호화 키를 뺀 뒤 256으로 나눈 나머지를 구한다.
+
+계산된 값을 `bytes()`를 통해 바이트 형태로 변환하고, `msg_dec`에 순차적으로 이어붙인다. 그리고 마지막에 반환한다.
+
+
+
+하나하나 이해하느라 말이 길어진거 같다. (생소한 문법이 많아서 이해하느라..)
+
+
+
+---
+
+
+
+## 취약점과 복호화 원리
+
+
+
+본격적으로 어디에서 취약점이 발생하는지 알아보자. 먼저, `main()`함수를 보면 되는데 `key = random.randint(1, 255)`에서 첫번째 문제가 발생하게 된다. 저 코드는 1부터 255까지 총 255개의 무작위 정수를 암호화 키로 사용하겠다는건데, 범위가 좁은것을 알 수 있다. 이를 통해 우리는 브루트포스 공격이 가능하다고 볼 수 있다.
+
+다음으로 취약한 부분은 `(b + self._key) % 256`이다. 이 코드는 원본 바이트 값에 키를 더하고 256으로 나눈 나머지를 구한다. 수식으로 표현하면 `C = (P + K) mod 256`이다.
+
+여기서 C는 암호문 바이트이고, P는 평문 바이트, K는 암호화 키이다. 그럼 복호화를 할려면 어떻게 해야할까? 우리가 구해야하는건 `P`니까 `P`를 기준으로 계산해주면 된다. `P = (C - K) mod 256` 이다.
+
+그래서 왜? 복호화 공식이 저렇게 나올까? 이건 그냥 수학적으로 유도가 가능하다. `C = (P + K) mod 256`이다. 암호화는 평문에 키를 더한 다음 256으로 나눈 나머지를 구하는 것이다.
+
+모듈러 연산에서는 양쪽에서 같은 값을 빼도 합동 관계가 유지된다. 따라서 양쪽에서 `K`를 빼면..
+
+$$
+
+C-K\equiv P+K-K\pmod{256}
+
+$$
+
+가 되고 오른쪽에 `K`가 상쇄되므로..
+
+$$
+
+C-K\equiv P\pmod{256}
+
+$$
+
+이다. 결국 `P = (C - K) mod 256`이 된다. 즉 암호화할때 더했던 키를 복호화할때 빼서 원래 값을 복원하는 것이다. 여기서 주의할점은 복호화에도 `mod 256`을 사용해야한다는 것이다.
+
+
 
 &nbsp;
 
-&nbsp;
+---
+
+
+
+## 복호화 코드
+
+그래서 복호화 코드는 다음과 같이 암호문을 읽어오고, 16진수로 변환 후, 브루트 포스 공격을 진행하고 DH{..} 형태가 발견되면 키 값과 복호화한 내용과 플래그를 출력하고 반복문(브루트포스)을 종료한다.
+
+```python
+# 암호문 읽기
+with open("C:\\exploits\\output.txt", "r") as f:
+    data = f.read()
+
+# 암호문 추출 및 16진수 변환
+hex_data = data.split("my encrypted sentence > ")[1].strip()
+ciphertext = bytes.fromhex(hex_data)
+
+# 브루트포스
+for key in range(1, 256):
+
+    plaintext = bytes(
+        (b - key) % 256 for b in ciphertext
+    )
+
+# decrypt된 평문에 "DH{"가 포함되어 있는지 확인
+    if b"DH{" in plaintext:
+        print(f"키 값: {key}")
+        print(f"복호화 결과:\n{plaintext.decode()}")
+
+        start = plaintext.find(b"DH{")
+        end = plaintext.find(b"}", start)
+
+        if end != -1:
+            flag = plaintext[start:end + 1].decode()
+            print(f"\n플래그: {flag}")
+
+        break
+```
+
+
+
+---
+
+
+
+## 결과
+
+![image.png](/images/image-40.png)
+
+
+
+플래그:
+
+```
+DH{37bdfc823523deca663c737a6c6e24fc561da4dd515f097cf8a48d417a3fb4ca}
+```
+
