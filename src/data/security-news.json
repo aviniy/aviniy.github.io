@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-11-09T18:46:03.017Z",
+  "updatedAt": "2026-11-10T02:06:03.633Z",
   "items": [
+    {
+      "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
+      "source": "BleepingComputer",
+      "date": "2026-11-09T23:52:12.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed/"
+    },
+    {
+      "title": "SEGA newsletter data breach exposes 2.2 million email addresses",
+      "source": "BleepingComputer",
+      "date": "2026-11-09T22:09:33.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/sega-newsletter-data-breach-exposes-22-million-email-addresses/"
+    },
+    {
+      "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
+      "source": "BleepingComputer",
+      "date": "2026-11-09T21:26:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/"
+    },
+    {
+      "title": "York University breach exposed personal information dating to 2007",
+      "source": "BleepingComputer",
+      "date": "2026-11-09T21:22:31.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/york-university-breach-exposed-personal-information-dating-to-2007/"
+    },
     {
       "title": "France blames Iranian hackers for supermarket attacks that sparked fires",
       "source": "BleepingComputer",
@@ -74,6 +98,12 @@
       "url": "https://www.bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million/"
     },
     {
+      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-09T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+    },
+    {
       "title": "Default 'admin:admin' Server Password Helps Researchers Hack Two Automakers, Unlock and Start Cars",
       "source": "The Hacker News",
       "date": "2026-11-09T11:27:53.000Z",
@@ -90,36 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-09T10:01:21.000Z",
       "url": "https://thehackernews.com/2026/11/lnbits-urges-all-operators-to-shut-down.html"
-    },
-    {
-      "title": "Taiwan-Based Hacker Used BOSSAI AI Agents to Steal Taipei Emergency Dispatch Records",
-      "source": "The Hacker News",
-      "date": "2026-11-09T09:01:50.000Z",
-      "url": "https://thehackernews.com/2026/11/taiwan-based-hacker-used-bossai-ai.html"
-    },
-    {
-      "title": "Former OpenAI Engineer Pleads Not Guilty to Planting Covert Device in Executive Meeting Room",
-      "source": "The Hacker News",
-      "date": "2026-11-09T07:05:48.000Z",
-      "url": "https://thehackernews.com/2026/11/former-openai-engineer-pleads-not.html"
-    },
-    {
-      "title": "U.S. Agencies Warn Refrigeration Controller Attacks Could Cause Fires and Inventory Losses",
-      "source": "The Hacker News",
-      "date": "2026-11-09T06:15:10.000Z",
-      "url": "https://thehackernews.com/2026/11/us-agencies-warn-refrigeration.html"
-    },
-    {
-      "title": "CISA Flags SonicWall SonicOS MFA Bypass Flaw Amid Reports of Possible Exploitation",
-      "source": "The Hacker News",
-      "date": "2026-11-09T06:05:24.000Z",
-      "url": "https://thehackernews.com/2026/11/cisa-flags-sonicwall-sonicos-mfa-bypass.html"
-    },
-    {
-      "title": "Iris Ohyama data cloud breach exposes info of 7.7 million customers",
-      "source": "BleepingComputer",
-      "date": "2026-11-08T15:43:08.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/"
     }
   ]
 }
