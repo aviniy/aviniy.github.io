@@ -1,6 +1,90 @@
 {
-  "updatedAt": "2026-11-10T09:46:03.556Z",
+  "updatedAt": "2026-11-10T17:48:39.187Z",
   "items": [
+    {
+      "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T16:17:16.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
+    },
+    {
+      "title": "Attackers Exploit AhsayCBS Flaws to Deploy Sandbox-Evading Python Backdoor",
+      "source": "The Hacker News",
+      "date": "2026-11-10T16:00:55.000Z",
+      "url": "https://thehackernews.com/2026/11/attackers-exploit-ahsaycbs-flaws-to.html"
+    },
+    {
+      "title": "Binance warns of iOS flaw that could leak crypto wallet secrets",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T15:59:19.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/binance-warns-of-ios-flaw-that-could-leak-crypto-wallet-secrets/"
+    },
+    {
+      "title": "Blind Eagle Uses Fake Court Notices to Deliver Remote Access Trojan Across Latin America",
+      "source": "The Hacker News",
+      "date": "2026-11-10T15:58:44.000Z",
+      "url": "https://thehackernews.com/2026/11/blind-eagle-uses-fake-court-notices-to.html"
+    },
+    {
+      "title": "Fireworks AI Breach Widens to Expose Customer Billing Data and Incomplete Model Weights",
+      "source": "The Hacker News",
+      "date": "2026-11-10T15:33:59.000Z",
+      "url": "https://thehackernews.com/2026/11/fireworks-ai-breach-widens-to-expose.html"
+    },
+    {
+      "title": "Ransomware recovery is now a client retention metric",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T15:01:11.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/ransomware-recovery-is-now-a-client-retention-metric/"
+    },
+    {
+      "title": "Binance Warns of iOS Sandbox Escape That Could Expose Crypto Wallet Keys, No Fix Confirmed",
+      "source": "The Hacker News",
+      "date": "2026-11-10T12:15:31.000Z",
+      "url": "https://thehackernews.com/2026/11/binance-warns-of-ios-sandbox-escape.html"
+    },
+    {
+      "title": "SAP patches ICM2SHELL and PROXYGATE maximum severity flaws",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T12:07:03.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/"
+    },
+    {
+      "title": "Beyond the Alert: The Case for Rich Network Data",
+      "source": "The Hacker News",
+      "date": "2026-11-10T11:38:13.000Z",
+      "url": "https://thehackernews.com/2026/11/beyond-alert-case-for-rich-network-data.html"
+    },
+    {
+      "title": "Apple Patches iMessage Group Chat Privacy Flaws and Bluetooth Pairing Vulnerabilities",
+      "source": "The Hacker News",
+      "date": "2026-11-10T10:16:51.000Z",
+      "url": "https://thehackernews.com/2026/11/apple-patches-imessage-group-chat.html"
+    },
+    {
+      "title": "Hackers now exploit critical Barracuda ESG flaws to gain root access",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T10:10:20.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-barracuda-email-security-gateway-flaws-to-get-root-access/"
+    },
+    {
+      "title": "Russian Turla Hackers Use New Cereal Malware to Steal Emails From Government Exchange Servers",
+      "source": "The Hacker News",
+      "date": "2026-11-10T10:07:29.000Z",
+      "url": "https://thehackernews.com/2026/11/russian-turla-hackers-use-new-cereal.html"
+    },
+    {
+      "title": "Turla hackers use new Cereal malware to spy on govt Exchange servers",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T10:04:32.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/turla-hackers-use-new-ceral-malware-to-spy-on-govt-exchange-servers/"
+    },
+    {
+      "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
+      "source": "The Hacker News",
+      "date": "2026-11-10T10:02:40.000Z",
+      "url": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html"
+    },
     {
       "title": "France Blames Iran for Sabotage Attack on Refrigeration Controllers at About 700 Retail Sites",
       "source": "The Hacker News",
@@ -36,90 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-10T06:44:36.000Z",
       "url": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html"
-    },
-    {
-      "title": "CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws",
-      "source": "The Hacker News",
-      "date": "2026-11-10T06:31:42.000Z",
-      "url": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html"
-    },
-    {
-      "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T23:52:12.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed/"
-    },
-    {
-      "title": "SEGA newsletter data breach exposes 2.2 million email addresses",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T22:09:33.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/sega-newsletter-data-breach-exposes-22-million-email-addresses/"
-    },
-    {
-      "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T21:26:25.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/"
-    },
-    {
-      "title": "York University breach exposed personal information dating to 2007",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T21:22:31.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/york-university-breach-exposed-personal-information-dating-to-2007/"
-    },
-    {
-      "title": "France blames Iranian hackers for supermarket attacks that sparked fires",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T18:32:42.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/france-blames-iranian-hackers-for-supermarket-attacks-that-sparked-fires/"
-    },
-    {
-      "title": "Hackers Exploit Qubole's Trusted AWS Access to Breach Customer Accounts and Steal Data",
-      "source": "The Hacker News",
-      "date": "2026-11-09T17:51:21.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-quboles-trusted-aws.html"
-    },
-    {
-      "title": "Russian cloud firm Beget rebuilds from scratch after data wiper attack",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T17:50:32.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/russian-cloud-firm-beget-rebuilds-from-scratch-after-data-wiper-attack/"
-    },
-    {
-      "title": "Hackers Compromise Ethersphere's bee-js and Swarm Desktop to Deliver Wallet-Stealing Malware",
-      "source": "The Hacker News",
-      "date": "2026-11-09T17:36:28.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-compromise-etherspheres-bee-js.html"
-    },
-    {
-      "title": "Binance denies data breach after alleged ShinyHunters claims",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T16:12:39.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims/"
-    },
-    {
-      "title": "Hackers exploit SSHole OpenSSH flaw to breach Linux systems",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T16:04:57.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/"
-    },
-    {
-      "title": "The Biggest Threat to Your GRC Job Isn’t AI. It’s Ignoring AI.",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T15:05:15.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/the-biggest-threat-to-your-grc-job-isnt-ai-its-ignoring-ai/"
-    },
-    {
-      "title": "FBI agent stole $2.5 million in crypto from hackers under investigation",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T14:34:03.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/fbi-agent-stole-25-million-in-crypto-from-hackers-fraud-victims/"
-    },
-    {
-      "title": "Bitter Hackers Deploy New PapRAT Backdoor in Cyberespionage Campaign Targeting South Asia",
-      "source": "The Hacker News",
-      "date": "2026-11-09T14:31:29.000Z",
-      "url": "https://thehackernews.com/2026/11/bitter-hackers-deploy-new-paprat.html"
     }
   ]
 }
