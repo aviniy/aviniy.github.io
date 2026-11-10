@@ -34,7 +34,7 @@ link: ([rev-basic-4 | Wargame | Dreamhack](https://dreamhack.io/wargame/challeng
 
 그러면 아래와 같이 어셈블리어가 나오게 된다. 바로 c언어로 디컴파일해서 분석해보자.
 
-![image.png](/images/image-43.png)
+![image.png](/images/image-48.png)
 
 
 
@@ -118,6 +118,12 @@ if ( ((unsigned __int8)(16 * *(_BYTE *)(a1 + i)) | ((int)*(unsigned __int8 *)(a1
 기존 `byte_140003000`에는 정답의 각 바이트에 니블 스왑을 적용한 값이 저장되어 있다. 따라서 이 배열의 값에 니블 스왑을 한번 더 적용하면 원래 입력을 복원할 수 있을것이다. 상위 4비트와 하위 4비트의 위치를 두 번 바꾸면 원래대로 돌아오기 때문이다. 
 
 예시: `0100 0001` -> `0001 0100` -> `0100 0001`
+
+디코딩된 데이터는 아래와 같다.
+
+![image.png](/images/image-49.png)
+
+위 사진은 IDA 프로그램으로 `byte_140003000`바이트 배열에 저장된 데이터를 확인한 화면이다.
 
 
 
