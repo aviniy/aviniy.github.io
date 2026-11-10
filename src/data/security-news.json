@@ -1,6 +1,48 @@
 {
-  "updatedAt": "2026-11-10T02:06:03.633Z",
+  "updatedAt": "2026-11-10T09:46:03.556Z",
   "items": [
+    {
+      "title": "France Blames Iran for Sabotage Attack on Refrigeration Controllers at About 700 Retail Sites",
+      "source": "The Hacker News",
+      "date": "2026-11-10T09:08:20.000Z",
+      "url": "https://thehackernews.com/2026/11/france-blames-iran-for-sabotage-attack.html"
+    },
+    {
+      "title": "Google patches eighth Chrome zero-day exploited in attacks this year",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T08:51:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/"
+    },
+    {
+      "title": "Anthropic's Claude Fable 5.2 Beats GPT-6 Cyber in Multi-Stage Cyberattack Benchmark",
+      "source": "The Hacker News",
+      "date": "2026-11-10T08:16:14.000Z",
+      "url": "https://thehackernews.com/2026/11/anthropics-claude-fable-52-beats-gpt-6.html"
+    },
+    {
+      "title": "Fireworks AI discloses new breach after cloud provider hack",
+      "source": "BleepingComputer",
+      "date": "2026-11-10T07:49:58.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack/"
+    },
+    {
+      "title": "Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026",
+      "source": "The Hacker News",
+      "date": "2026-11-10T06:52:54.000Z",
+      "url": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html"
+    },
+    {
+      "title": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits",
+      "source": "The Hacker News",
+      "date": "2026-11-10T06:44:36.000Z",
+      "url": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html"
+    },
+    {
+      "title": "CISA Warns of Active Exploitation of OpenSSH, GPUStack, FreeSWITCH, and IBM Flaws",
+      "source": "The Hacker News",
+      "date": "2026-11-10T06:31:42.000Z",
+      "url": "https://thehackernews.com/2026/11/cisa-warns-of-active-exploitation-of.html"
+    },
     {
       "title": "Vanderbilt University hit in BYOD ransomware attack, data theft claimed",
       "source": "BleepingComputer",
@@ -78,48 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-09T14:31:29.000Z",
       "url": "https://thehackernews.com/2026/11/bitter-hackers-deploy-new-paprat.html"
-    },
-    {
-      "title": "US bans MEXC crypto exchange over sanctions evasion, cybercrime links",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T13:28:56.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/us-bans-mexc-crypto-exchange-over-sanctions-evasion-cybercrime-links/"
-    },
-    {
-      "title": "⚡ Weekly Recap: SSHole Exploited, APT Root RCE, Robot Takeovers, 15K Hacked Sites, and More",
-      "source": "The Hacker News",
-      "date": "2026-11-09T13:28:25.000Z",
-      "url": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html"
-    },
-    {
-      "title": "Ukraine dismantles crypto scam network that stole €4.3 million",
-      "source": "BleepingComputer",
-      "date": "2026-11-09T12:16:13.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/ukraine-dismantles-crypto-scam-network-that-stole-43-million/"
-    },
-    {
-      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-      "source": "CISA",
-      "date": "2026-11-09T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "title": "Default 'admin:admin' Server Password Helps Researchers Hack Two Automakers, Unlock and Start Cars",
-      "source": "The Hacker News",
-      "date": "2026-11-09T11:27:53.000Z",
-      "url": "https://thehackernews.com/2026/11/default-adminadmin-server-password.html"
-    },
-    {
-      "title": "Web3Auth Flaw Exploited to Steal Keplr Crypto, Provider Empties Other Wallets for Safety",
-      "source": "The Hacker News",
-      "date": "2026-11-09T10:56:25.000Z",
-      "url": "https://thehackernews.com/2026/11/web3auth-flaw-exploited-to-steal-keplr.html"
-    },
-    {
-      "title": "LNbits Urges All Operators to Shut Down Their Bitcoin Lightning Wallet Servers Amid Attacks",
-      "source": "The Hacker News",
-      "date": "2026-11-09T10:01:21.000Z",
-      "url": "https://thehackernews.com/2026/11/lnbits-urges-all-operators-to-shut-down.html"
     }
   ]
 }
