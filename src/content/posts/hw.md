@@ -7,6 +7,8 @@ tags:
   - Pointer
   - C
   - CPU
+  - Computer
+  - Register
 createdAt: 2026-11-10
 updatedAt: 2026-11-11
 draft: false
