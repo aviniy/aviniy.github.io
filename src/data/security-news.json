@@ -1,6 +1,48 @@
 {
-  "updatedAt": "2026-11-12T02:57:13.372Z",
+  "updatedAt": "2026-11-12T11:02:10.898Z",
   "items": [
+    {
+      "title": "Microsoft confirms Windows security updates installation issues",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T10:24:07.000Z",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-kb5132061-installation-issues-0x80070306-0x800f0989-0x800f0993-errors/"
+    },
+    {
+      "title": "Hackers plant GSocket on Linux servers for persistent access",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T09:38:00.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-plant-gsocket-on-linux-servers-for-persistent-access/"
+    },
+    {
+      "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+      "source": "The Hacker News",
+      "date": "2026-11-12T09:25:00.000Z",
+      "url": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html"
+    },
+    {
+      "title": "Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data",
+      "source": "The Hacker News",
+      "date": "2026-11-12T08:20:37.000Z",
+      "url": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html"
+    },
+    {
+      "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
+      "source": "The Hacker News",
+      "date": "2026-11-12T06:42:47.000Z",
+      "url": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html"
+    },
+    {
+      "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
+      "source": "The Hacker News",
+      "date": "2026-11-12T05:12:26.000Z",
+      "url": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html"
+    },
+    {
+      "title": "ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients",
+      "source": "The Hacker News",
+      "date": "2026-11-12T04:39:48.000Z",
+      "url": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html"
+    },
     {
       "title": "Baker Tilly notifies clients of data breach at third-party provider",
       "source": "BleepingComputer",
@@ -78,48 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-11T12:01:59.000Z",
       "url": "https://thehackernews.com/2026/11/we-built-agent-that-broke-all-of-our.html"
-    },
-    {
-      "title": "eMudhra Revokes 8 More CAs It Previously Declared Unaffected by Key Compromise",
-      "source": "The Hacker News",
-      "date": "2026-11-11T12:00:53.000Z",
-      "url": "https://thehackernews.com/2026/11/emudhra-revokes-8-more-cas-it.html"
-    },
-    {
-      "title": "Microsoft fixes audio issues caused by September security updates",
-      "source": "BleepingComputer",
-      "date": "2026-11-11T11:18:36.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-usb-audio-issues-caused-by-september-security-updates/"
-    },
-    {
-      "title": "CISA flags Cisco BroadWorks flaw as actively exploited in attacks",
-      "source": "BleepingComputer",
-      "date": "2026-11-11T10:12:08.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/"
-    },
-    {
-      "title": "Microsoft fixes Exchange sign-ins broken by Windows Server updates",
-      "source": "BleepingComputer",
-      "date": "2026-11-11T09:07:27.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-exchange-sign-ins-broken-by-october-windows-server-updates/"
-    },
-    {
-      "title": "Microsoft Patches 1,259 Flaws, Including Exploited Outlook Bug That May Expose NTLMv2 Hashes",
-      "source": "The Hacker News",
-      "date": "2026-11-11T08:17:53.000Z",
-      "url": "https://thehackernews.com/2026/11/microsoft-patches-1259-flaws-including.html"
-    },
-    {
-      "title": "Railway Says Stolen Customer AI Keys Led to $740,000 in Estimated Unauthorized Usage Charges",
-      "source": "The Hacker News",
-      "date": "2026-11-11T07:49:04.000Z",
-      "url": "https://thehackernews.com/2026/11/railway-says-stolen-customer-ai-keys.html"
-    },
-    {
-      "title": "Microsoft Researchers Show AI Agents Can Be Backdoored by Editing Fewer Than 10 Neurons",
-      "source": "The Hacker News",
-      "date": "2026-11-11T07:21:05.000Z",
-      "url": "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html"
     }
   ]
 }
