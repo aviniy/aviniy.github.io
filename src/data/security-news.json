@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-11T21:55:45.180Z",
+  "updatedAt": "2026-11-12T02:57:13.372Z",
   "items": [
+    {
+      "title": "Baker Tilly notifies clients of data breach at third-party provider",
+      "source": "BleepingComputer",
+      "date": "2026-11-11T23:01:31.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider/"
+    },
+    {
+      "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+      "source": "BleepingComputer",
+      "date": "2026-11-11T22:56:21.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/"
+    },
     {
       "title": "eMudhra revokes 8 more CA certificates after private key mishap",
       "source": "BleepingComputer",
@@ -108,18 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-11T07:21:05.000Z",
       "url": "https://thehackernews.com/2026/11/microsoft-researchers-show-ai-agents.html"
-    },
-    {
-      "title": "Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches",
-      "source": "The Hacker News",
-      "date": "2026-11-11T06:04:02.000Z",
-      "url": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html"
-    },
-    {
-      "title": "Railway breach leads to $740,000 in fraudulent AI charges",
-      "source": "BleepingComputer",
-      "date": "2026-11-10T22:20:19.000Z",
-      "url": "https://www.bleepingcomputer.com/news/apple/railway-breach-leads-to-740-000-in-fraudulent-ai-charges/"
     }
   ]
 }
