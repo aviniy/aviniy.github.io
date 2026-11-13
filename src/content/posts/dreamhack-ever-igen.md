@@ -5,7 +5,16 @@ category: Dreamhack Crypto
 createdAt: 2026-11-13
 updatedAt: 2026-11-13
 draft: false
+tags:
+  - Dreamhack
+  - Crypto
+  - Wargame
+  - Vigenere
 ---
+# DH - EVER-igen
+
+
+
 ## 문제
 
 ![image.png](/images/image-54.png)
@@ -20,7 +29,7 @@ link: [EVER-igen | Wargame | Dreamhack](https://dreamhack.io/wargame/challenges/
 
 ## 비즈네르 암호란?
 
-문제에서 말하는 Vigenere는 아마 비즈네르 암호에 관한 내용일것이다. 그러면 이 비즈네르 암호가 뭔지 알아보자. 비즈네르 암호는 프랑스 외교관이었던 블레즈 드 비즈네르에 의하여 1586년에 발표된 암호이다. 비즈네르 암호의 장점은 '빈도분석법'으로 해독이 거의 불가능하다는 사실이다. 또한, 열쇠의 개수가 무궁무진하다는 것도 큰 장점이다. (빈도분석법이 무엇인지, 비즈네르 암호를 해독하는 방법이 있는지 스터디 노트에서 다뤄보도록 하겠다.)
+문제에서 말하는 Vigenere는 아마 비즈네르 암호에 관한 내용일것이다. 그러면 이 비즈네르 암호가 뭔지 알아보자. 비즈네르 암호는 프랑스 외교관이었던 블레즈 드 비즈네르에 의하여 1586년에 발표된 암호이다. 비즈네르 암호의 장점은 '빈도분석법'으로 해독이 거의 불가능하다는 사실이다. 또한, 열쇠의 개수가 무궁무진하다는 것도 큰 장점이다. (빈도분석법: )
 
 ![image.png](/images/image-56.png)
 
@@ -41,13 +50,17 @@ link: [EVER-igen | Wargame | Dreamhack](https://dreamhack.io/wargame/challenges/
 
 
 
+---
+
 ## 풀이
 
 그럼 간단한 개념을 봤으니 본격적으로 문제를 해결해보자.
 
 ### 소스코드 분석
 
-아래는 `prob.py`의 나와있는 코드이다.
+![image.png](/images/image-58.png)
+
+위에는 `output.txt`, 아래는 `prob.py`의 나와있는 코드이다.
 
 ```python
 import random
@@ -152,28 +165,318 @@ pt += self.shift(ct[i], -self._key[i % len(self._key)])
 평문:   H E  L  L O
 ```
 
+어 근데? 왜 세번째 `L`이 왜 소문자로 `e`가 되나? 아까 예시에선 `A`부터 `Z`까지 26개만 다뤘고 이번 예시에선 대문자, 소문자, 숫자까지 총 62개를 다루기 때문이다. 62개중, `L`은 인덱스 11번이고 19가 더해지니까 인덱스 30번째인 `e`가 되는것이다.
+
+참고로 순서는 아래와 같다.
+
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+```
+
+---
+
+## 복호화 코드
+
+### 제작 과정
+
+일단 복호화를 하려면 키가 필요한데 `prob.py`에서 `main()`함수가 정의된 부분을 보면..
+
+```python
+key = [random.randint(0, len(words)) for _ in range(16)]
+```
+
+위와 같이 62개중(대문자, 소문자, 숫자) 16개를 랜덤하게 뽑아서 키를 만든다는걸 알 수 있다.
+
+해결하기 위해 빈도분석법을 사용해보자. 어? 근데 아까 빈도분석법으로 해독이 불가능하다 했는데 왜 써먹냐 질문이 생길 수 있다. 빈도분석법으로 해독이 불가능한 경우는 키를 아예 모르고 있을 경우이고, 우리는 키의 글자수를 알았기 때문에 시도를 해볼만하다. 물론 100% 되는건 아니다. 그래서 아래와 같은 파이썬 코드를 작성해보았다.
+
+```
+from string import ascii_uppercase, ascii_lowercase, digits
+from collections import Counter
+
+words = ascii_uppercase + ascii_lowercase + digits
+
+# 영어에서 자주 등장하는 문자
+freq = {
+    'e': 12.7, 't': 9.1, 'a': 8.2,
+    'o': 7.5, 'i': 7.0, 'n': 6.7,
+    's': 6.3, 'h': 6.1, 'r': 6.0,
+    'd': 4.3, 'l': 4.0, 'u': 2.8
+}
+
+def shift(c, d):
+    if c not in words:
+        return c
+    return words[(words.index(c) + d) % 62]
+
+def score(text):
+    text = text.lower()
+    return sum(freq.get(c, 0) for c in text)
+
+with open("C:\\exploits\\output.txt", "r", encoding="utf-8") as f:
+    data = f.read()
+
+ct = data.split("my encrypted sentence > ", 1)[1].rstrip("\n")
+
+key = []
+
+for i in range(16):
+    group = ct[i::16]
+
+    candidates = []
+
+    for k in range(62):
+        decrypted = ''.join(shift(c, -k) for c in group)
+        candidates.append((score(decrypted), k))
+
+    best = max(candidates)
+    key.append(best[1])
+
+print("추정한 키:", key)
+
+pt = ""
+
+for i in range(len(ct)):
+    pt += shift(ct[i], -key[i % 16])
+
+print("복호화 결과:")
+print(pt)
+```
+
+위 코드의 대략적인 흐름은 먼저 암호화에 사용되는 문자를 설정하고, 영어 문자 빈도 설정을 한다. 그 후 `output.txt`를 읽어오고 문자별 가중치를 합산해서 빈도분석 점수를 계산한다. 그리고 점수가 제일 높으면 그 키값을 기준으로 복호화를 한다.
+
+![image.png](/images/image-59.png)
+
+음 그렇게 하니까 위와 같이 조금은 알아볼 수 있지만 완전하게 복호화가 되지 않은걸 알 수 있다. 그러고 보니 내가 간과한게 있었다. 아까 `prob.py`에서 다음과 같은 코드가 있었다.
+
+```python
+assert "Vigenere", "cipher" in secret
+```
+
+오 설마 원래 평문에 `Vigenere`라는 말과 `cipher`라는 말이 들어가나? 그래서 아래와 같이 코드를 수정했다.
+
+```python
+from string import ascii_uppercase, ascii_lowercase, digits
+
+words = ascii_uppercase + ascii_lowercase + digits
+
+with open(r"C:\exploits\output.txt", encoding="utf-8") as f:
+    ct = f.read().split("my encrypted sentence > ", 1)[1].rstrip("\r\n")
+
+def shift(c, k):
+    return words[(words.index(c) - k) % 62] if c in words else c
+
+def find_keys(word):
+    for pos in range(len(ct) - len(word) + 1):
+        key = [None] * 16
+
+        for i, p in enumerate(word):
+            c = ct[pos + i]
+
+            if c not in words:
+                break
+
+            key[(pos + i) % 16] = (words.index(c) - words.index(p)) % 62
+        else:
+            yield pos, key
+
+v = list(find_keys("Vigenere"))
+c = list(find_keys("cipher"))
+
+print("Vigenere 후보:", len(v))
+print("cipher 후보:", len(c))
+
+results = []
+
+for vp, vk in v:
+    for cp, ck in c:
+        if vp < cp + 6 and cp < vp + 8:
+            continue
+
+        if any(a != b for a, b in zip(vk, ck)
+               if a is not None and b is not None):
+            continue
+
+        key = [a if a is not None else b for a, b in zip(vk, ck)]
+
+        if key.count(None) <= 2:
+            results.append((vp, cp, key))
+
+print("일치하는 후보:", len(results))
+
+for vp, cp, key in results[:30]:
+    temp = [k if k is not None else 0 for k in key]
+    pt = "".join(shift(ch, temp[i % 16]) for i, ch in enumerate(ct))
+
+    print("\n" + "=" * 60)
+    print("Vigenere 위치:", vp)
+    print("cipher 위치:", cp)
+    print("추정한 키:", key)
+    print("예상 복호화:")
+    print(pt)
+```
+
+기존 코드는 영어 문자 빈도를 이용해 키를 추정했지만, 위에 수정한 코드는 `Vigenere`와 `cipher`라는 단어를 평문에 포함된 단어라고 가정하고 키를 역산하는 방식으로 변경하였다.
+
+두 단어가 암호문에서 등장할 수 있는 모든 위치를 탐색하고, `K = (C - P) % 62`공식을 이용해 키값을 계산한다. 그 후 두 단어에서 계산한 키값이 서로 충돌하지 않는지 확인하고, 16개 중 14개 이상의 키값을 알아낸 후보를 선택하고, 마지막으로 알아내지 못한 키는 임시로 0으로 설정하고, 추정한 키를 이용해서 암호문의 복호화를 시도한다.
+
+![image.png](/images/image-60.png)
+
+오 이제 `DH{}`포멧 형태도 잘 나온다. 그리고 `Vigenere`라는 단어와 `cipher`라는 단어가 조금씩 나오는걸 볼 수 있다. 나는 여기서 한가지 잔머리(?)라고 해야하나 추리를 해보았다. 아까 내가 맨 처음에 1586년에 프랑스 외교관이었던 블레즈 드 비즈네르에 의하여 발표되었다고 했다? 근데 잘 봐보자 예상 복호화문 첫번째 줄에 1586이라는 숫자가 정확히 나온다. 우연이라고 하기엔 무언가 있는거 같다? 그리고 계속 확인해보자. 특히 `BlXoei NP Vigenere`이 부분 비즈네르 풀네임이 '블레즈 드 비즈네르' 이라고 했는데 저 문장과 거의 맞는다. 그리고 앞에 `Bl`이 부분도 `블`을 나타내는 영어문자같다. 오 그러면 한번 블레즈 드 비즈네르의 영어 표기를 확인해보자.
+
+![image.png](/images/image-61.png)
+
+이렇게 친절하게 알려준다. 심지어 6글자 2글자 `Vigenere`이다. 오 그럼? 첫번째 줄에 저 이름이 들어갔겠구나 생각했다. 그래서 코드를 다음과 같이 수정해줬다.
+
+```python
+from string import ascii_uppercase, ascii_lowercase, digits
+
+words = ascii_uppercase + ascii_lowercase + digits
+
+with open(r"C:\exploits\output.txt", encoding="utf-8") as f:
+    ct = f.read().split("my encrypted sentence > ", 1)[1].rstrip("\r\n")
+
+def find_keys(word):
+    for pos in range(len(ct) - len(word) + 1):
+        key = [None] * 16
+
+        for i, p in enumerate(word):
+            c = ct[pos + i]
+
+            if p not in words:
+                if p != c:
+                    break
+                continue
+
+            if c not in words:
+                break
+
+            idx = (pos + i) % 16
+            k = (words.index(c) - words.index(p)) % 62
+
+            if key[idx] is not None and key[idx] != k:
+                break
+
+            key[idx] = k
+        else:
+            yield pos, key
+
+def decrypt(key):
+    return "".join(
+        words[(words.index(c) - (key[i % 16] or 0)) % 62]
+        if c in words else c
+        for i, c in enumerate(ct)
+    )
+
+a = list(find_keys("1586 Blaise de Vigenere"))
+b = list(find_keys("cipher"))
+
+results = []
+
+for p1, k1 in a:
+    for p2, k2 in b:
+        if p1 < p2 + 6 and p2 < p1 + 23:
+            continue
+
+        if any(x != y for x, y in zip(k1, k2)
+               if x is not None and y is not None):
+            continue
+
+        key = [x if x is not None else y for x, y in zip(k1, k2)]
+
+        if key.count(None) <= 2:
+            results.append((p1, p2, key))
+
+print("일치하는 후보:", len(results))
+
+for p1, p2, key in results[:30]:
+    print("\n1586 Blaise de Vigenere 위치:", p1)
+    print("cipher 위치:", p2)
+    print("추정한 키:", key)
+    print("예상 복호화:")
+    print(decrypt(key))
+```
+
+기존 코드에서 `Vigenere`대신 `1586 Blaise de Vigenere`를 찾게끔 수정했다.
+
+![image.png](/images/image-62.png)
+
+오 드디어 조금 모양새가 더 잡혀져간다. 그리고 여기서 한가지 추리를 해보면, 맨앞에는 `In`이라는 영어 단어가 들어갈거 같다. (바로 뒤에가 년도니까). 아마 "In 1586 Blaise de Vigenere" 이렇게 나올거같다. 근데 추정한 키에서 1번째 인덱스가 `None`으로 되어있으니까. 9를 n으로 바꿔줄 키만 알아내면 될거같다. 9가 1번째 인덱스 자리니까. 그러면 기존 키값에서 `None`을 22로 바꿔주고 복호화 해보자. (9는 61번째, n은 39번째니까 `(61 - 39) mod 62 = 22`)
+
+```python
+from string import ascii_uppercase, ascii_lowercase, digits
+
+words = ascii_uppercase + ascii_lowercase + digits
+
+key = [47, 22, 41, 1, 29, 2, 53, 53, 35, 20, 47, 60, 20, 20, 48, 5]
+
+with open(r"C:\exploits\output.txt", encoding="utf-8") as f:
+    ct = f.read().split("my encrypted sentence > ", 1)[1].rstrip("\r\n")
+
+pt = ""
+
+for i, c in enumerate(ct):
+    if c in words:
+        pt += words[(words.index(c) - key[i % 16]) % 62]
+    else:
+        pt += c
+
+print("복호화 결과:")
+print(pt)
+```
+
+이렇게 기존 추정한 키값에서 1번째 인덱스에서 암호문 9를 평문 n으로 복호화할 수 있도록 키값 22를 추가해줬다.
 
 
-![image.png](/images/image-57.png)
+
+그래서 아래와 같이 플래그를 얻을 수 있었다.
+
+![image.png](/images/image-63.png)
+
+이렇게 아무 글자 깨짐 없이 깔끔하게 출력되는 것을 확인할 수 있었다.
 
 
 
-output.txt
-
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-## 디코딩 코드
+---
 
 ## 해결
 
-(해당 문제 라이트업을 작성하고 있었는데 날라가서 다시 작성했다.)
+플래그:
+
+```
+DH{10587bd243d302e95d4b4b0fe331166605b85dd6660e18a305e1fc3db72bf3be}
+```
+
+
+
+(해당 문제 라이트업을 작성하고 있었는데 날라가서 다시 작성했다.) + (음 근데 나처럼 잔머리를 써서 추리를 하면서 푸는 문제가 맞나싶다. 다른 방법이 있으려나..? -> 이것을 한번 조사해보는것도 괜찮겠다.)
+
+---
+
+
+
+## 번외
+
+### 다른 사람들의 풀이
+
+음 나는 이분의 풀이를 한번 보았다.
+
+[DreamHack EVER-igen 풀이 (드림핵 Bronze 3) — 주기 16 비제네르를 열별 빈도로 깨다](https://zino.kr/blog/dreamhack-ever-igen-writeup)
+
+빈도로 깬다는거 보니까 나랑 초반엔 비슷한 방향으로 간건가 싶다..? 한번 이분의 라이트업을 정독해보았다.
+
+이분의 풀이도 나의 초반 풀이처럼 빈도분석으로 하셨는데 나와 차이점이 있었다. 나의 빈도분석법은 단순히 일반적으로 많이 나오는 문자들의 가중치를 두고 점수를 계산하는 방식이였는데, 이분의 풀이와 차이점은 소문자, 대문자, 숫자에 서로 다른 확률을 적용하고, 이분은 로그가능도를 더했다.  아래는 기존의 나의 방식이다.
+
+$$
+
+S=\sum_i f(c_i)
+
+$$  
+  
+그리고 아래는 이분의 방식이다.
+
+$$  
+S=\sum_i\log P(c_i)
+
+$$  
+  
+여기서 `(P(c_i)`는 해당 문자가 영어 문장에서 등장할 것으로 가정한 확률이다. 다만 중요한건 로그를 사용했다는 사실 자체가 무조건 더 정확하다는 뜻은 아니다. 진짜 중요한 건 이분이 소문자, 대문자, 숫자의 확률을 구별하고, 영어의 문자 분포를 확률 모델로 사용했다는 점이라고 생각한다.
