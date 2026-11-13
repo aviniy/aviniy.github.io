@@ -250,7 +250,7 @@ print(pt)
 assert "Vigenere", "cipher" in secret
 ```
 
-여기서 위와 같은 코드가 눈에 들어왔다. 해당 `assert`문은 문법상 두 단어의 포함 여부를 검사하지 않는다. 그럼 출제자는 굳이 들어갈 필요 없는 코드를 왜 써둔걸까? 그래서 나는 출제자가 평문에 `Vigenere`와 `cipher`가 포함된다 힌트를 줬다고 생각하고 한번 두 단어를 예상 평문으로 사용해봤다.
+여기서 위와 같은 코드가 눈에 들어왔다. 해당 `assert`문은 문법상 두 단어의 포함 여부를 검사하지 않는다. 그럼 출제자는 굳이 들어갈 필요 없는 코드를 왜 써둔걸까? 그래서 나는 출제자가 평문에 `Vigenere`와 `cipher`가 포함된다는 힌트를 줬다고 생각하고 한번 두 단어를 예상 평문으로 사용해봤다.
 
 ```python
 from string import ascii_uppercase, ascii_lowercase, digits
