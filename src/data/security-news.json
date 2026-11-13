@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-11-12T18:54:02.344Z",
+  "updatedAt": "2026-11-13T00:19:36.804Z",
   "items": [
+    {
+      "title": "New worm-like 'SCKit' malware targets MSPs in ScreenConnect attacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T22:53:10.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/"
+    },
+    {
+      "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T22:25:30.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/"
+    },
+    {
+      "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T20:15:16.000Z",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
+    },
+    {
+      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T19:51:16.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/"
+    },
+    {
+      "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
+      "source": "BleepingComputer",
+      "date": "2026-11-12T19:12:55.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/"
+    },
     {
       "title": "Webinar: See How Identity Blind Spots Put Your SOC at Risk and How to Close Them",
       "source": "The Hacker News",
@@ -90,36 +120,6 @@
       "source": "CISA",
       "date": "2026-11-12T12:00:00.000Z",
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-05"
-    },
-    {
-      "title": "Siemens Building Automation and Energy Products",
-      "source": "CISA",
-      "date": "2026-11-12T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-01"
-    },
-    {
-      "title": "Siemens Industrial Edge Management",
-      "source": "CISA",
-      "date": "2026-11-12T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-03"
-    },
-    {
-      "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
-      "source": "The Hacker News",
-      "date": "2026-11-12T11:51:43.000Z",
-      "url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html"
-    },
-    {
-      "title": "Calendar Invites and Live Proxies: Inside a Google Session Hijacking Campaign",
-      "source": "The Hacker News",
-      "date": "2026-11-12T11:51:31.000Z",
-      "url": "https://thehackernews.com/2026/11/calendar-invites-and-live-proxies.html"
-    },
-    {
-      "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
-      "source": "The Hacker News",
-      "date": "2026-11-12T11:33:15.000Z",
-      "url": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html"
     }
   ]
 }
