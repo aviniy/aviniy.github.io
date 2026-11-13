@@ -43,12 +43,137 @@ link: [EVER-igen | Wargame | Dreamhack](https://dreamhack.io/wargame/challenges/
 
 ## 풀이
 
+그럼 간단한 개념을 봤으니 본격적으로 문제를 해결해보자.
+
 ### 소스코드 분석
+
+아래는 `prob.py`의 나와있는 코드이다.
+
+```python
+import random
+from string import ascii_lowercase, ascii_uppercase, digits
+
+words = ascii_uppercase + ascii_lowercase + digits
+class Vigenere:
+    def __init__(self, key):
+        self._key = key
+
+    def shift(self, a, d):
+        if a not in words:
+            return a
+        index = words.index(a)
+        return words[(index + d) % len(words)]
+
+    def encrypt(self, pt):
+        ct = ""
+        for i in range(len(pt)):
+            ct += self.shift(pt[i], self._key[i % len(self._key)])
+        return ct
+
+    def decrypt(self, ct):
+        pt = ""
+        for i in range(len(ct)):
+            pt += self.shift(ct[i], -self._key[i % len(self._key)])
+        return pt
+
+def main():
+    key = [random.randint(0, len(words)) for _ in range(16)]
+    with open("secret", "r") as f:
+        secret = f.read()
+
+    assert "Vigenere", "cipher" in secret
+    cipher = Vigenere(key)
+    secret_enc = cipher.encrypt(secret)
+    print(f"my encrypted sentence > {secret_enc}")
+
+if __name__ == '__main__':
+    main()
+```
+
+코드의 중요한 부분을 확인해보자.
+
+```python
+words = ascii_uppercase + ascii_lowercase + digits
+```
+
+위에서 봤던 비즈네르 표처럼 일반적인 비즈네르 암호는 알파벳 26개를 사용하지만, 위 코드를 보면 소스 코드는 총 62개의 문자를 사용한다는 것을 알 수 있다. (대문자 26개, 소문자 26개, 숫자 10개 26 + 26 + 10 = 62)
+
+```python
+def shift(self, a, d):
+    if a not in words:
+        return a
+    index = words.index(a)
+    return words[(index + d) % len(words)]
+```
+
+위 코드가 실제 암호화를 수행하는 핵심 함수이다. 예를 들어 `shift('A', 3)`을 실행한다 해보자. `A`의 인덱스 값은 0이고 이동값은 3이니까 A는 D가 된다. 그리고 `words`에 포함이 되지 않은 글자는 그대로 반환한다. (특수문자 등)
+
+```python
+def encrypt(self, pt):
+    ct = ""
+    for i in range(len(pt)):
+        ct += self.shift(pt[i], self._key[i % len(self._key)])
+    return ct
+```
+
+위 코드는 평문(pt)을 암호문(ct)으로 바꾸는 함수이다. 빈 문자열을 생성 후 평문(pt)의 길이만큼 shift 함수를 사용해서 암호화된 글자를 암호를 담을 공간(ct)에 담은 후 완성된 암호문(ct)을 반환한다.
+
+문제에서는 고맙게도 복호화 코드까지 적어놨다.
+
+```python
+    def decrypt(self, ct):
+        pt = ""
+        for i in range(len(ct)):
+            pt += self.shift(ct[i], -self._key[i % len(self._key)])
+        return pt
+```
+
+그럼 복호화 코드가 왜 이렇게 나오는걸까? 암호화 코드와 복호화 코드를 봐보자.
+
+```python
+ct += self.shift(pt[i], self._key[i % len(self._key)])
+
+pt += self.shift(ct[i], -self._key[i % len(self._key)])
+```
+
+보다시피 암호화 코드에는 `-`가 없고 복호화 코드에는 `-`가 있다. 왜냐하면 암호화 할때 그 문자가 이동한 만큼 거꾸로 이동하면 원래 문자로 돌아오기 때문이다. 위에 예시에서 평문이 `HELLO`이고 키가 `CAT`이라는 예시를 들었으니, 같은 예시로 해보자. 아까 설명한대로 암호화 과정은 아래와 같다.
+
+```
+평문:  H E L L O
+키:    2 0 19 2 0
+암호문: J E e N O
+```
+
+이제 여기서 복호화를 하려면 어떻게 해야할까? 우리가 앞으로 세걸음 가고 뒤로 세걸음 가면 제자리인거 처럼, 똑같이 원래 키만큼 돌려주면 된다.
+
+```
+암호문: J E  e  N  O
+키:   -2 0 -19 -2 0
+평문:   H E  L  L O
+```
+
+
+
+![image.png](/images/image-57.png)
+
+
+
+output.txt
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ## 디코딩 코드
 
 ## 해결
-
-
 
 (해당 문제 라이트업을 작성하고 있었는데 날라가서 다시 작성했다.)
