@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-11-13T16:19:07.505Z",
+  "updatedAt": "2026-11-13T22:36:15.220Z",
   "items": [
+    {
+      "title": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
+      "source": "BleepingComputer",
+      "date": "2026-11-13T19:38:36.000Z",
+      "url": "https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/"
+    },
+    {
+      "title": "German military drone operations disrupted by cyberattack",
+      "source": "BleepingComputer",
+      "date": "2026-11-13T17:31:56.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/german-military-drone-operations-disrupted-by-cyberattack/"
+    },
+    {
+      "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+      "source": "The Hacker News",
+      "date": "2026-11-13T16:53:08.000Z",
+      "url": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html"
+    },
+    {
+      "title": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
+      "source": "BleepingComputer",
+      "date": "2026-11-13T16:21:43.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/"
+    },
     {
       "title": "New Mior and Skyfall Attacks Let Rogue Cloud Hosts Steal Secrets From AMD SEV-SNP VMs",
       "source": "The Hacker News",
@@ -30,6 +54,12 @@
       "source": "BleepingComputer",
       "date": "2026-11-13T12:27:40.000Z",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/"
+    },
+    {
+      "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-13T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog"
     },
     {
       "title": "When an AI Agent Goes Wrong, Can You Stop It?",
@@ -90,36 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-12T22:25:30.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/"
-    },
-    {
-      "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
-      "source": "BleepingComputer",
-      "date": "2026-11-12T20:15:16.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
-    },
-    {
-      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
-      "source": "BleepingComputer",
-      "date": "2026-11-12T19:51:16.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/"
-    },
-    {
-      "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
-      "source": "BleepingComputer",
-      "date": "2026-11-12T19:12:55.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/"
-    },
-    {
-      "title": "Webinar: See How Identity Blind Spots Put Your SOC at Risk and How to Close Them",
-      "source": "The Hacker News",
-      "date": "2026-11-12T18:07:15.000Z",
-      "url": "https://thehackernews.com/2026/11/your-soc-sees-alert-but-does-it-know.html"
-    },
-    {
-      "title": "ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Backdoors + 17 More Stories",
-      "source": "The Hacker News",
-      "date": "2026-11-12T18:02:51.000Z",
-      "url": "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html"
     }
   ]
 }
