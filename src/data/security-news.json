@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-14T17:04:33.931Z",
+  "updatedAt": "2026-11-14T21:27:53.474Z",
   "items": [
+    {
+      "title": "Cursor confirms security breach led to malicious Claude Code extension",
+      "source": "BleepingComputer",
+      "date": "2026-11-14T17:27:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/"
+    },
     {
       "title": "US disrupts North Korean campaign behind $400 million crypto theft",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-13T08:05:49.000Z",
       "url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html"
-    },
-    {
-      "title": "Hackers Exploit N-central Flaws to Infect 21 Servers, Including 19 Running Hotfix 2",
-      "source": "The Hacker News",
-      "date": "2026-11-13T05:43:28.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-n-central-flaws-to.html"
     }
   ]
 }
