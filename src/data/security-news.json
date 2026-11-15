@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-15T17:07:20.435Z",
+  "updatedAt": "2026-11-15T21:47:29.167Z",
   "items": [
+    {
+      "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-15T18:29:53.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/"
+    },
     {
       "title": "TSMC employee data breach linked to cloud provider",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-13T10:55:03.000Z",
       "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
-    },
-    {
-      "title": "Check Point warns of zero-day flaw exploited for root access",
-      "source": "BleepingComputer",
-      "date": "2026-11-13T10:44:22.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
     }
   ]
 }
