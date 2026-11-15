@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-15T01:53:12.140Z",
+  "updatedAt": "2026-11-15T09:22:00.138Z",
   "items": [
+    {
+      "title": "Stolen Fireworks AI Key Led to Cursor Data Breach and Trojanized Claude Code Extension",
+      "source": "The Hacker News",
+      "date": "2026-11-15T08:22:04.000Z",
+      "url": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html"
+    },
     {
       "title": "Cursor confirms security breach led to malicious Claude Code extension",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-13T08:34:20.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/"
-    },
-    {
-      "title": "Hackers Exploit PHP2Shell Flaws in Check Point Gateways to Deploy TSGA Backdoor and Wipe ESXi Files",
-      "source": "The Hacker News",
-      "date": "2026-11-13T08:05:49.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-php2shell-flaws-in.html"
     }
   ]
 }
