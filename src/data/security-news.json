@@ -1,8 +1,20 @@
 {
-  "updatedAt": "2026-11-15T09:22:00.138Z",
+  "updatedAt": "2026-11-15T17:07:20.435Z",
   "items": [
     {
-      "title": "Stolen Fireworks AI Key Led to Cursor Data Breach and Trojanized Claude Code Extension",
+      "title": "TSMC employee data breach linked to cloud provider",
+      "source": "BleepingComputer",
+      "date": "2026-11-15T15:23:48.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/"
+    },
+    {
+      "title": "Italy Fines Meta €805 Million Over Facebook's Android Gallery Access Without Explicit Consent",
+      "source": "The Hacker News",
+      "date": "2026-11-15T11:27:31.000Z",
+      "url": "https://thehackernews.com/2026/11/italy-fines-meta-805-million-over.html"
+    },
+    {
+      "title": "Cursor Says Stolen Fireworks AI Key Led to Trojanized Claude Code Extension Incident",
       "source": "The Hacker News",
       "date": "2026-11-15T08:22:04.000Z",
       "url": "https://thehackernews.com/2026/11/stolen-fireworks-ai-key-led-to-cursor.html"
@@ -108,18 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-13T10:44:22.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
-    },
-    {
-      "title": "Microsoft confirms Windows activation failures after November updates",
-      "source": "BleepingComputer",
-      "date": "2026-11-13T09:36:18.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-windows-activation-failures-after-november-updates/"
-    },
-    {
-      "title": "Police arrest 354 suspects in dark web cybercrime crackdown",
-      "source": "BleepingComputer",
-      "date": "2026-11-13T08:34:20.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/"
     }
   ]
 }
