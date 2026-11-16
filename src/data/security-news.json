@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-11-16T02:02:44.228Z",
+  "updatedAt": "2026-11-16T09:38:43.728Z",
   "items": [
+    {
+      "title": "New NoisyTCP vulnerability lets attackers crash Linux servers",
+      "source": "BleepingComputer",
+      "date": "2026-11-16T09:30:04.000Z",
+      "url": "https://www.bleepingcomputer.com/news/linux/new-noisytcp-linux-kernel-flaw-lets-attackers-crash-servers/"
+    },
+    {
+      "title": "Microsoft pushes Windows emergency updates to fix activation failures",
+      "source": "BleepingComputer",
+      "date": "2026-11-16T08:26:52.000Z",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-new-windows-emergency-updates-fix-activation-licensing-failures/"
+    },
+    {
+      "title": "Amazon Uncovers AI Agent Campaign Targeting LiteLLM, Dify, and Other Apps for API Keys",
+      "source": "The Hacker News",
+      "date": "2026-11-16T07:34:21.000Z",
+      "url": "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html"
+    },
+    {
+      "title": "BO Team Exploits Log4Shell in VMware vCenter, Compromises Russian Firm's Code-Signing Server",
+      "source": "The Hacker News",
+      "date": "2026-11-16T06:53:34.000Z",
+      "url": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html"
+    },
     {
       "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks",
       "source": "BleepingComputer",
@@ -96,30 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-13T12:27:40.000Z",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/"
-    },
-    {
-      "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
-      "source": "CISA",
-      "date": "2026-11-13T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "title": "When an AI Agent Goes Wrong, Can You Stop It?",
-      "source": "The Hacker News",
-      "date": "2026-11-13T11:52:31.000Z",
-      "url": "https://thehackernews.com/2026/11/when-ai-agent-goes-wrong-can-you-stop-it.html"
-    },
-    {
-      "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
-      "source": "The Hacker News",
-      "date": "2026-11-13T11:10:40.000Z",
-      "url": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html"
-    },
-    {
-      "title": "Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins",
-      "source": "The Hacker News",
-      "date": "2026-11-13T10:55:03.000Z",
-      "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
     }
   ]
 }
