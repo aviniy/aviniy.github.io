@@ -1,6 +1,66 @@
 {
-  "updatedAt": "2026-11-17T13:21:29.204Z",
+  "updatedAt": "2026-11-17T22:20:38.705Z",
   "items": [
+    {
+      "title": "Cloud keys leaked in Docker Hub images are stolen within seconds",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T21:27:17.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/"
+    },
+    {
+      "title": "Japan takes Fugaku supercomputer offlline after cyberattack",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T20:51:21.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/japan-takes-fugaku-supercomputer-offlline-after-cyberattack/"
+    },
+    {
+      "title": "Researchers Claim Two RCE Exploits That Bypass Telegram’s New Android Defenses",
+      "source": "The Hacker News",
+      "date": "2026-11-17T19:34:20.000Z",
+      "url": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html"
+    },
+    {
+      "title": "Apple reports outages affecting iCloud Mail, AppleCare and more",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T19:24:07.000Z",
+      "url": "https://www.bleepingcomputer.com/news/apple/apple-reports-outages-affecting-icloud-mail-applecare-and-more/"
+    },
+    {
+      "title": "Researchers hijack Hugging Face account for popular Kokoro AI model",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T18:21:24.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/"
+    },
+    {
+      "title": "Tor releases emergency update amid ongoing DDoS attack",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T18:04:15.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/tor-releases-emergency-update-amid-ongoing-ddos-attack/"
+    },
+    {
+      "title": "Flipper Devices launches $399 ‘Flipper One’ Linux-based multi-tool",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T16:00:00.000Z",
+      "url": "https://www.bleepingcomputer.com/news/hardware/flipper-devices-launches-399-flipper-one-linux-based-multi-tool/"
+    },
+    {
+      "title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
+      "source": "The Hacker News",
+      "date": "2026-11-17T15:17:36.000Z",
+      "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
+    },
+    {
+      "title": "Trigram Campaign Impersonates About 50 AI and Blockchain Brands to Target Devs with Infostealers",
+      "source": "The Hacker News",
+      "date": "2026-11-17T15:17:28.000Z",
+      "url": "https://thehackernews.com/2026/11/trigram-campaign-impersonates-about-50.html"
+    },
+    {
+      "title": "Inside Modern Phishing Kits Built to Steal Microsoft 365 Sessions",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T15:01:11.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/inside-modern-phishing-kits-built-to-steal-microsoft-365-sessions/"
+    },
     {
       "title": "Hackers Found a Way Around GitHub SHA Pinning. This Webinar Explains How to Close the Gap",
       "source": "The Hacker News",
@@ -14,112 +74,52 @@
       "url": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html"
     },
     {
-      "title": "New GitDoor and GraphDoor Backdoors Turn GitHub and SharePoint Into Covert C2 Channels",
-      "source": "The Hacker News",
-      "date": "2026-11-17T11:20:18.000Z",
-      "url": "https://thehackernews.com/2026/11/new-gitdoor-and-graphdoor-backdoors.html"
+      "title": "Dorsett Controls InfoScan",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-01"
     },
     {
-      "title": "Microsoft testing Remote Lock for lost or stolen Windows devices",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T11:19:51.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-testing-remote-lock-for-lost-or-stolen-windows-devices/"
+      "title": "Siemens Mendix Studio Pro",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-05"
     },
     {
-      "title": "Apple Tightens macOS App Permissions to Limit Data Access Amid AI Agent Security Risks",
-      "source": "The Hacker News",
-      "date": "2026-11-17T11:07:31.000Z",
-      "url": "https://thehackernews.com/2026/11/apple-tightens-macos-app-permissions-to.html"
+      "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/17/cisa-adds-one-known-exploited-vulnerability-catalog"
     },
     {
-      "title": "Court clears brothers of $25 million Ethereum crypto heist charges",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T09:44:22.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/court-clears-brothers-of-25-million-ethereum-crypto-heist-charges/"
+      "title": "Siemens meta-iot2050",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-11"
     },
     {
-      "title": "Uber notifies drivers of data breach affecting nearly 150,000 people",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T08:35:42.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/uber-notifies-drivers-of-data-breach-affecting-nearly-150-000-people/"
+      "title": "Siemens SIMATIC WinCC",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-09"
     },
     {
-      "title": "Ransomware affiliate suspect extradited to US, faces 27 years in prison",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T07:25:44.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/alleged-inc-lynx-ransomware-affiliate-extradited-to-us-faces-27-years-in-prison/"
+      "title": "Siemens RUGGEDCOM APE1808",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-07"
     },
     {
-      "title": "Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, BBC and Zoom Visitors",
-      "source": "The Hacker News",
-      "date": "2026-11-17T07:12:13.000Z",
-      "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
+      "title": "Siemens .NET Client Library for SIMATIC S7 Webserver API",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-02"
     },
     {
-      "title": "ConnectWise Warns ScreenConnect Attacks Continue as SCKit Targets Unpatched Systems",
-      "source": "The Hacker News",
-      "date": "2026-11-17T06:29:27.000Z",
-      "url": "https://thehackernews.com/2026/11/connectwise-warns-screenconnect-attacks.html"
-    },
-    {
-      "title": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners",
-      "source": "The Hacker News",
-      "date": "2026-11-17T05:00:34.000Z",
-      "url": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html"
-    },
-    {
-      "title": "Optimizely hack infected CNN, Fox News, BBC, Salesforce sites with malware",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T02:12:17.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/"
-    },
-    {
-      "title": "Gemini AI agents repeatedly bypassed safeguards to attack real website",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T22:54:00.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/gemini-ai-agents-repeatedly-bypassed-safeguards-to-attack-real-website/"
-    },
-    {
-      "title": "Google Project Zero cuts bug disclosures to 30 days amid AI threats",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T21:31:44.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/google-project-zero-cuts-bug-disclosure-deadline-to-30-days-amid-ai-threats/"
-    },
-    {
-      "title": "California sues OpenAI over AI agents escaping sandboxes, hacking firms",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T20:59:44.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/california-sues-openai-over-ai-agents-escaping-sandboxes-hacking-firms/"
-    },
-    {
-      "title": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T19:57:13.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/"
-    },
-    {
-      "title": "Microsoft says months-old bug caused global Microsoft 365 outage",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T16:43:24.000Z",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/"
-    },
-    {
-      "title": "Fandango says hackers stole payment card details from checkout pages",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T15:44:21.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages/"
-    },
-    {
-      "title": "7 Tips For Complying with CJIS Password and MFA Requirements",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T15:01:11.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/7-tips-for-complying-with-cjis-password-and-mfa-requirements/"
-    },
-    {
-      "title": "Google warns that fully-automated AI attacks are coming soon",
-      "source": "BleepingComputer",
-      "date": "2026-11-16T14:00:00.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/google-warns-that-fully-automated-ai-attacks-are-coming-soon/"
+      "title": "Siemens Industrial Automation Software Products",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03"
     }
   ]
 }
