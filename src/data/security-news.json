@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-17T22:20:38.705Z",
+  "updatedAt": "2026-11-18T04:17:46.150Z",
   "items": [
+    {
+      "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+      "source": "BleepingComputer",
+      "date": "2026-11-17T23:04:21.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"
+    },
     {
       "title": "Cloud keys leaked in Docker Hub images are stolen within seconds",
       "source": "BleepingComputer",
@@ -74,6 +80,12 @@
       "url": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html"
     },
     {
+      "title": "Siemens ROS#",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-06"
+    },
+    {
       "title": "Dorsett Controls InfoScan",
       "source": "CISA",
       "date": "2026-11-17T12:00:00.000Z",
@@ -86,40 +98,28 @@
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-05"
     },
     {
-      "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-      "source": "CISA",
-      "date": "2026-11-17T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/17/cisa-adds-one-known-exploited-vulnerability-catalog"
-    },
-    {
-      "title": "Siemens meta-iot2050",
-      "source": "CISA",
-      "date": "2026-11-17T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-11"
-    },
-    {
-      "title": "Siemens SIMATIC WinCC",
-      "source": "CISA",
-      "date": "2026-11-17T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-09"
-    },
-    {
-      "title": "Siemens RUGGEDCOM APE1808",
-      "source": "CISA",
-      "date": "2026-11-17T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-07"
-    },
-    {
       "title": "Siemens .NET Client Library for SIMATIC S7 Webserver API",
       "source": "CISA",
       "date": "2026-11-17T12:00:00.000Z",
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-02"
     },
     {
-      "title": "Siemens Industrial Automation Software Products",
+      "title": "Critical Java Vulnerability Requires Immediate Patching",
       "source": "CISA",
       "date": "2026-11-17T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03"
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching"
+    },
+    {
+      "title": "Siemens Industrial Software Products",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04"
+    },
+    {
+      "title": "Siemens Simcenter Femap",
+      "source": "CISA",
+      "date": "2026-11-17T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-10"
     }
   ]
 }
