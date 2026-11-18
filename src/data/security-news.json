@@ -1,6 +1,54 @@
 {
-  "updatedAt": "2026-11-18T13:55:41.791Z",
+  "updatedAt": "2026-11-18T21:54:37.728Z",
   "items": [
+    {
+      "title": "Coinbase blocks $4.7 million in transfers to Elon Musk deepfake scam",
+      "source": "BleepingComputer",
+      "date": "2026-11-18T20:49:32.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/coinbase-blocks-47-million-in-transfers-to-elon-musk-deepfake-scam/"
+    },
+    {
+      "title": "Data breach impacts 40 Irish credit unions in reported IT provider hack",
+      "source": "BleepingComputer",
+      "date": "2026-11-18T19:39:33.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/"
+    },
+    {
+      "title": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers",
+      "source": "The Hacker News",
+      "date": "2026-11-18T18:31:17.000Z",
+      "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"
+    },
+    {
+      "title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE",
+      "source": "The Hacker News",
+      "date": "2026-11-18T18:15:39.000Z",
+      "url": "https://thehackernews.com/2026/11/f5-warns-6-critical-big-ip-flaws-can.html"
+    },
+    {
+      "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+      "source": "The Hacker News",
+      "date": "2026-11-18T17:10:45.000Z",
+      "url": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html"
+    },
+    {
+      "title": "Microsoft’s Agent Framework PyPI package compromised to steal credentials",
+      "source": "BleepingComputer",
+      "date": "2026-11-18T16:58:42.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/microsofts-agent-framework-pypi-package-compromised-to-steal-credentials/"
+    },
+    {
+      "title": "From Deepfakes to Helpdesk Impersonation: Why Stronger Verification Matters",
+      "source": "BleepingComputer",
+      "date": "2026-11-18T15:00:10.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/from-deepfakes-to-helpdesk-impersonation-why-stronger-verification-matters/"
+    },
+    {
+      "title": "New EggStreme Malware Variant Goes Silent to Evade Security Tools in Government Attacks",
+      "source": "The Hacker News",
+      "date": "2026-11-18T14:11:28.000Z",
+      "url": "https://thehackernews.com/2026/11/eggstreme-hackers-rebuild-malware-with.html"
+    },
     {
       "title": "New Attack Bypasses TPM Lockout to Crack Windows Hello and BitLocker PINs in Days, Not Years",
       "source": "The Hacker News",
@@ -12,6 +60,12 @@
       "source": "The Hacker News",
       "date": "2026-11-18T12:15:00.000Z",
       "url": "https://thehackernews.com/2026/11/ai-pentesting-checklist-for-web-apps-15.html"
+    },
+    {
+      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-18T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog"
     },
     {
       "title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
@@ -66,60 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-18T06:45:26.000Z",
       "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
-    },
-    {
-      "title": "Russian COLD RELIC Hackers Use Stolen Google Workspace Data to Breach Second U.S. Organization",
-      "source": "The Hacker News",
-      "date": "2026-11-18T05:58:04.000Z",
-      "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"
-    },
-    {
-      "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T23:04:21.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"
-    },
-    {
-      "title": "Cloud keys leaked in Docker Hub images are stolen within seconds",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T21:27:17.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/cloud-keys-leaked-in-docker-hub-images-are-stolen-within-seconds/"
-    },
-    {
-      "title": "Japan takes Fugaku supercomputer offlline after cyberattack",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T20:51:21.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/japan-takes-fugaku-supercomputer-offlline-after-cyberattack/"
-    },
-    {
-      "title": "Researchers Claim Two RCE Exploits That Bypass Telegram’s New Android Defenses",
-      "source": "The Hacker News",
-      "date": "2026-11-17T19:34:20.000Z",
-      "url": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html"
-    },
-    {
-      "title": "Apple reports outages affecting iCloud Mail, AppleCare and more",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T19:24:07.000Z",
-      "url": "https://www.bleepingcomputer.com/news/apple/apple-reports-outages-affecting-icloud-mail-applecare-and-more/"
-    },
-    {
-      "title": "Researchers hijack Hugging Face account for popular Kokoro AI model",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T18:21:24.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/"
-    },
-    {
-      "title": "Tor releases emergency update amid ongoing DDoS attack",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T18:04:15.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/tor-releases-emergency-update-amid-ongoing-ddos-attack/"
-    },
-    {
-      "title": "Flipper Devices launches $399 ‘Flipper One’ Linux-based multi-tool",
-      "source": "BleepingComputer",
-      "date": "2026-11-17T16:00:00.000Z",
-      "url": "https://www.bleepingcomputer.com/news/hardware/flipper-devices-launches-399-flipper-one-linux-based-multi-tool/"
     }
   ]
 }
