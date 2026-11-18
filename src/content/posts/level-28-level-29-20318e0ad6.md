@@ -5,7 +5,7 @@ category: "OverTheWire Bandit"
 tags: []
 createdAt: "2026-11-03"
 updatedAt: "2026-11-03"
-draft: false
+draft: true
 notionSource: "01377189-8ded-49f7-a965-ccdae8430911_ExportBlock-70e51c03-942c-4958-8025-8f7c870b9fff.zip:bandit/Level 28 → Level 29 3e95747616b280579188dcd69fc8bb7d.html"
 ---
 
