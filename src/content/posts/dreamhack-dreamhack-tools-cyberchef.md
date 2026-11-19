@@ -6,14 +6,14 @@ tags:
   - Dreamhack
   - Wargame
   - Misc
+  - cyberc
 createdAt: 2026-11-19
 updatedAt: 2026-11-19
 draft: false
 ---
 # DH - dreamhack-tools-cyberchef
 
-## 문제  
-
+## 문제
 
 ![image.png](/images/image-71.png)
 
@@ -65,7 +65,7 @@ EUg5MJAyYJ9fYJ5iMKqio29iVK1VL2WlnTM0o3AyL2Elq3q3qlRu
 
 ![image.png](/images/image-76.png)
 
-같은 방법으로 Base64와 ROT13을 복호화 하기 위한 레시피를 추가해준다. (요리 레시피처럼 어떤걸 인코딩 하고 복호화할건지 순서대로 추가가 가능.)
+같은 방법으로 Base64와 ROT13을 디코딩과 복호화를 하기 위한 레시피를 추가해준다. (요리 레시피처럼 어떤걸 인코딩 하고 복호화할건지 순서대로 추가가 가능.)
 
 ![image.png](/images/image-78.png)
 
