@@ -1,6 +1,12 @@
 {
-  "updatedAt": "2026-11-18T21:54:37.728Z",
+  "updatedAt": "2026-11-19T03:23:53.342Z",
   "items": [
+    {
+      "title": "Ukraine, FBI arrest ransomware gang members tied to $40M in ransoms",
+      "source": "BleepingComputer",
+      "date": "2026-11-18T23:08:33.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms/"
+    },
     {
       "title": "Coinbase blocks $4.7 million in transfers to Elon Musk deepfake scam",
       "source": "BleepingComputer",
@@ -114,12 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-18T08:24:18.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/british-scattered-spider-hacker-sentenced-to-6-years-in-prison/"
-    },
-    {
-      "title": "Attackers Compromise Microsoft's Agent Framework PyPI Package to Steal Cloud Credentials",
-      "source": "The Hacker News",
-      "date": "2026-11-18T06:45:26.000Z",
-      "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
     }
   ]
 }
