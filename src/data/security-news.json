@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-19T21:30:11.924Z",
+  "updatedAt": "2026-11-20T03:11:02.560Z",
   "items": [
+    {
+      "title": "VMware patches vCenter zero-day exploited in attacks since September",
+      "source": "BleepingComputer",
+      "date": "2026-11-20T00:26:25.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/"
+    },
+    {
+      "title": "Hackers steal data of 1.6 million SBC Medical Group customers",
+      "source": "BleepingComputer",
+      "date": "2026-11-19T22:25:42.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/"
+    },
     {
       "title": "ASUS warns of critical hard-coded key flaw in Control Center Express",
       "source": "BleepingComputer",
@@ -108,18 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-19T09:31:26.000Z",
       "url": "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html"
-    },
-    {
-      "title": "NVIDIA investigating Gentlemen ransomware breach claims",
-      "source": "BleepingComputer",
-      "date": "2026-11-19T09:23:21.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/"
-    },
-    {
-      "title": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
-      "source": "The Hacker News",
-      "date": "2026-11-19T08:42:11.000Z",
-      "url": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html"
     }
   ]
 }
