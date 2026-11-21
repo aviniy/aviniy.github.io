@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-21T01:30:09.600Z",
+  "updatedAt": "2026-11-21T09:46:10.972Z",
   "items": [
+    {
+      "title": "Signal Blocks AI Agents From Reading Private Chats via Screenshots on Android and iOS",
+      "source": "The Hacker News",
+      "date": "2026-11-21T08:49:20.000Z",
+      "url": "https://thehackernews.com/2026/11/signal-blocks-ai-agents-from-reading.html"
+    },
+    {
+      "title": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+      "source": "The Hacker News",
+      "date": "2026-11-21T08:49:13.000Z",
+      "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html"
+    },
     {
       "title": "Bell Canada says 'agentic' hacker stole enterprise customer data",
       "source": "BleepingComputer",
@@ -108,18 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-20T05:30:01.000Z",
       "url": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html"
-    },
-    {
-      "title": "VMware patches vCenter zero-day exploited in attacks since September",
-      "source": "BleepingComputer",
-      "date": "2026-11-20T00:26:25.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/"
-    },
-    {
-      "title": "Hackers steal data of 1.6 million SBC Medical Group customers",
-      "source": "BleepingComputer",
-      "date": "2026-11-19T22:25:42.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/"
     }
   ]
 }
