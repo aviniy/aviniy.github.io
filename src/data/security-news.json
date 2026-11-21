@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-21T17:28:56.964Z",
+  "updatedAt": "2026-11-21T23:13:20.471Z",
   "items": [
+    {
+      "title": "Rackspace Spot breach let hackers access customer Kubernetes secrets",
+      "source": "BleepingComputer",
+      "date": "2026-11-21T22:59:58.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+    },
+    {
+      "title": "Microsoft Entra Connect Health flaw exploited to steal tenant data",
+      "source": "BleepingComputer",
+      "date": "2026-11-21T18:01:58.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+    },
     {
       "title": "BADBOX botnet returns with record-breaking 40 billion daily ad requests",
       "source": "BleepingComputer",
@@ -108,18 +120,6 @@
       "source": "CISA",
       "date": "2026-11-20T12:00:00.000Z",
       "url": "https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "title": "F5 releases emergency patches for critical BIG-IP RCE flaws",
-      "source": "BleepingComputer",
-      "date": "2026-11-20T10:57:43.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/"
-    },
-    {
-      "title": "SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws",
-      "source": "The Hacker News",
-      "date": "2026-11-20T10:38:22.000Z",
-      "url": "https://thehackernews.com/2026/11/sonicwall-warns-gen-6-firewalls-wont.html"
     }
   ]
 }
