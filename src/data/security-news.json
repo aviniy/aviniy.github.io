@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-23T00:50:08.309Z",
+  "updatedAt": "2026-11-23T08:59:46.928Z",
   "items": [
+    {
+      "title": "AI-Assisted Cyberattacks Trigger Unauthorized Payments at Indian Banks and Fintech Firms",
+      "source": "The Hacker News",
+      "date": "2026-11-23T08:24:15.000Z",
+      "url": "https://thehackernews.com/2026/11/ai-assisted-cyberattacks-trigger.html"
+    },
+    {
+      "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-23T07:44:19.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/"
+    },
     {
       "title": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices",
       "source": "BleepingComputer",
@@ -108,18 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-20T16:58:16.000Z",
       "url": "https://thehackernews.com/2026/11/bazuka-android-malware-uses-fake-screen.html"
-    },
-    {
-      "title": "Vendor data breach exposes Chase, Visa, Mastercard customer info",
-      "source": "BleepingComputer",
-      "date": "2026-11-20T15:58:06.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/"
-    },
-    {
-      "title": "Still tracking company passwords in spreadsheets? You’re flying blind.",
-      "source": "BleepingComputer",
-      "date": "2026-11-20T15:00:10.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/still-tracking-company-passwords-in-spreadsheets-youre-flying-blind/"
     }
   ]
 }
