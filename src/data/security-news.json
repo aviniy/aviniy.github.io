@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T21:18:23.861Z",
+  "updatedAt": "2026-11-24T05:59:27.215Z",
   "items": [
     {
       "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
@@ -80,6 +80,12 @@
       "url": "https://www.bleepingcomputer.com/news/security/call-center-operator-gets-8-years-for-helping-scam-30-000-americans/"
     },
     {
+      "title": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-23T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+    },
+    {
       "title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
       "source": "The Hacker News",
       "date": "2026-11-23T09:11:56.000Z",
@@ -114,12 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-22T18:45:37.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
-    },
-    {
-      "title": "Cleverbridge warns hackers stole credit card numbers, CVVs in data breach",
-      "source": "BleepingComputer",
-      "date": "2026-11-22T15:43:04.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
     }
   ]
 }
