@@ -1,6 +1,36 @@
 {
-  "updatedAt": "2026-11-24T17:39:40.842Z",
+  "updatedAt": "2026-11-25T02:24:24.946Z",
   "items": [
+    {
+      "title": "Rackspace shuts down Spot cloud platform after security breach",
+      "source": "BleepingComputer",
+      "date": "2026-11-24T21:37:30.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/"
+    },
+    {
+      "title": "New Inception extortion gang launches large-scale vishing campaign",
+      "source": "BleepingComputer",
+      "date": "2026-11-24T20:21:20.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/new-inception-extortion-gang-launches-large-scale-vishing-campaign/"
+    },
+    {
+      "title": "Turnitin discloses cyberattack affecting customer-facing systems",
+      "source": "BleepingComputer",
+      "date": "2026-11-24T18:59:52.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/turnitin-discloses-cyberattack-affecting-customer-facing-systems/"
+    },
+    {
+      "title": "Radware discloses breach exposing customer cloud access keys",
+      "source": "BleepingComputer",
+      "date": "2026-11-24T17:49:05.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
+    },
+    {
+      "title": "Iran-Aligned Volant Manticore Uses IPFS-Based KuboShell Backdoor in Espionage Campaigns",
+      "source": "The Hacker News",
+      "date": "2026-11-24T16:54:07.000Z",
+      "url": "https://thehackernews.com/2026/11/iran-aligned-volant-manticore-uses-ipfs.html"
+    },
     {
       "title": "ShinyHunters claims to return after FBI arrests, uses old PGP keys as proof",
       "source": "BleepingComputer",
@@ -74,10 +104,10 @@
       "url": "https://thehackernews.com/2026/11/2027-soc-budget-reset-5-priorities-to.html"
     },
     {
-      "title": "Schneider Electric EcoStruxure Power Build Rapsody software",
+      "title": "CISA Adds Three Known Exploited Vulnerabilities to Catalog",
       "source": "CISA",
       "date": "2026-11-24T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-02"
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/24/cisa-adds-three-known-exploited-vulnerabilities-catalog"
     },
     {
       "title": "Danfoss AK-SM 8xxA Series",
@@ -86,40 +116,10 @@
       "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-03"
     },
     {
-      "title": "AutomationDirect C-More EA9 Programming Software",
+      "title": "Schneider Electric EcoStruxure Power Build Rapsody software",
       "source": "CISA",
       "date": "2026-11-24T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-01"
-    },
-    {
-      "title": "Microsoft Fixes Azure API Management Classic Flaw as Actor Targets Customer Secrets",
-      "source": "The Hacker News",
-      "date": "2026-11-24T10:44:49.000Z",
-      "url": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html"
-    },
-    {
-      "title": "WHMCS SQL Injection Could Expose Customer Data and Admin Password Hashes without Login",
-      "source": "The Hacker News",
-      "date": "2026-11-24T08:34:20.000Z",
-      "url": "https://thehackernews.com/2026/11/whmcs-sql-injection-flaw-could-expose.html"
-    },
-    {
-      "title": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
-      "source": "The Hacker News",
-      "date": "2026-11-24T06:02:57.000Z",
-      "url": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html"
-    },
-    {
-      "title": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
-      "source": "The Hacker News",
-      "date": "2026-11-24T06:02:45.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html"
-    },
-    {
-      "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
-      "source": "BleepingComputer",
-      "date": "2026-11-23T20:54:51.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-02"
     }
   ]
 }
