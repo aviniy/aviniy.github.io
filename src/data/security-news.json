@@ -1,6 +1,72 @@
 {
-  "updatedAt": "2026-11-25T02:24:24.946Z",
+  "updatedAt": "2026-11-25T12:49:43.669Z",
   "items": [
+    {
+      "title": "Credential Remediation Is Slow When You Don’t Know What Will Break",
+      "source": "The Hacker News",
+      "date": "2026-11-25T11:51:48.000Z",
+      "url": "https://thehackernews.com/2026/11/credential-remediation-is-slow-when-you.html"
+    },
+    {
+      "title": "Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active Exploitation",
+      "source": "The Hacker News",
+      "date": "2026-11-25T11:23:26.000Z",
+      "url": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html"
+    },
+    {
+      "title": "Microsoft fixes Microsoft 365 bug blocking access to Office apps",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T11:16:32.000Z",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-blank-dialog-that-made-microsoft-365-office-apps-unusable/"
+    },
+    {
+      "title": "Ex-OpenAI Employee Accused of Bugging Company Offices Granted $1 Million Bail",
+      "source": "The Hacker News",
+      "date": "2026-11-25T10:43:07.000Z",
+      "url": "https://thehackernews.com/2026/11/ex-openai-employee-accused-of-bugging.html"
+    },
+    {
+      "title": "Hackers now exploit critical Drupal RCE flaw to hijack sites",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T10:10:20.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/"
+    },
+    {
+      "title": "Hackers Exploited CVSS 10.0 Hex.pm RCE Flaw to Compromise 6 Package Registry Servers",
+      "source": "The Hacker News",
+      "date": "2026-11-25T09:06:59.000Z",
+      "url": "https://thehackernews.com/2026/11/hackers-exploited-cvss-100-hexpm-rce.html"
+    },
+    {
+      "title": "Microsoft confirms authentication issues after November updates",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T09:02:57.000Z",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-authentication-issues-after-november-updates/"
+    },
+    {
+      "title": "Hackers reportedly breached CIA intelligence analysis system",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T07:45:03.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"
+    },
+    {
+      "title": "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign",
+      "source": "The Hacker News",
+      "date": "2026-11-25T06:50:19.000Z",
+      "url": "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html"
+    },
+    {
+      "title": "Com-Affiliated Hackers Hijack Cloud Accounts via Vishing for Data Theft and Extortion",
+      "source": "The Hacker News",
+      "date": "2026-11-25T06:37:06.000Z",
+      "url": "https://thehackernews.com/2026/11/com-affiliated-hackers-hijack-cloud.html"
+    },
+    {
+      "title": "WordPress Blocks Six Backdoored WP Connect Plugins Before Malicious Releases Go Live",
+      "source": "The Hacker News",
+      "date": "2026-11-25T06:21:12.000Z",
+      "url": "https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html"
+    },
     {
       "title": "Rackspace shuts down Spot cloud platform after security breach",
       "source": "BleepingComputer",
@@ -54,72 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-24T15:10:10.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/police-disrupt-57-illegal-streaming-services-with-73-million-visits/"
-    },
-    {
-      "title": "From Vulnerability Noise to Resilience: Rethinking Security in the AI Era",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T15:01:11.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/from-vulnerability-noise-to-resilience-rethinking-security-in-the-ai-era/"
-    },
-    {
-      "title": "McDonald's Japan data breach exposes customer location information",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T14:09:37.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/mcdonalds-japan-data-breach-exposes-customer-location-information/"
-    },
-    {
-      "title": "New Shirudo tool uses AI to shield unpatched Linux systems from exploits",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T13:34:23.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/"
-    },
-    {
-      "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
-      "source": "The Hacker News",
-      "date": "2026-11-24T13:28:26.000Z",
-      "url": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html"
-    },
-    {
-      "title": "Okta Links ShinyHunters-Associated Vishing Group to New INCEPTION Data Leak Site",
-      "source": "The Hacker News",
-      "date": "2026-11-24T13:28:21.000Z",
-      "url": "https://thehackernews.com/2026/11/okta-links-shinyhunters-associated.html"
-    },
-    {
-      "title": "Hackers Found a Way Around GitHub SHA Pinning. This Webinar Explains How to Close the Gap",
-      "source": "The Hacker News",
-      "date": "2026-11-24T12:42:09.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-found-way-around-github-sha.html"
-    },
-    {
-      "title": "Google Researcher Shows How a Single Bit Change in .NET Files Bypassed Windows Code Integrity",
-      "source": "The Hacker News",
-      "date": "2026-11-24T12:02:00.000Z",
-      "url": "https://thehackernews.com/2026/11/google-researcher-shows-how-single-bit.html"
-    },
-    {
-      "title": "2027 SOC Budget Reset: 5 Priorities to Cut Costs and Reduce Cyber Risk",
-      "source": "The Hacker News",
-      "date": "2026-11-24T12:01:54.000Z",
-      "url": "https://thehackernews.com/2026/11/2027-soc-budget-reset-5-priorities-to.html"
-    },
-    {
-      "title": "CISA Adds Three Known Exploited Vulnerabilities to Catalog",
-      "source": "CISA",
-      "date": "2026-11-24T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/11/24/cisa-adds-three-known-exploited-vulnerabilities-catalog"
-    },
-    {
-      "title": "Danfoss AK-SM 8xxA Series",
-      "source": "CISA",
-      "date": "2026-11-24T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-03"
-    },
-    {
-      "title": "Schneider Electric EcoStruxure Power Build Rapsody software",
-      "source": "CISA",
-      "date": "2026-11-24T12:00:00.000Z",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-328-02"
     }
   ]
 }
