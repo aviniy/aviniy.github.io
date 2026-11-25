@@ -1,6 +1,60 @@
 {
-  "updatedAt": "2026-11-25T12:49:43.669Z",
+  "updatedAt": "2026-11-25T22:29:44.829Z",
   "items": [
+    {
+      "title": "Palo Alto Networks warns of Fragnesia flaw exploited in PAN-OS attacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T22:05:09.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-fragnesia-flaw-exploited-in-pan-os-attacks/"
+    },
+    {
+      "title": "1Password customer data stolen after employee GitHub account breach",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T21:33:33.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/"
+    },
+    {
+      "title": "Italy and Switzerland warn of autonomous AI-driven cyberattacks",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T19:39:31.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/italy-and-switzerland-warn-of-autonomous-ai-driven-cyberattacks/"
+    },
+    {
+      "title": "CISA warns of critical unpatched flaw in Danfoss refrigeration controllers",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T16:13:40.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/"
+    },
+    {
+      "title": "More Pentests Without More Pentesters: Where AI Safely Helps",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T15:00:10.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/more-pentests-without-more-pentesters-where-ai-safely-helps/"
+    },
+    {
+      "title": "InfraTrust warns of exploited supply chain flaws in network appliances",
+      "source": "BleepingComputer",
+      "date": "2026-11-25T15:00:00.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/"
+    },
+    {
+      "title": "Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains",
+      "source": "The Hacker News",
+      "date": "2026-11-25T12:48:54.000Z",
+      "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
+    },
+    {
+      "title": "U.S. Treasury's Financial Crimes Agency Takes Some Systems Offline After Cyber Intrusion",
+      "source": "The Hacker News",
+      "date": "2026-11-25T12:30:08.000Z",
+      "url": "https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html"
+    },
+    {
+      "title": "CISA Adds 10 Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-25T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog"
+    },
     {
       "title": "Credential Remediation Is Slow When You Don’t Know What Will Break",
       "source": "The Hacker News",
@@ -66,60 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-25T06:21:12.000Z",
       "url": "https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html"
-    },
-    {
-      "title": "Rackspace shuts down Spot cloud platform after security breach",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T21:37:30.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/"
-    },
-    {
-      "title": "New Inception extortion gang launches large-scale vishing campaign",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T20:21:20.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/new-inception-extortion-gang-launches-large-scale-vishing-campaign/"
-    },
-    {
-      "title": "Turnitin discloses cyberattack affecting customer-facing systems",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T18:59:52.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/turnitin-discloses-cyberattack-affecting-customer-facing-systems/"
-    },
-    {
-      "title": "Radware discloses breach exposing customer cloud access keys",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T17:49:05.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
-    },
-    {
-      "title": "Iran-Aligned Volant Manticore Uses IPFS-Based KuboShell Backdoor in Espionage Campaigns",
-      "source": "The Hacker News",
-      "date": "2026-11-24T16:54:07.000Z",
-      "url": "https://thehackernews.com/2026/11/iran-aligned-volant-manticore-uses-ipfs.html"
-    },
-    {
-      "title": "ShinyHunters claims to return after FBI arrests, uses old PGP keys as proof",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T16:30:19.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-resurfaces-after-fbi-arrests-uses-old-pgp-keys-as-proof/"
-    },
-    {
-      "title": "European Commission confirms data theft in EU Academy breach",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T16:22:44.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/"
-    },
-    {
-      "title": "Hackers compromise Check Point Servers in 22 organizations",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T16:15:23.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/"
-    },
-    {
-      "title": "Police disrupt 57 illegal streaming services with 7.3 million visits",
-      "source": "BleepingComputer",
-      "date": "2026-11-24T15:10:10.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/police-disrupt-57-illegal-streaming-services-with-73-million-visits/"
     }
   ]
 }
