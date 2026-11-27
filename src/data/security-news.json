@@ -1,6 +1,24 @@
 {
-  "updatedAt": "2026-11-26T23:50:10.715Z",
+  "updatedAt": "2026-11-27T08:25:08.156Z",
   "items": [
+    {
+      "title": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+      "source": "BleepingComputer",
+      "date": "2026-11-27T08:06:58.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/"
+    },
+    {
+      "title": "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators",
+      "source": "The Hacker News",
+      "date": "2026-11-27T06:04:20.000Z",
+      "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
+    },
+    {
+      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+      "source": "The Hacker News",
+      "date": "2026-11-27T05:48:20.000Z",
+      "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+    },
     {
       "title": "OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
       "source": "BleepingComputer",
@@ -102,24 +120,6 @@
       "source": "BleepingComputer",
       "date": "2026-11-25T15:00:10.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/more-pentests-without-more-pentesters-where-ai-safely-helps/"
-    },
-    {
-      "title": "InfraTrust warns of exploited supply chain flaws in network appliances",
-      "source": "BleepingComputer",
-      "date": "2026-11-25T15:00:00.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/infratrust-warns-of-exploited-supply-chain-flaws-in-network-appliances/"
-    },
-    {
-      "title": "Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains",
-      "source": "The Hacker News",
-      "date": "2026-11-25T12:48:54.000Z",
-      "url": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html"
-    },
-    {
-      "title": "U.S. Treasury's Financial Crimes Agency Takes Some Systems Offline After Cyber Intrusion",
-      "source": "The Hacker News",
-      "date": "2026-11-25T12:30:08.000Z",
-      "url": "https://thehackernews.com/2026/11/us-treasurys-fincen-takes-some-systems.html"
     }
   ]
 }
