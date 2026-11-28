@@ -1,6 +1,18 @@
 {
-  "updatedAt": "2026-11-27T18:56:33.909Z",
+  "updatedAt": "2026-11-28T01:57:35.483Z",
   "items": [
+    {
+      "title": "pCloud confirms password manager hack after suspicious login alerts",
+      "source": "BleepingComputer",
+      "date": "2026-11-27T19:26:04.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/pcloud-confirms-password-manager-hack-after-suspicious-login-alerts/"
+    },
+    {
+      "title": "New Boston Scientific data breach exposes personal, medical info",
+      "source": "BleepingComputer",
+      "date": "2026-11-27T18:57:42.000Z",
+      "url": "https://www.bleepingcomputer.com/news/security/new-boston-scientific-data-breach-exposes-personal-medical-info/"
+    },
     {
       "title": "Unpatched Cacti zero-day with public PoC gives remote code execution",
       "source": "BleepingComputer",
@@ -30,6 +42,12 @@
       "source": "BleepingComputer",
       "date": "2026-11-27T14:22:06.000Z",
       "url": "https://www.bleepingcomputer.com/news/security/malwarebytes-antivirus-get-50-percent-off-during-black-friday-2026/"
+    },
+    {
+      "title": "CISA Adds Three Known Exploited Vulnerabilities to Catalog",
+      "source": "CISA",
+      "date": "2026-11-27T12:00:00.000Z",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/27/cisa-adds-three-known-exploited-vulnerabilities-catalog"
     },
     {
       "title": "Microsoft Store App Found Delivering Vinci RAT Capable of Remote System Control",
@@ -102,24 +120,6 @@
       "source": "The Hacker News",
       "date": "2026-11-26T19:39:57.000Z",
       "url": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html"
-    },
-    {
-      "title": "NordVPN Black Friday Deal: Get 78% off VPN plans in 2026",
-      "source": "BleepingComputer",
-      "date": "2026-11-26T17:58:42.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/nordvpn-black-friday-deal-get-78-percent-off-vpn-plans-in-2026/"
-    },
-    {
-      "title": "Fake paid expert interviews impersonate brands to steal Google logins",
-      "source": "BleepingComputer",
-      "date": "2026-11-26T17:15:27.000Z",
-      "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/"
-    },
-    {
-      "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
-      "source": "BleepingComputer",
-      "date": "2026-11-26T15:23:28.000Z",
-      "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/"
     }
   ]
 }
